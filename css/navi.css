@@ -13,7 +13,6 @@ nav {
 }
 
 nav a {
-    float: left;
     color: black;
     padding: 14px 16px;
     text-decoration: none;
@@ -21,8 +20,4 @@ nav a {
 
 nav a:hover {
     color: rgba(0, 0, 0, 0.5);
-}
-
-.right {
-    float: right;
 }
