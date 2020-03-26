@@ -1,5 +1,8 @@
 <div class="row">
-    <div class="column"></div>
-    <div class="column"></div>
-    <div class="column"></div>
+    <div class="column">
+        <p>Profiili</p>
+    </div>
+    <div class="column">
+        <p>Fyysiset tiedot</p>
+    </div>
 </div>

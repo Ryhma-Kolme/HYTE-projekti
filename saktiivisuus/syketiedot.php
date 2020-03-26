@@ -1,4 +1,4 @@
-<div class="header2">
+<div class="header-trans">
     <p>Syketiedot</p>
     <p>- graafi -</p>
 </div>
