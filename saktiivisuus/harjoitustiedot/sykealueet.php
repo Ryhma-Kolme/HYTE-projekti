@@ -1,4 +1,4 @@
 <div class="header-trans">
-    <p>Unitiedot</p>
+    <p>Harjoitustiedot</p>
     <p>- graafi -</p>
 </div>

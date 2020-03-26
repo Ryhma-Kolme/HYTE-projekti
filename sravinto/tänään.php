@@ -1,3 +1,3 @@
-<header>
+<div class="header-white">
     <p>Tänään</p>
-</header>
+</div>
