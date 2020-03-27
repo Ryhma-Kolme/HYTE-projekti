@@ -1,3 +1,3 @@
-<div class="header-trans">
+<div class="header-white">
     <p>Kalenterinäkymä</p>
 </div>
