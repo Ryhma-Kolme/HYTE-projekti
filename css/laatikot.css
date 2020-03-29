@@ -6,13 +6,13 @@
 
 /* laatikot */
 .column {
-    border: 1px solid #b5d8cf;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 5px 10px 10px #88888830;
     background-color: white;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    padding: 10px;
-    height: 250px; /* Should be removed. Only for demonstration */
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
