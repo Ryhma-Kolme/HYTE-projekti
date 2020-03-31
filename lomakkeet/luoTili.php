@@ -22,6 +22,9 @@
     <label for="sukunimi"><b>Sukunimi</b></label>
     <input type="text" placeholder="Syötä sukunimesi" name="sukunimi" required>
 
+    <label for="kayttaja"><b>Käyttäjänimi</b></label>
+    <input type="text" placeholder="Syötä käyttäjänimesi" name="kayttaja" required>
+
     <label for="sijainti"><b>Sijainti</b></label>
     <input type="text" placeholder="Maa" name="sijainti" required>
 
@@ -35,12 +38,13 @@
     <input type="password" placeholder="Syötä salasana uudelleen" name="psw-repeat" required>
     <hr>
    
+    <input type="submit" class="registerbtn" name="continuebtn" value="Jatka"/>
+    <input type="reset"  value="Reset"/>
 
-    <button type="submit" class="registerbtn" ><a href="terveystiedot.php" class="registerbtn" >Jatka</a></button>
   </div>
   
   <div class="container signin">
-    <p>Onko sinulla jo tili? <a href="kirjautuminen.php">Kirjaudu sisään</a>.</p>
+    <p>Onko sinulla jo tili? <a href="kirjautumisLomake.php">Kirjaudu sisään</a>.</p>
   </div>
 </form>
 

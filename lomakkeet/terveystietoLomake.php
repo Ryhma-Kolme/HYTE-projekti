@@ -35,7 +35,7 @@
   <input type="text" id="pituus" name="pituus">
 
  
-    <button type="submit" class="registerbtn">Rekisteröidy</button>
+  <input type="submit" class="registerbtn" name="registerbtn" value="Rekisteröidy"/>
   </div>
   
   <div class="container signin">

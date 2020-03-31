@@ -22,8 +22,7 @@
     
     <hr>
    
-
-    <button type="submit" class="loginbtn">Kirjaudu sisään</button>
+    <input type="submit" class="loginbtn" name="submitUser" value="Kirjaudu sisään"/>
   </div>
   
   <div class="container signin">
