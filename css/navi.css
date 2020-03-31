@@ -6,18 +6,25 @@ img:hover{
     opacity: 0.5;
 }
 
-nav {
+ul {
     display: flex;
     align-items: center;
-    overflow: hidden;
+    position: fixed;
+    list-style-type: none;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    top: 0;
+    background: white;
+    box-shadow:  3px 3px 0px #88888830;
 }
 
-nav a {
+li a {
     color: black;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-nav a:hover {
+li a:hover {
     color: rgba(0, 0, 0, 0.5);
 }

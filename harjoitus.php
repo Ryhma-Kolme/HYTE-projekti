@@ -9,7 +9,15 @@
 <?php
     include("includes/head.php");
     include("includes/navigaatio.php");
-    include("saktiivisuus/harjoitustiedot/sykealueet.php");
-    include("saktiivisuus/harjoitustiedot/lisätiedot.php");
+?>
+
+<main>
+    <?php
+        include("saktiivisuus/harjoitustiedot/sykealueet.php");
+        include("saktiivisuus/harjoitustiedot/lisätiedot.php");
+    ?>
+</main>
+
+<?php
     include("includes/footer.php");
 ?>
