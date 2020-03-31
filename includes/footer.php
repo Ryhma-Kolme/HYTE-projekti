@@ -1,3 +1,3 @@
 <footer>
-    <p>Footer</p>
+    <p>© foodfx</p>
 </footer>
