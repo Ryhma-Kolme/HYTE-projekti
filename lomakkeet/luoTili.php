@@ -38,7 +38,7 @@
     <input type="password" placeholder="Syötä salasana uudelleen" name="psw-repeat" required>
     <hr>
    
-    <input type="submit" class="registerbtn" name="continuebtn" value="Jatka"/>
+    <input type="submit" class="continuebtn" name="continuebtn" value="Jatka"/>
     <input type="reset"  value="Reset"/>
 
   </div>

@@ -37,7 +37,7 @@ hr {
 }
 
 /* Set a style for the submit button */
-.registerbtn, .loginbtn {
+.registerbtn, .loginbtn, .addbtn, .continuebtn {
   background-color: var(--main-bg-color);
   color: white;
   padding: 16px 20px;
@@ -61,5 +61,10 @@ a {
 .signin {
   background-color: #f1f1f1;
   text-align: center;
+}
+
+.error {
+  color: red;
+  
 }
 
