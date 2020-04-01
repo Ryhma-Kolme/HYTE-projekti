@@ -1,7 +1,14 @@
-<?php include("includes/iheader.php");?>
+<?php
+include("includes/iheader.php");
+include("includes/head.php");
+include_once("includes/naviOut.php");
+?>
+<main>
+  <?php
+  include("lomakkeet/kirjautumisLomake.php"); 
+  ?>
+</main>
 
-
-<?php include("lomakkeet/kirjautumisLomake.php"); ?>
 <?php
 //Lomakkeen submit painettu?
 if(isset($_POST['submitUser'])){

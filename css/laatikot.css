@@ -7,7 +7,6 @@
 /* laatikot */
 .column {
     margin: 5px;
-    padding: 10px;
     box-shadow: 5px 10px 10px #88888830;
     background-color: white;
     -webkit-flex: 1;

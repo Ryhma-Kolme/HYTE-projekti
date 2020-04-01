@@ -8,7 +8,7 @@
         </div>
         <div class="right">
             <li><a href="tilitiedot.php">Oma tili</a></li>
-            <li><a href="index.php"><span class="material-icons">exit_to_app</span></a></li>
+            <li><a href="logOutUser.php"><span class="material-icons">exit_to_app</span></a></li>
         </div>
     </ul>
 </nav>

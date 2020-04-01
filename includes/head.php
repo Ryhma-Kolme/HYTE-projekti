@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/laatikot.css">
     <link rel="stylesheet" href="css/navi.css">
+    <link rel="stylesheet" href="css/tekstit.css">
 </head>
 
 <body>
