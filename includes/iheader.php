@@ -7,7 +7,7 @@ session_start();
 <!DOCTYPE html> 
 <html  lang="fi-FI">
 <head>
-<title> Lab 6: User account</title>
+<title> foodfx</title>
 <meta charset="UTF-8">
 </head>
 <body>
