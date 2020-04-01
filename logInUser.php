@@ -8,6 +8,9 @@ if(isset($_POST['submitUser'])){
   //***Tarkistetaan email myös palvelimella
   if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
    $_SESSION['swarningInput']="Illegal email";
+   ?>
+   <span class="error">* <?php echo("Väärä sähköposti");?></span>
+<?php
   }else{
     unset($_SESSION['swarningInput']);  
      try {
@@ -31,9 +34,16 @@ if(isset($_POST['submitUser'])){
               header("Location: index.php"); //Palataan pääsivulle kirjautuneena
           }else{
             $_SESSION['swarningInput']="Wrong password";
+            ?>
+            <span class="error">* <?php echo("Väärä salasana");?></span>
+            <?php
           }
       }else{
         $_SESSION['swarningInput']="Wrong email";
+        ?>
+        <span class="error">* <?php echo("Väärä sähköposti");?></span>
+        <?php
+
       }
      } catch(PDOException $e) {
         file_put_contents('log/DBErrors.txt', 'signInUser.php: '.$e->getMessage()."\n", FILE_APPEND);

@@ -10,7 +10,7 @@
 <form method="post">
 <div class="container">
     <h1>Kirjaudu sisään</h1>
-    <p>Anna käyttäjänimi ja salasana kirjautuaksesi.</p>
+    <p>Anna sähköposti ja salasana kirjautuaksesi.</p>
     <hr>
 
     <label for="username"><b>Sähköposti</b></label>
