@@ -13,8 +13,8 @@
     <p>Anna käyttäjänimi ja salasana kirjautuaksesi.</p>
     <hr>
 
-    <label for="username"><b>Käyttäjänimi</b></label>
-    <input type="text" placeholder="Anna käyttäjänimesi" name="username" required>
+    <label for="username"><b>Sähköposti</b></label>
+    <input type="text" placeholder="Anna sähköpostisi" name="email" required>
 
     <label for="psw"><b>Salasana</b></label>
     <input type="password" placeholder="Anna salasana" name="psw" required>
@@ -26,7 +26,7 @@
   </div>
   
   <div class="container signin">
-    <p>Eikö sinulla ole vielä tiliä? <a href="rekisteröinti.php">Rekisteröidy</a>.</p>
+    <p>Eikö sinulla ole vielä tiliä? <a href="luoTili2.php">Rekisteröidy</a>.</p>
   </div>
 </form>
 </body>
