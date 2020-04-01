@@ -10,7 +10,7 @@ if($_SESSION['sloggedIn']=="yes"){
     ?>
     <p>Terve, täällä voit katsella tietojasi!</p>
 
-    <button><a href="kirjautuminen.php">Kirjaudu</a></button>
+    <button><a href="logInUser.php">Kirjaudu</a></button>
     <button><a href="luoTili2.php">Rekisteröidy</a></button>
     <?php
 }
