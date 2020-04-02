@@ -1,10 +1,15 @@
 <div class="row">
     <div class="column">
-        <h2>Keskiarvo päivien ravinnosta</h2>
-        <p>Rinkula</p>
+        <div class="blue-title">
+            <h3>Keskiarvo päivien ravinnosta</h3>
+        </div>
+        <p>rinkula</p>
     </div>
+
     <div class="column">
-        <h2>Keskiarvo päivien aktiivisuudesta</h2>
-        <p>Rinkula</p>
+        <div class="blue-title">
+            <h3>Keskiarvo päivien aktiivisuudesta</h3>
+        </div>
+        <p>rinkula</p>
     </div>
 </div>
