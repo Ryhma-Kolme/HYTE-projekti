@@ -8,7 +8,7 @@ ul {
     box-shadow:  3px 3px 0px #88888830;
     width: 100%;
     list-style-type: none;
-    padding: 10px;
+    padding: 0;
     margin: 0;
     top: 0;
 }
@@ -28,21 +28,25 @@ ul {
 
 .logo {
     font-size: xx-large;
-    font-family: fantasy;
+    font-weight: bold;
     color: #8d77e0;
 }
 
+/* li {
+    padding: 13px 5px;
+} */
+
 li a {
     color: black;
-    padding: 10px 16px;
+    /* padding: 15px 10px; */
     text-decoration: none;
-    margin-right: 10px;
+    margin: 0px 15px;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
 }
 
-li a:hover {
+li:hover, a:hover {
     background-color: #77BFE0;
     color: white;
 }
