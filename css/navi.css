@@ -8,7 +8,7 @@ ul {
     box-shadow:  3px 3px 0px #88888830;
     width: 100%;
     list-style-type: none;
-    padding: 0;
+    padding: 10px;
     margin: 0;
     top: 0;
 }
@@ -42,6 +42,10 @@ li a {
 }
 
 li a:hover {
+    opacity: 0.5;
+}
+
+nav .active {
     opacity: 0.5;
 }
 

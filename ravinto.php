@@ -1,6 +1,6 @@
 <?php
     include("includes/head.php");
-    include("includes/navigaatio.php");
+    include("includes/naviravinto.php");
 ?>
 
 <main>
