@@ -8,7 +8,21 @@ if($_SESSION['sloggedIn']=="yes"){
     <div class="header-white">
         <?php echo("<p> Tervetuloa " .$_SESSION['suserName']. "!");?>
         <hr>
-        <button><a href="logOutUser.php">Kirjaudu ulos</a></button>
+        <!-- <button><a href="logOutUser.php">Kirjaudu ulos</a></button> -->
+    </div>
+    
+    <div class="row">
+        <div class="column">
+            <div class="blue-title">
+                <h3>Tämän päivän ruoat</h3>
+            </div>
+            <p>Taulukko</p>
+            <p>Aamiainen</p>
+            <p>Lounas</p>
+            <p>Välipala</p>
+            <p>Päivällinen</p>
+            <p>Iltapala</p>
+        </div>
     </div>
 </main>
 <?php
