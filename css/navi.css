@@ -32,13 +32,8 @@ ul {
     color: #8d77e0;
 }
 
-/* li {
-    padding: 13px 5px;
-} */
-
 li a {
     color: black;
-    /* padding: 15px 10px; */
     text-decoration: none;
     margin: 0px 15px;
     -webkit-flex: 1;
@@ -46,9 +41,8 @@ li a {
     flex: 1;
 }
 
-li:hover, a:hover {
-    background-color: #77BFE0;
-    color: white;
+li a:hover {
+    opacity: 0.5;
 }
 
 /* RESPONSIIVISUUS */
