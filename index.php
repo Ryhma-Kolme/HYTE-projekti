@@ -1,14 +1,14 @@
 <?php
     include("includes/iheader.php");
     include("includes/head.php");
-    include("includes/naviOut.php");
+    // include("includes/naviOut.php");
 ?>
     
-<main>
+<!-- <main> -->
     <?php
         include("setusivu/alku.php");
     ?>
-</main>
+<!-- </main> -->
     
 <?php
     include("includes/footer.php");

@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/body.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/laatikot.css">
+    <link rel="stylesheet" href="css/osiot.css">
+    <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/navi.css">
     <link rel="stylesheet" href="css/tekstit.css">
 </head>

@@ -44,7 +44,7 @@
   </div>
   
   <div class="container signin">
-    <p>Onko sinulla jo tili? <a href="kirjautumisLomake.php">Kirjaudu sisään</a>.</p>
+    <p>Onko sinulla jo tili? <a href="logInUser.php">Kirjaudu sisään</a>.</p>
   </div>
 </form>
 

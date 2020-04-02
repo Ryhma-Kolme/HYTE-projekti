@@ -24,7 +24,9 @@
 
 <div class="row">
     <div class="column">
-        <h4>Päiväsi tavoite</h4>
+        <div class="blue-title">
+            <h3>Päivän tavoite</h3>
+        </div>
         <p>rinkula</p>
     </div>
 
