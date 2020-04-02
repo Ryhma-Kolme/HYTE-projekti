@@ -28,12 +28,13 @@ if($_SESSION['sloggedIn']=="yes"){
 <?php
 }else{
     include("includes/naviOut.php");
+    include("logInUser.php");
     ?>
-    <main>
+    <!-- <main>
         <div class="header-white">
             <p class="logo"> foodfx </p>
             <button><a href="logInUser.php">Kirjaudu</a></button>
             <button><a href="luoTili2.php">Rekisteröidy</a></button>
         </div>
-    </main>
+    </main> -->
 <?php } ?>
