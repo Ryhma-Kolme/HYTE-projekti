@@ -58,6 +58,10 @@
     padding: 10px;
 }
 
+.column-content{
+    margin: 20px;
+}
+
 /* RESPONSIIVISUUS */
 @media (max-width: 600px) {
     .row {
