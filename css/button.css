@@ -1,0 +1,23 @@
+/* Aamiainen, lounas, välipala yms. -buttonit */
+.button-ateriat {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+button {
+    margin: 10px;
+    background-color: #77BFE0;
+    color: white;
+    padding: 20px;
+    box-shadow: 5px 10px 10px #88888830;
+    border-radius: 10px;
+}
+
+/* 
+Buttoneita löytyy:
+    Ravintosivu: 
+    - ateriat
+    - lisää uusi ruoka-aine
+    - tallenna ateriaksi
+*/
