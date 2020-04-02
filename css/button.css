@@ -15,7 +15,6 @@ button {
     border: 1px solid #5B92AB;
     text-transform: uppercase;
     font-size: small;
-    cursor: pointer;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -26,10 +25,19 @@ button {
     max-width: 200px;
 }
 
-.uusiruoka:hover, button:hover {
+.uusiruoka:hover {
     background-color: #5B92AB;
     border: 1px solid black;
-    box-shadow: 0;
+    cursor: pointer;
+}
+
+button:hover {
+    border: 1px solid white;
+}
+
+button a:hover {
+    color: white;
+    cursor: pointer;
 }
 
 button .current {

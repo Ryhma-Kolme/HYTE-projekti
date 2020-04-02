@@ -46,7 +46,7 @@ li a:hover {
 }
 
 nav .active {
-    opacity: 0.5;
+    color: #8d77e0;
 }
 
 /* RESPONSIIVISUUS */

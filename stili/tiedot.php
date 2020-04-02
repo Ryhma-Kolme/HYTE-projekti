@@ -12,7 +12,9 @@ if($_SESSION['sloggedIn']=="yes"){
             <h3>Profiili</h3>
         </div>
         <?php echo("<p> Nimi " .$_SESSION['sfirstName']. "");?>
+        <hr>
         <?php echo("<p> Maa " .$_SESSION['slastName']. "");?>
+        <hr>
         <?php echo("<p> Syntymäpäivä " .$_SESSION['spaiva']. "");?>
     </div>
     <div class="column">
@@ -20,7 +22,9 @@ if($_SESSION['sloggedIn']=="yes"){
             <h3>Fyysiset tiedot</h3>
         </div>
         <?php echo("<p> Sukupuoli " .$_SESSION['ssukupuoli']. "");?>
+        <hr>
         <?php echo("<p> Pituus " .$_SESSION['spituus']. " cm");?>
+        <hr>
         <?php echo("<p> Paino " .$_SESSION['spaino']. " kg");?>
     </div>
 </div>

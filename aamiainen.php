@@ -5,7 +5,7 @@
 
 <main>
     <div class="row-buttons">
-        <button><a class="current" href="aamiainen.php">Aamiainen</a></button>
+        <button style="border: 1px solid white"><a class="current" href="aamiainen.php">Aamiainen</a></button>
         <button><a href="lounas.php">Lounas</a></button>
         <button><a href="välipala.php">Välipala</a></button>
         <button><a href="päivällinen.php">Päivällinen</a></button>
