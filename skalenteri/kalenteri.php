@@ -1,3 +1,3 @@
 <div class="header-white">
-    <p>Kalenterinäkymä</p>
+    <h2>Kuukausi</h2>
 </div>
