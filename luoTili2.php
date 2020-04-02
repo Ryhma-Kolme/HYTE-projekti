@@ -1,8 +1,14 @@
 <?php
     include("includes/head.php");
     include("includes/iheader.php");
-    include_once("includes/navigaatio.php");
+    include_once("includes/naviOut.php");
+?>
+<main>
+  <?php
     include_once("lomakkeet/luoTili.php");
+  ?>
+</main>
+<?php
     include_once("includes/footer.php");
 ?>
 

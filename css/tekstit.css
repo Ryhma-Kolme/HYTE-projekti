@@ -1,0 +1,22 @@
+h2{
+    color: #5B92AB;
+    font-weight: bold;
+    text-align: center;
+}
+
+h3{
+    color: white;
+    margin: 0;
+}
+
+h4 {
+    color: black;
+    margin: 10px;
+    text-align: start;
+}
+
+p {
+    margin: 5px;
+    font-size: medium;
+    text-align: center;
+}
