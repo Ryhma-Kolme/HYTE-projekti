@@ -1,4 +1,4 @@
-<div class="button-ateriat">
+<div class="row-buttons">
     <button>Aamiainen</button>
     <button>Lounaus</button>
     <button>Välipala</button>
@@ -9,7 +9,7 @@
 <div class="header-white">
     <div class="row-1">
         <p>Et ole merkinnyt vielä lounastasi! Lisää valitsemalla tallentamasi ateria tai ruoka-aine tai lisää uusi.</p>
-        <button>Lisää uusi ruoka-aine</button>
+        <button class="uusiruoka">Lisää uusi ruoka-aine</button>
     </div>
     <div class="boxes-tallennetut">
         <div class="box-tallennetut">

@@ -1,17 +1,44 @@
 /* Aamiainen, lounas, välipala yms. -buttonit */
-.button-ateriat {
+.row-buttons {
     display: flex;
+    display: -webkit-flex;
     justify-content: space-around;
     margin: 5px;
 }
 
 button {
-    margin: 10px;
-    background-color: #77BFE0;
-    color: white;
-    padding: 20px;
+    margin: 0px 5px 10px 5px;
+    background-color: #77bfe000;
+    color: #5B92AB;
+    padding: 5px;
     box-shadow: 5px 10px 10px #88888830;
-    border-radius: 10px;
+    border: 1px solid #5B92AB;
+    text-transform: uppercase;
+    font-size: small;
+    cursor: pointer;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.uusiruoka {
+    padding: 10px;
+    max-width: 200px;
+}
+
+.uusiruoka:hover, button:hover {
+    background-color: #5B92AB;
+    color: black;
+    border: 1px solid black;
+    box-shadow: 0;
+}
+
+/* RESPONSIIVISUUS */
+@media (max-width: 600px) {
+    .row-buttons {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
 }
 
 /* 
