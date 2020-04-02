@@ -23,7 +23,7 @@ if(isset($_POST['submitUser'])){
      try {
       //Tiedot kannasta, hakuehto
       $data['email'] = $_POST['email'];
-      $STH = $DBH->prepare("SELECT userName, userEmail, userPwd FROM app_user WHERE userEmail = :email;");
+      $STH = $DBH->prepare("SELECT userName, userEmail, userPwd, firstname, surname, userLocation, healthBirthday, healthWeight, healthHeight, userGender FROM app_user WHERE userEmail = :email;");
       $STH->execute($data);
       $STH->setFetchMode(PDO::FETCH_OBJ);
       $tulosOlio=$STH->fetch();
@@ -38,6 +38,17 @@ if(isset($_POST['submitUser'])){
               $_SESSION['sloggedIn']=true;
               $_SESSION['suserName']=$tulosOlio->userName;
               $_SESSION['suserEmail']=$tulosOlio->userEmail;
+              $_SESSION['sfirstName']=$tulosOlio->firstname;
+              $_SESSION['slastName']=$tulosOlio->surname;
+              $_SESSION['slocation']=$tulosOlio->userLocation;
+              $_SESSION['ssukupuoli']=$tulosOlio->userGender;
+              $_SESSION['spaino']=$tulosOlio->healthWeight;
+              $_SESSION['spituus']=$tulosOlio->healthHeight;
+              $_SESSION['spaiva']=$tulosOlio->healthBirthday;
+
+
+
+
               header("Location: index.php"); //Palataan pääsivulle kirjautuneena
           }else{
             $_SESSION['swarningInput']="Wrong password";
