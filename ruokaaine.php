@@ -1,9 +1,15 @@
 <?php
-    include("includes/head.php");
-    include("includes/iheader.php");
-    include_once("includes/navigaatio.php");
+  include("includes/head.php");
+  include("includes/iheader.php");
+  include_once("includes/naviravinto.php");
+?>
+<main>
+  <?php
     include_once("lomakkeet/lisääRuokaaine.php");
-    include_once("includes/footer.php");
+  ?>
+</main>
+<?php
+  include_once("includes/footer.php");
 ?>
 
 <?php

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/navi.css">
     <link rel="stylesheet" href="css/tekstit.css">
+    <link rel="stylesheet" href="css/lomakkeet.css">
 </head>
 
 <body>

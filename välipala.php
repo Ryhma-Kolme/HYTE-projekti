@@ -15,7 +15,7 @@
     <div class="header-white">
         <div class="row-1">
             <p>Lisää välipalasi valitsemalla tallentamasi ateria tai ruoka-aine tai lisää uusi.</p>
-            <button class="uusiruoka">Lisää uusi ruoka-aine</button>
+            <button class="uusiruoka"><a href="ruokaaine.php">Lisää uusi ruoka-aine</a></button>
         </div>
         <div class="boxes-tallennetut">
             <!-- <div class="box-tallennetut">
