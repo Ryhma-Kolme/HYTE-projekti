@@ -5,7 +5,7 @@
 
 <main>
     <?php
-        include("sravinto/ravintoTänään.php");
+        include("ruokatänään.php");
     ?>
 </main>
 

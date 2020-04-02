@@ -28,9 +28,17 @@ button {
 
 .uusiruoka:hover, button:hover {
     background-color: #5B92AB;
-    color: black;
     border: 1px solid black;
     box-shadow: 0;
+}
+
+button .current {
+    color: white;
+}
+
+button a{
+    text-decoration: none;
+    color: black;
 }
 
 /* RESPONSIIVISUUS */
