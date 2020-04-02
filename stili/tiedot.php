@@ -11,8 +11,9 @@ if($_SESSION['sloggedIn']=="yes"){
         <div class="blue-title">
             <h3>Profiili</h3>
         </div>
-        <?php echo("<p> Nimi " .$_SESSION['sfirstName']. "");?>
-        <?php echo("<p> Maa " .$_SESSION['slastName']. "");?>
+        <?php echo("<p> Nimi " .$_SESSION['sfirstName']." " .$_SESSION['slastName']."");?>
+
+        <?php echo("<p> Maa " .$_SESSION['slocation']. "");?>
         <?php echo("<p> Syntymäpäivä " .$_SESSION['spaiva']. "");?>
     </div>
     <div class="column">
