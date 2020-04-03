@@ -6,9 +6,15 @@ if($_SESSION['sloggedIn']=="yes"){
 ?>
 <main>
     <div class="header-white">
-        <?php echo("<p> Tervetuloa " .$_SESSION['suserName']. "!");?>
+        <?php echo("<h2> Tervetuloa " .$_SESSION['suserName']. "!</h2>");?>
         <hr>
         <!-- <button><a href="logOutUser.php">Kirjaudu ulos</a></button> -->
+        <p>Täällä voit tarkastella ruokapäiväkirjaasi ja aktiivisuustietojasi!</p>
+        <p>Kalenterista löydät kuukauden yhteenvedon.</p>
+        <p>Ravintosivulla voit päivittää tämän päivän syötyjä ruokia, jotka näkyvät kokonaisuudessaan myös tällä sivulla.</p>
+        <p>Aktiivisuussivulla näet kokonaisuuden aktiivisuudestasi syketiedon perusteella.</p>
+        <br>
+        <p>Tsemppiä analysointiin!</p>
     </div>
     
     <div class="row">
