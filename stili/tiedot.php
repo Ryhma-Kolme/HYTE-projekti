@@ -11,14 +11,15 @@ if($_SESSION['sloggedIn']=="yes"){
         <div class="blue-title">
             <h3>Profiili</h3>
         </div>
+
         <div class="column-content">
-            <?php echo("<p> Nimi " .$_SESSION['sfirstName']. "");?>
+            <?php echo("<p> Nimi " .$_SESSION['sfirstName']." " .$_SESSION['slastName']."");?>
             <hr>
-            <?php echo("<p> Maa " .$_SESSION['slastName']. "");?>
+            <?php echo("<p> Maa " .$_SESSION['slocation']. "");?>
             <hr>
             <?php echo("<p> Syntymäpäivä " .$_SESSION['spaiva']. "");?>
         </div>
-    </div>
+
     <div class="column">
         <div class="blue-title">
             <h3>Fyysiset tiedot</h3>

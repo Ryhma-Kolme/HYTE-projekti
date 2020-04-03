@@ -17,6 +17,9 @@
     <label for="ruoka"><b>Ruoka:</b></label>
     <input type="text" placeholder="Syötä ruoka-aine" name="ruoka" required>
 
+    <label for="ruokagrammat"><b>Ruoan määrä (g):</b></label>
+    <input type="text" placeholder="Syötä määrä" name="ruokagrammat" required>
+
     <label for="kalorit"><b>Kalorit:</b></label>
     <input type="text" placeholder="Kaloreja" name="kalorit" required>
 
