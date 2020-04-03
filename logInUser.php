@@ -9,8 +9,6 @@ include_once("includes/naviOut.php");
   ?>
 </main>
 
-<?php include("includes/footer.php"); ?>
-
 <?php
 //Lomakkeen submit painettu?
 if(isset($_POST['submitUser'])){
