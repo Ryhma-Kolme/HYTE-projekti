@@ -19,6 +19,7 @@ if($_SESSION['sloggedIn']=="yes"){
             <hr>
             <?php echo("<p> Syntymäpäivä " .$_SESSION['spaiva']. "");?>
         </div>
+    </div>
 
     <div class="column">
         <div class="blue-title">
