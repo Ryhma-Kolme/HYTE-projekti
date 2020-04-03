@@ -1,4 +1,4 @@
-ul {
+nav ul {
     display: -webkit-flex;
     display: flex;
     justify-content: space-between;
@@ -32,7 +32,7 @@ ul {
     color: #8d77e0;
 }
 
-li a {
+nav ul li a {
     color: black;
     text-decoration: none;
     margin: 0px 15px;
@@ -41,7 +41,7 @@ li a {
     flex: 1;
 }
 
-li a:hover {
+nav ul li a:hover {
     opacity: 0.5;
 }
 
@@ -51,7 +51,7 @@ nav .active {
 
 /* RESPONSIIVISUUS */
 @media (max-width: 600px) {
-    ul {
+    nav ul {
         -webkit-flex-direction: column;
         flex-direction: column;
     }

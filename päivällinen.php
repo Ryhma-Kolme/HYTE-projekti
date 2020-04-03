@@ -17,15 +17,7 @@
             <p>Lisää päivällisesi valitsemalla tallentamasi ateria tai ruoka-aine tai lisää uusi.</p>
             <button class="uusiruoka"><a href="ruokaaine.php">Lisää uusi ruoka-aine</a></button>
         </div>
-        <div class="boxes-tallennetut">
-            <!-- <div class="box-tallennetut">
-                <h4>Tallennetut ateriat</h4>
-            </div> -->
-
-            <div class="box-tallennetut">
-                <h4>Tallennetut ruoka-aineet</h4>
-            </div>
-        </div>
+        <?php include("sravinto/boxes-tallennetut.php"); ?>
     </div>
 
     <div class="row">
