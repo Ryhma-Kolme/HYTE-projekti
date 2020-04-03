@@ -18,26 +18,28 @@ if(isset($_POST['addbtn'])){
   unset($_SESSION['swarningInput']);
   //1. Tiedot sessioon
   $_SESSION['sruoka']=$_POST['ruoka'];
+  $_SESSION['sruokagrammat']=$_POST['ruokagrammat'];
   $_SESSION['skalorit']=$_POST['kalorit'];
   $_SESSION['shiilihydraatit']=$_POST['hiilihydraatit'];
   $_SESSION['srasva']=$_POST['rasva'];
   $_SESSION['sproteiini']= $_POST['proteiini'];
   //2. Tiedot kantaan 
   $data['dbruoka'] = $_POST['ruoka'];
+  $data['dbruokagrammat'] = $_POST['ruokagrammat'];
   $data['dbkalorit'] = $_POST['kalorit'];
   $data['dbhiilihydraatit'] = $_POST['hiilihydraatit'];
   $data['dbrasva'] = $_POST['rasva'];
   $data['dbproteiini'] = $_POST['proteiini'];
   
   try {
-   //***Email ei saa olla käytetty aiemmin
-   $sql = "SELECT COUNT(*) FROM app_addedFoods where foodStuff  =  " . "'".$_POST['ruoka']."'"  ;
+   //***Ruoka ei saa olla lisätty jo aiemmin
+   $sql = "SELECT COUNT(*) FROM app_food where foodName  =  " . "'".$_POST['ruoka']."'"  ;
    $kysely=$DBH->prepare($sql);
    $kysely->execute();				
    $tulos=$kysely->fetch();
    if($tulos[0] == 0){ //email ei ole käytössä
-     $STH = $DBH->prepare("INSERT INTO app_addedFoods (foodStuff, calories, carbs, fat, protein)
-      VALUES (:dbruoka, :dbkalorit, :dbhiilihydraatit, :dbrasva, :dbproteiini);");
+     $STH = $DBH->prepare("INSERT INTO app_food (foodName, quantity, calories, fat, carbohydrates, proteins)
+      VALUES (:dbruoka, :dbruokagrammat, :dbkalorit, :dbrasva, :dbhiilihydraatit, :dbproteiini);");
      $STH->execute($data);
      header("Location: index.php"); //Palataan pääsivulle kirjautuneena
     }else{
