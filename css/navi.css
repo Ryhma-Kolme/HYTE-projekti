@@ -1,4 +1,4 @@
-ul {
+nav ul {
     display: -webkit-flex;
     display: flex;
     justify-content: space-between;
@@ -8,7 +8,7 @@ ul {
     box-shadow:  3px 3px 0px #88888830;
     width: 100%;
     list-style-type: none;
-    padding: 0;
+    padding: 10px;
     margin: 0;
     top: 0;
 }
@@ -32,13 +32,8 @@ ul {
     color: #8d77e0;
 }
 
-/* li {
-    padding: 13px 5px;
-} */
-
-li a {
+nav ul li a {
     color: black;
-    /* padding: 15px 10px; */
     text-decoration: none;
     margin: 0px 15px;
     -webkit-flex: 1;
@@ -46,14 +41,17 @@ li a {
     flex: 1;
 }
 
-li:hover, a:hover {
-    background-color: #77BFE0;
-    color: white;
+nav ul li a:hover {
+    opacity: 0.5;
+}
+
+nav .active {
+    color: #8d77e0;
 }
 
 /* RESPONSIIVISUUS */
 @media (max-width: 600px) {
-    ul {
+    nav ul {
         -webkit-flex-direction: column;
         flex-direction: column;
     }

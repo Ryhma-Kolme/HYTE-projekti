@@ -1,11 +1,11 @@
 <?php
     include("includes/head.php");
-    include("includes/navigaatio.php");
+    include("includes/naviravinto.php");
 ?>
 
 <main>
     <?php
-        include("sravinto/ravintoTänään.php");
+        include("ruokatänään.php");
     ?>
 </main>
 

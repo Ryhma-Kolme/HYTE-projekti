@@ -8,8 +8,6 @@
 </head>
 <body>
         
-
-
 <form method="post">
 <div class="container">
     <h1>Lisää ruoka</h1>
@@ -35,15 +33,10 @@
     <input type="text" placeholder="Proteiinia" name="proteiini" required>
 
     <hr>
-   
+  
     <input type="submit" class="addbtn" name="addbtn" value="Lisää ruoka-aine"/>
-  </div>
-  
-  
+  </div> 
 </form>
 
 </body>
 </html>
-
-  
- 

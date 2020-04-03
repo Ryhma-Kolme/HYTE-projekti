@@ -37,6 +37,15 @@
     flex: 1;
 }
 
+.ruokalista {
+    max-height: 150px;
+    overflow: auto;
+}
+
+.ruokalista ul {
+    list-style-type: none;
+}
+
 /* PIENEMMÄT LAATIKOT: ison laatikon alapuolella */
 .row {
     display: -webkit-flex;
@@ -56,6 +65,10 @@
 .blue-title {
     background-color: #77BFE0;
     padding: 10px;
+}
+
+.column-content{
+    margin: 20px;
 }
 
 /* RESPONSIIVISUUS */

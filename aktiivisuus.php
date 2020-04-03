@@ -1,7 +1,7 @@
 <!-- Sisältää käyttäjän aktiivisuustiedot -->
 <?php
     include("includes/head.php");
-    include("includes/navigaatio.php");
+    include("includes/naviaktiivisuus.php");
 ?>
 
 <main>

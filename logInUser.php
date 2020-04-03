@@ -70,7 +70,3 @@ if(isset($_POST['submitUser'])){
   }
 }
 ?>
-
-
-<?php include("includes/footer.php");?>
-
