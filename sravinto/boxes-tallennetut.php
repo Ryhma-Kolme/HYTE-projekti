@@ -1,53 +1,27 @@
+<?php include("includes/iheader.php");?>
+
 <div class="boxes-tallennetut">
     <!-- <div class="box-tallennetut">
         <h4>Tallennetut ateriat</h4>
     </div> -->
 
+  
     <div class="box-tallennetut">
         <h4>Tallennetut ruoka-aineet</h4>
         
-        <?php 
-        // $sql = "SELECT * FROM app_food";
-        // $STH=$DBH->prepare($sql);
-        // $STH->execute();
-        // $STH->setFetchMode(PDO::FETCH_OBJ);
-        ?>
-        
         <div class="ruokalista">
             <ul>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <li>Ruoka-aine</li>
-                <?php
-                // try{
-                // while ($food = $STH->fetch()) {
-                // echo "<li> " . $food["foodName"] ." </li>";
-                // }
-
-                // } catch (PDOException $e) {
-                //     die("VIRHE: " . $e->getMessage());
-                // }
-                ?>
+            <?php
+      $STH = $DBH->prepare("SELECT foodName FROM app_food");
+      $STH->execute();
+      $tulosOlio=$STH->fetchAll(PDO::FETCH_COLUMN);
+      $List = implode('<li> ', $tulosOlio); 
+  
+      // Display the comma separated list 
+      echo utf8_encode($List); 
+        ?>
+               
+             
             </ul>
             </div>
         </div>
