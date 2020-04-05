@@ -18,14 +18,23 @@
       $STH->execute();
       $tulosOlio=$STH->fetchAll(PDO::FETCH_COLUMN);
 
-      // Array listaksi
-
-      $List = implode('<li>', $tulosOlio)."</li>"; 
+     
+      ?>
+      
+      <select>
+          <option selected="selected">Lisää ruoka</option>
+          <?php
+          
+          // käydään array läpi
+          foreach ($tulosOlio as $food){
+          ?>
+          <option value="<?php echo strtolower($food); ?>"><?php echo utf8_encode($food); ?></option>
+          <?php
+          }
+          ?>
+      </select>
+      <input type="submit" class="tallennaruoka" name="foodbtn" value="Tallenna ruoka">
   
-      // Listan tulostus
-      echo utf8_encode($List); 
-        ?>
-               
              
             </ul>
             </div>
