@@ -12,12 +12,17 @@
         <div class="ruokalista">
             <ul>
             <?php
+            // Ruokien nimien haku kannasta
+            
       $STH = $DBH->prepare("SELECT foodName FROM app_food");
       $STH->execute();
       $tulosOlio=$STH->fetchAll(PDO::FETCH_COLUMN);
-      $List = implode('<li> ', $tulosOlio); 
+
+      // Array listaksi
+
+      $List = implode('<li>', $tulosOlio)."</li>"; 
   
-      // Display the comma separated list 
+      // Listan tulostus
       echo utf8_encode($List); 
         ?>
                
