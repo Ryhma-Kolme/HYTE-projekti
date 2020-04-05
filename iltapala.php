@@ -25,7 +25,7 @@
             <div class="blue-title">
                 <h3>Päivän tavoite</h3>
             </div>
-            <p>rinkula</p>
+            <img style="height:200px; padding:10px" src="images/värit.png" alt="Rinkula">
         </div>
 
         <div class="column">
