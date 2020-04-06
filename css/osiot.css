@@ -2,8 +2,7 @@
 .header-white {
     margin: 5px;
     box-shadow: 5px 10px 10px #88888830;
-    padding: 15px 50px;
-    height: 300px;
+    padding: 30px 50px;
     background-color: white;
 }
 
@@ -27,6 +26,7 @@
     display: -webkit-flex;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .box-tallennetut{
