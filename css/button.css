@@ -6,7 +6,7 @@
     margin: 5px;
 }
 
-button {
+button, select, .tallennaruoka {
     margin: 0px 5px 10px 5px;
     background-color: #77bfe000;
     color: #5B92AB;
