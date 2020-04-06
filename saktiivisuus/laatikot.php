@@ -9,12 +9,12 @@
         <div class="blue-title">
             <h3>Päivän harjoitukset</h3>
         </div>
-        <button><a href="harjoitus.php">Katso harjoitustiedot</a></button>
+        <!-- <button><a href="harjoitus.php">Katso harjoitustiedot</a></button> -->
     </div>
     <div class="column">
         <div class="blue-title">
             <h3>Yöuni</h3>
         </div>
-        <button><a href="uni.php">Katso unitiedot</a></button>
+        <!-- <button><a href="uni.php">Katso unitiedot</a></button> -->
     </div>
 </div>

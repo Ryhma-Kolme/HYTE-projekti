@@ -11,7 +11,7 @@ if($_SESSION['sloggedIn']=="yes"){
         <!-- <button><a href="logOutUser.php">Kirjaudu ulos</a></button> -->
         <p>Täällä voit tarkastella ruokapäiväkirjaasi ja aktiivisuustietojasi!</p>
         <p>Kalenterista löydät kuukauden yhteenvedon.</p>
-        <p>Ravintosivulla voit päivittää tämän päivän syötyjä ruokia, jotka näkyvät kokonaisuudessaan myös tällä sivulla.</p>
+        <p>Ravintosivulla voit päivittää tämän päivän syötyjä ruokia.</p>
         <p>Aktiivisuussivulla näet kokonaisuuden aktiivisuudestasi syketiedon perusteella.</p>
         <br>
         <p>Tsemppiä analysointiin!</p>

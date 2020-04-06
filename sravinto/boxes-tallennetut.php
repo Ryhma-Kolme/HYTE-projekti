@@ -14,7 +14,7 @@
             <?php
             // Ruokien nimien haku kannasta
             
-      $STH = $DBH->prepare("SELECT foodName FROM app_food");
+      $STH = $DBH->prepare("SELECT foodName FROM app_food ORDER BY foodName ASC");
       $STH->execute();
       $tulosOlio=$STH->fetchAll(PDO::FETCH_COLUMN);
 
