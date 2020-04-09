@@ -20,8 +20,8 @@
 
      
       ?>
-      
-      <select>
+      <form method="post">
+      <select name="food">
           <option selected="selected">Lisää ruoka</option>
           <?php
           
@@ -34,6 +34,7 @@
           ?>
       </select>
       <input type="submit" class="tallennaruoka" name="foodbtn" value="Tallenna ruoka">
+        </form>
   
              
             </ul>

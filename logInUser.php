@@ -23,7 +23,7 @@ if(isset($_POST['submitUser'])){
      try {
       //Tiedot kannasta, hakuehto
       $data['email'] = $_POST['email'];
-      $STH = $DBH->prepare("SELECT userName, userEmail, userPwd, firstname, surname, userLocation, healthBirthday, healthWeight, healthHeight, userGender FROM app_user WHERE userEmail = :email;");
+      $STH = $DBH->prepare("SELECT userID, userName, userEmail, userPwd, firstname, surname, userLocation, healthBirthday, healthWeight, healthHeight, userGender FROM app_user WHERE userEmail = :email;");
       $STH->execute($data);
       $STH->setFetchMode(PDO::FETCH_OBJ);
       $tulosOlio=$STH->fetch();
@@ -36,6 +36,7 @@ if(isset($_POST['submitUser'])){
          // var_dump($tulosOlio);
           if(password_verify($givenPasswordAdded,$tulosOlio->userPwd)){
               $_SESSION['sloggedIn']=true;
+              $_SESSION['suserID']=$tulosOlio->userID;
               $_SESSION['suserName']=$tulosOlio->userName;
               $_SESSION['suserEmail']=$tulosOlio->userEmail;
               $_SESSION['sfirstName']=$tulosOlio->firstname;
