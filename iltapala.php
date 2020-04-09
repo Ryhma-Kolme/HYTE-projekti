@@ -5,17 +5,17 @@
 
 <main>
     <div class="row-buttons">
-        <button><a href="aamiainen.php">Aamiainen</a></button>
-        <button><a href="lounas.php">Lounas</a></button>
-        <button><a href="välipala.php">Välipala</a></button>
-        <button><a href="päivällinen.php">Päivällinen</a></button>
-        <button style="border: 1px solid white"><a class="current" href="iltapala.php">Iltapala</a></button>
+        <button onclick="document.location = 'aamiainen.php'">Aamiainen</button>
+        <button onclick="document.location = 'lounas.php'">Lounas</button>
+        <button onclick="document.location = 'välipala.php'">Välipala</button>
+        <button onclick="document.location = 'päivällinen.php'">Päivällinen</button>
+        <button class="current" onclick="document.location = 'iltapala.php'">Iltapala</button>
     </div>
 
     <div class="header-white">
         <div class="row-1">
             <p>Lisää iltapalasi valitsemalla tallentamasi ateria tai ruoka-aine tai lisää uusi.</p>
-            <button class="uusiruoka" href="ruokaaine.php">Lisää uusi ruoka-aine</button>
+            <button class="uusiruoka" onclick="document.location = 'ruokaaine.php'">Lisää uusi ruoka-aine</button>
         </div>
         <?php include("sravinto/boxes-tallennetut.php"); ?>
     </div>
