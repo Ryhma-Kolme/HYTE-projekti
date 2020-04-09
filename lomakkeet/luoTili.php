@@ -18,22 +18,28 @@
     
     <label for="etunimi"><b>Etunimi</b></label>
     <input type="text" placeholder="Syötä etunimesi" name="etunimi" required>
+    <hr>
 
     <label for="sukunimi"><b>Sukunimi</b></label>
     <input type="text" placeholder="Syötä sukunimesi" name="sukunimi" required>
+    <hr>
 
     <label for="kayttaja"><b>Käyttäjänimi</b></label>
     <input type="text" placeholder="Syötä käyttäjänimesi" name="kayttaja" required>
+    <hr>
 
     <label for="sijainti"><b>Sijainti</b></label>
     <input type="text" placeholder="Maa" name="sijainti" required>
+    <hr>
 
     <label for="email"><b>Sähköpostiosoite</b></label>
     <input type="text" placeholder="Syötä sähköpostiosoitteesi" name="email" required>
+    <hr>
 
     <label for="psw"><b>Salasana</b></label>
     <input type="password" placeholder="Syötä salasana" name="psw" required>
-
+    <hr>
+    
     <label for="psw-repeat"><b>Vahvista salasana</b></label>
     <input type="password" placeholder="Syötä salasana uudelleen" name="psw-repeat" required>
     <hr>
