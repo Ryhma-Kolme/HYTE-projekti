@@ -6,12 +6,17 @@
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
-  width: -webkit-fill-available;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
+  margin: 0px 5px 10px 5px;
+  background-color: #77bfe000;
+  color: #5B92AB;
+  padding: 5px;
+  box-shadow: 5px 10px 10px #88888830;
+  border: 1px solid #5B92AB;
+  font-size: small;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  
 }
 
 input[type=text]:focus, input[type=password]:focus {

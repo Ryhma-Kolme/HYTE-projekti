@@ -15,7 +15,7 @@
 
     <label for="username"><b>Sähköposti</b></label>
     <input type="text" placeholder="Anna sähköpostisi" name="email" required>
-
+<hr>
     <label for="psw"><b>Salasana</b></label>
     <input type="password" placeholder="Anna salasana" name="psw" required>
 

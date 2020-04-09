@@ -33,6 +33,7 @@
           }
           ?>
       </select>
+      <input type="text" class="quantitybtn" id="määrä" name="määrä" value="MÄÄRÄ (g)" onclick="this.select()">
       <input type="submit" class="tallennaruoka" name="foodbtn" value="Tallenna ruoka">
         </form>
   

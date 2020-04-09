@@ -34,7 +34,7 @@
   <label for="pituus">Pituus (cm):</label>
   <input type="text" id="pituus" name="pituus">
 
- 
+  <hr>
   <input type="submit" class="registerbtn" name="registerbtn" value="Rekisteröidy"/>
   </div>
   
