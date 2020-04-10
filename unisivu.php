@@ -6,8 +6,8 @@
 
 <main>
     <?php
-        include("saktiivisuus/syketiedot.php");
-        include("saktiivisuus/laatikot.php");
+        include("iUni/unigraafi.php");
+        include("iUni/unitiedot.php");
     ?>
 </main>
 
