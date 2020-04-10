@@ -7,12 +7,12 @@
 /* Full-width input fields */
 input[type=text], input[type=password] {
   margin: 0px 5px 10px 5px;
+  padding: 5px;
+  /* box-shadow: 5px 10px 10px #88888830;
+  border: 1px solid #5B92AB;
   background-color: #77bfe000;
   color: #5B92AB;
-  padding: 5px;
-  box-shadow: 5px 10px 10px #88888830;
-  border: 1px solid #5B92AB;
-  font-size: small;
+  font-size: small; */
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
