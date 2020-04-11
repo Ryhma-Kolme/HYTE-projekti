@@ -39,14 +39,14 @@ hr {
 }
 
 /* Set a style for the submit button */
-.registerbtn, .loginbtn, .addbtn, .continuebtn {
+.registerbtn, .loginbtn, .addbtn, .continuebtn, .savebtn {
   background-color: var(--main-bg-color);
   color: white;
-  padding: 16px 20px;
+  padding: 6px 10px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: auto;
   opacity: 0.9;
 }
 

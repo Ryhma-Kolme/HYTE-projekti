@@ -73,27 +73,8 @@ $kysely=$DBH->prepare($sql);
 $kysely->execute();
 
 
-// Luodaan taulukko johon syötetään arvot 
-echo("<table>
-<tr>
-   <th>Ruoka-aine</th>
-   <th>Määrä</th>
-   <th>Kalorit</th>
-   <th>Rasva</th>
-   <th>Hiilihydraatit</th>
-   <th>Proteiinit</th>
-   <th>Lisätty</th>
-</tr>");
-while	($row=$kysely->fetch()){	
-echo("<tr><td>".$row["foodName"]."</td>
-   <td>".$row["quantity"]."g </td>
-   <td>".$row["calories"]."kcal</td>
-   <td>".$row["fat"]."g</td>
-   <td>".$row["carbohydrates"]."g</td>
-   <td>".$row["proteins"]."g</td>
-   <td>".$row["timeOfEating"]."</td>");
-}
-echo("</table>");
+ // taulukko, jossa syötetyt arvot 
+ include("sravinto/foodTable.php"); 
 
 // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
 $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
@@ -102,27 +83,8 @@ WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
 $kysely=$DBH->prepare($sql);				
 $kysely->execute();
 
-// Luodaan taulukko johon syötetään arvot 
-echo("<table>
-<tr>
-  <th>Ruoka-aineet yht.</th>
-  <th>Määrä yht.</th>
-  <th>Kalorit yht.</th>
-  <th>Rasvat yht.</th>
-  <th>Hiilihydraatit yht.</th>
-  <th>Proteiinit yht.</th>
-</tr>");
-while	($row=$kysely->fetch()){	
-echo("<tr><td>".$row['COUNT(foodName)']."kpl</td>
-  <td>".$row['SUM(quantity)']."g</td>
-  <td>".$row['SUM(calories)']."kcal</td>
-  <td>".$row['SUM(fat)']."g</td>
-  <td>".$row['SUM(carbohydrates)']."g</td>
-  <td>".$row['SUM(proteins)']."g</td>");
-                       }
-echo("</table>");
-  
-
+ // taulukko, jossa syötetyt arvot 
+ include("sravinto/sumFoodsTable.php"); 
    
     ?>
         </div>
