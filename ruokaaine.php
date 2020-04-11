@@ -40,16 +40,17 @@ if(isset($_POST['addbtn'])){
   try {
    //***Ruoka ei saa olla lisätty jo aiemmin
    $sql = "SELECT COUNT(*) FROM app_food where foodName  =  " . "'".$_POST['ruoka']."'"  ;
-   $kysely=$DBH->prepare($sql);
-   $kysely->execute();				
+    $kysely=$DBH->prepare($sql);
+    $kysely->execute();				
    $tulos=$kysely->fetch();
    if($tulos[0] == 0){ //email ei ole käytössä
      $STH = $DBH->prepare("INSERT INTO app_food (foodName, quantity, calories, fat, carbohydrates, proteins)
       VALUES (:dbruoka, :dbruokagrammat, :dbkalorit, :dbrasva, :dbhiilihydraatit, :dbproteiini);");
      $STH->execute($data);
-     header("Location: index.php"); //Palataan pääsivulle kirjautuneena
+     header("Location: ravinto.php"); //Palataan pääsivulle kirjautuneena
+     echo("Ruoka-aine lisätty onnistuneesti");
     }else{
-        $_SESSION['swarningInput']="Ruoka-aine on jo lisätty";
+        echo("Ruoka-aine on jo lisätty");
       }
   } catch(PDOException $e) {
     file_put_contents('config/DBErrors.txt', 'signInUser.php: '.$e->getMessage()."\n", FILE_APPEND);
@@ -61,7 +62,7 @@ if(isset($_POST['addbtn'])){
   //Testataan pääsivulle paluu
 
   //Palataan pääsivulle jos tallennus onnistui
-    header("Location: index.php");
+    header("Location: ravinto.php");
 }
  echo("<h1>".$_SESSION['swarningInput']."</hi>");
 
