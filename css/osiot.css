@@ -37,13 +37,8 @@
     flex: 1;
 }
 
-.ruokalista {
-    max-height: 150px;
-    overflow: auto;
-}
-
-.ruokalista ul {
-    list-style-type: none;
+.ruoka-tallennus {
+    margin: 10px;
 }
 
 /* PIENEMMÄT LAATIKOT: ison laatikon alapuolella */
