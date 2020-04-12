@@ -2,7 +2,6 @@
     include("includes/head.php");
     include("includes/naviravinto.php");
 ?>
-
 <main>
     <div class="row-buttons">
         <button class="current" onclick="document.location = 'aamiainen.php'">Aamiainen</button>
