@@ -37,7 +37,9 @@ hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
-
+tr {
+  text-align: left;
+}
 /* Set a style for the submit button */
 .registerbtn, .loginbtn, .addbtn, .continuebtn, .savebtn {
   background-color: var(--main-bg-color);
