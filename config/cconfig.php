@@ -8,10 +8,12 @@ $added='#â‚¬%&&/';
 // Muodostetaan yhteys tietokantaan
 try {     //Avataan yhteys tietokantaan ($DBH on nyt  yhteysolio, nimi vapaasti valittavissa)
 // $DBH yhteysolio on kahva tietokantaan data base handle
-	$DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+	$DBH = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
            // virheenkäsittely: virheet aiheuttavat poikkeuksen
+       
 	$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     // käytetään  merkistöä utf8
+
     ?>
 
     <?php

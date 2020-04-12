@@ -24,7 +24,7 @@
                         // käydään array läpi
                         foreach ($tulosOlio as $food){
                         ?>
-                        <option value="<?php echo strtolower($food); ?>"><?php echo utf8_encode($food); ?></option>
+                        <option value="<?php echo strtolower($food); ?>"><?php echo ($food); ?></option>
                         <?php
                         }
                         ?>
