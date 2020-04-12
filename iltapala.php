@@ -30,13 +30,26 @@
 
         <div class="column">
             <div class="blue-title">
+            <form method="post"><input type="submit" class="deletebtn" name="em_deletebtn" value="Poista kaikki"></form>
                 <h3>Iltapala</h3>
             </div>
-            <?php
+<?php
 
 // userID lisäys 
 $currentUserID = $_SESSION['suserID'];
+?>
+<?php // Poista kaikki tämän päivän iltapalat
+         if(isset($_POST['em_deletebtn'])){
 
+                // Näytetään vain kirjautuneen käyttäjän ja tämän päivän lisätyt ruoka-aineet
+                $sql="DELETE FROM app_eveningmeal WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
+                $kysely=$DBH->prepare($sql);				
+                $kysely->execute();
+                    
+            
+        }		
+?>
+<?php
 if(isset($_POST['foodbtn'])){
               $selected_val = $_POST['food'];  // Valittu ruoka lisätään muuttujaan
 

@@ -142,7 +142,7 @@ $currentUserID = $_SESSION['suserID'];
             if ($sntotal==0){
                 echo("<tr>               
                 <th>Välipala</th>
-                <td>Et ole vielä lisännyt välipaloja</td>");
+                <th>Et ole vielä lisännyt välipaloja</th>");
             } else {
 
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
