@@ -8,28 +8,28 @@
         <button onclick="document.location = 'iltapala.php'">Iltapala</button>
     
 </div>
-<?php
-// userID lisäys 
-$currentUserID = $_SESSION['suserID'];
-?>
 <div class="row">
         <div class="column">
             <div class="blue-title">
                 <h3>Tämän päivän ruoat</h3>
             </div>
-            
-<?php   // Taulukko kaikille aterioille
+ 
+<?php // userID lisäys 
+        $currentUserID = $_SESSION['suserID'];
+?>      
 
-        echo("  
-        <table>
-        <tr>
-        <th>Ruokailu</th>
-        <th>Määrä yht.</th>
-        <th>Kalorit yht.</th>
-        <th>Rasvat yht.</th>
-        <th>Hiilihydraatit yht.</th>
-        <th>Proteiinit yht.</th>
-        </tr>");
+<?php // Taulukko kaikille aterioille
+
+            echo("  
+            <table>
+            <tr>
+            <th>Ruokailu</th>
+            <th>Määrä yht.</th>
+            <th>Kalorit yht.</th>
+            <th>Rasvat yht.</th>
+            <th>Hiilihydraatit yht.</th>
+            <th>Proteiinit yht.</th>
+            </tr>");
 ?>
             
 <?php // Aamiainen
@@ -54,7 +54,7 @@ $currentUserID = $_SESSION['suserID'];
             $kysely=$DBH->prepare($sql);				
             $kysely->execute();
 
-             // Jos ateriaan ei ole vielä lisätty mitään 
+            // Jos ateriaan ei ole vielä lisätty mitään 
             if ($bretotal==0){
                 echo("<tr>               
                 <th>Aamiainen</th>
@@ -62,35 +62,34 @@ $currentUserID = $_SESSION['suserID'];
             } else {
 
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
-             while	($row=$kysely->fetch()){	
-                echo("<tr>               
+                while	($row=$kysely->fetch()){	
+                 echo("<tr>               
                     <th>Aamiainen".$row[""]."</th>
                     <td>".$row['SUM(quantity)']."g</td>
                     <td>".$row['SUM(calories)']."kcal</td>
                     <td>".$row['SUM(fat)']."g</td>
                     <td>".$row['SUM(carbohydrates)']."g</td>
                     <td>".$row['SUM(proteins)']."g</td>");
-                                       }
-            }
+                                                }
+                    }
 ?>        
            
 <?php // Lounas
-                 // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
+                // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
                 $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
                 FROM app_lunch
                 WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
                 $kysely=$DBH->prepare($sql);				
                 $kysely->execute();
-
                 $row=$kysely->fetch();
      
-                 // Lisätään alkuperäinen määrä muuttujaan
-                 $lunchtotalQ = $row["SUM(quantity)"]; 
-                 $lunchtotal = $row['COUNT(foodName)'];
-                 $lunchtotalC = $row["SUM(calories)"]; 
-                 $lunchtotalF = $row["SUM(fat)"]; 
-                 $lunchtotalCh = $row["SUM(carbohydrates)"]; 
-                 $lunchtotalP = $row["SUM(proteins)"]; 
+                // Lisätään alkuperäinen määrä muuttujaan
+                $lunchtotalQ = $row["SUM(quantity)"]; 
+                $lunchtotal = $row['COUNT(foodName)'];
+                $lunchtotalC = $row["SUM(calories)"]; 
+                $lunchtotalF = $row["SUM(fat)"]; 
+                $lunchtotalCh = $row["SUM(carbohydrates)"]; 
+                $lunchtotalP = $row["SUM(proteins)"]; 
                 // Suoritetaan kysely uudelleen
                 $kysely=$DBH->prepare($sql);				
                 $kysely->execute();
@@ -99,20 +98,19 @@ $currentUserID = $_SESSION['suserID'];
                 if ($lunchtotal==0){
                     echo("<tr>               
                     <th>Lounas</th>
-                    <th>Et ole vielä lisännyt lounasta</th>");
-                   
+                    <th>Et ole vielä lisännyt lounasta</th>");   
                 } else {
                 //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
-                while	($row=$kysely->fetch()){	    
-                echo("<tr>               
-                    <th>Lounas</th>
-                    <td>".$row['SUM(quantity)']."g</td>
-                    <td>".$row['SUM(calories)']."kcal</td>
-                    <td>".$row['SUM(fat)']."g</td>
-                    <td>".$row['SUM(carbohydrates)']."g</td>
-                    <td>".$row['SUM(proteins)']."g</td>");
-                                       }
-                                    }            
+                    while	($row=$kysely->fetch()){	    
+                    echo("<tr>               
+                        <th>Lounas</th>
+                        <td>".$row['SUM(quantity)']."g</td>
+                        <td>".$row['SUM(calories)']."kcal</td>
+                        <td>".$row['SUM(fat)']."g</td>
+                        <td>".$row['SUM(carbohydrates)']."g</td>
+                        <td>".$row['SUM(proteins)']."g</td>");
+                                                    }
+                        }            
 ?>     
            
 <?php // Välipala
@@ -123,7 +121,6 @@ $currentUserID = $_SESSION['suserID'];
             WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
             $kysely=$DBH->prepare($sql);				
             $kysely->execute();
-
             $row=$kysely->fetch();
                 
             // Lisätään alkuperäinen määrä muuttujaan
@@ -154,8 +151,8 @@ $currentUserID = $_SESSION['suserID'];
                     <td>".$row['SUM(fat)']."g</td>
                     <td>".$row['SUM(carbohydrates)']."g</td>
                     <td>".$row['SUM(proteins)']."g</td>");
-                                       }
-                                    }
+                                                }
+                    }
                                               
 ?>     
                        
@@ -167,7 +164,6 @@ $currentUserID = $_SESSION['suserID'];
             WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
             $kysely=$DBH->prepare($sql);				
             $kysely->execute();
-
             $row=$kysely->fetch();
                 
             // Lisätään alkuperäinen määrä muuttujaan
@@ -182,8 +178,9 @@ $currentUserID = $_SESSION['suserID'];
             // Suoritetaan kysely uudelleen
             $kysely=$DBH->prepare($sql);				
             $kysely->execute();
-             // Jos ateriaan ei ole vielä lisätty mitään 
-             if ($dintotal==0){
+
+            // Jos ateriaan ei ole vielä lisätty mitään 
+            if ($dintotal==0){
                 echo("<tr>               
                 <th>Päivällinen</th>
                 <th>Et ole vielä lisännyt päivällistä</th>");
@@ -197,8 +194,8 @@ $currentUserID = $_SESSION['suserID'];
                     <td>".$row['SUM(fat)']."g</td>
                     <td>".$row['SUM(carbohydrates)']."g</td>
                     <td>".$row['SUM(proteins)']."g</td>");
-                                       }
-                                    }
+                                                }
+                    }
                                     
 ?>     
 
@@ -210,10 +207,8 @@ $currentUserID = $_SESSION['suserID'];
                 WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
                 $kysely=$DBH->prepare($sql);				
                 $kysely->execute();
-
                 $row=$kysely->fetch();
                     
-                // Lisätään alkuperäinen määrä muuttujaan
                 // Lisätään alkuperäinen määrä muuttujaan
                 $emtotalQ = $row["SUM(quantity)"]; 
                 $emtotal = $row['COUNT(foodName)'];
@@ -227,60 +222,52 @@ $currentUserID = $_SESSION['suserID'];
                 $kysely->execute();
 
                 // Jos ateriaan ei ole vielä lisätty mitään 
-                 if ($emtotal==0){
+                if ($emtotal==0){
                     echo("<tr>               
                     <th>Iltapala</th>
                     <th>Et ole vielä lisännyt iltapalaa</th>");
-                 } else {
+                } else {
                  //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
-                
-
-                  while($row=$kysely->fetch()){	
+                    while($row=$kysely->fetch()){	
                
-                  echo("<tr>               
-                    <th>Iltapala</th>
-                    <td>".$row['SUM(quantity)']."g</td>
-                    <td>".$row['SUM(calories)']."kcal</td>
-                    <td>".$row['SUM(fat)']."g</td>
-                    <td>".$row['SUM(carbohydrates)']."g</td>
-                    <td>".$row['SUM(proteins)']."g</td></tr>
-                   
-                 ");
-                                       }
-                                    }
+                        echo("<tr>               
+                            <th>Iltapala</th>
+                            <td>".$row['SUM(quantity)']."g</td>
+                            <td>".$row['SUM(calories)']."kcal</td>
+                            <td>".$row['SUM(fat)']."g</td>
+                            <td>".$row['SUM(carbohydrates)']."g</td>
+                            <td>".$row['SUM(proteins)']."g</td></tr>");
+                                                }
+                        }
                                     
 ?>  
 
 <?php // Yhteenveto
 
                 // Luodaan muuttujat joissa lasketaan yhteen kaikki
+
+                // Ruoka-aineita yhteensä
                 $foodstotal = $bretotal + $lunchtotal + $dintotal + $sntotal + $emtotal;
+                // Kaloreita yhteensä
                 $caloriestotal = $bretotalC + $lunchtotalC + $dintotalC + $sntotalC + $emtotalC;
+                // Grammoja yhteensä
                 $quanttotal = $bretotalQ + $lunchtotalQ + $dintotalQ + $sntotalQ + $emtotalQ;
+                // Rasvaa yhteensä
                 $fatstotal = $bretotalF + $lunchtotalF + $dintotalF + $sntotalF + $emtotalF;
+                // Hiilihydraatteja yhteensä
                 $chtotal = $bretotalCh + $lunchtotalCh + $dintotalCh + $sntotalCh + $emtotalCh;
+                // Proteiinia yhteensä
                 $proteinstotal = $bretotalP + $lunchtotalP + $dintotalP + $sntotalP + $emtotalP;
 
-
                 // Luodaan taulukko jossa on yhteenveto kaikista ravintomääristä 
-
                 echo("<tr>               
                 <th>Yhteenveto</th>
                 <td>".$quanttotal."g</td>
                 <td>".$caloriestotal."kcal</td>
                 <td>".$fatstotal."g</td>
                 <td>".$chtotal."g</td>
-                <td>".$proteinstotal."g</td>
-
-                ");
-
+                <td>".$proteinstotal."g</td>");
 ?>
-
-
-                      
-
-
-
         </div>
     </div>
     

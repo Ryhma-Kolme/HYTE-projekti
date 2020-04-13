@@ -33,12 +33,13 @@
             <form method="post"><input type="submit"onclick="return confirm('Oletko varma, että haluat poistaa kaikki tämän päivän iltapalat?')" class="deletebtn" name="em_deletebtn" value="Poista kaikki"></form>
                 <h3>Iltapala</h3>
             </div>
-<?php
 
-// userID lisäys 
-$currentUserID = $_SESSION['suserID'];
+<?php // userID lisäys 
+                $currentUserID = $_SESSION['suserID'];
 ?>
-<?php // Poista kaikki tämän päivän iltapalat
+
+<?php // Poistaa kaikki tämän päivän iltapalat "Poista kaikki"-napista
+
          if(isset($_POST['em_deletebtn'])){
 
                 // Näytetään vain kirjautuneen käyttäjän ja tämän päivän lisätyt ruoka-aineet
@@ -47,13 +48,14 @@ $currentUserID = $_SESSION['suserID'];
                 $kysely->execute();
                     
             
-        }		
+                                          }		
 ?>
-<?php
-if(isset($_POST['foodbtn'])){
-              $selected_val = $_POST['food'];  // Valittu ruoka lisätään muuttujaan
 
-              $quantity = $_POST['määrä'];     // Syötetty määrä lisätään muuttujaan
+<?php // Lisätään valittu ruoka ateriataulukkoon "Lisää ruoka"-napista
+
+         if(isset($_POST['foodbtn'])){
+                $selected_val = $_POST['food'];  // Valittu ruoka lisätään muuttujaan
+                $quantity = $_POST['määrä'];     // Syötetty määrä lisätään muuttujaan
 
                 // Etsitään tietokannassa oleva alkuperäinen määrä
                 $sql="SELECT app_user.userID, app_food.quantity 
@@ -76,30 +78,35 @@ if(isset($_POST['foodbtn'])){
                 FROM app_user, app_food
                 WHERE app_food.foodName = '$selected_val' AND app_user.userID = '$currentUserID';");
                 $STH->execute();
-}
+                                        }
 
 
-// Näytetään vain kirjautuneen käyttäjän ja tämän päivän lisätyt ruoka-aineet
-$sql="SELECT * FROM app_eveningmeal WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
-$kysely=$DBH->prepare($sql);				
-$kysely->execute();
+               
+?>
 
+<?php // Syötetään arvot taulukkoon
 
-    // taulukko, jossa syötetyt arvot 
-    include("sravinto/foodTable.php"); 
+                // Näytetään vain kirjautuneen käyttäjän ja tämän päivän lisätyt ruoka-aineet
+                $sql="SELECT * FROM app_eveningmeal WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
+                $kysely=$DBH->prepare($sql);				
+                $kysely->execute();
+ 
+                // taulukko, jossa syötetyt arvot 
+                include("sravinto/foodTable.php"); 
 
-    // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
-    $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
-    FROM app_eveningmeal
-    WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
-    $kysely=$DBH->prepare($sql);				
-    $kysely->execute();
+                // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
+                $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
+                FROM app_eveningmeal
+                WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+                $kysely=$DBH->prepare($sql);				
+                $kysely->execute();
 
-     // taulukko, jossa syötetyt arvot 
-     include("sravinto/sumFoodsTable.php"); 
+                // taulukko, jossa syötetyt arvot 
+                include("sravinto/sumFoodsTable.php"); 
 
    
-    ?>        </div>
+?>   
+      </div>
     </div>
 </main>
 
