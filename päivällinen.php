@@ -30,7 +30,7 @@
 
         <div class="column">
             <div class="blue-title">
-            <form method="post"><input type="submit" class="deletebtn" name="din_deletebtn" value="Poista kaikki"></form>
+            <form method="post"><input type="submit" onclick="return confirm('Oletko varma, että haluat poistaa kaikki tämän päivän päivälliset?')" class="deletebtn" name="din_deletebtn" value="Poista kaikki"></form>
                 <h3>Päivällinen</h3>
             </div>
 <?php

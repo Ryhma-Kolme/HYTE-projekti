@@ -31,7 +31,7 @@
 
         <div class="column">
             <div class="blue-title">
-            <form method="post"><input type="submit" class="deletebtn" name="lunch_deletebtn" value="Poista kaikki"></form>
+            <form method="post"><input type="submit" onclick="return confirm('Oletko varma, että haluat poistaa kaikki tämän päivän lounaat?')" class="deletebtn" name="lunch_deletebtn" value="Poista kaikki"></form>
                 <h3>Lounas</h3>
             </div>
             <?php
