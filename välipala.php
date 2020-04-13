@@ -33,70 +33,73 @@
             <form method="post"><input type="submit" onclick="return confirm('Oletko varma, että haluat poistaa kaikki tämän päivän välipalat?')"class="deletebtn" name="sn_deletebtn" value="Poista kaikki"></form>
                 <h3>Välipala</h3>
             </div>
-<?php
-// userID lisäys 
-$currentUserID = $_SESSION['suserID'];
+
+<?php // userID lisäys 
+                $currentUserID = $_SESSION['suserID'];
 ?>
-<?php // Poista kaikki tämän päivän välipalat
+
+<?php // Poistaa kaikki tämän päivän välipalat "Poista kaikki"-napista
+
          if(isset($_POST['sn_deletebtn'])){
 
                 // Näytetään vain kirjautuneen käyttäjän ja tämän päivän lisätyt ruoka-aineet
                 $sql="DELETE FROM app_snacks WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
                 $kysely=$DBH->prepare($sql);				
                 $kysely->execute();
-                    
-            
-        }		
+                                          }		
 ?>
-<?php
-if(isset($_POST['foodbtn'])){
-              $selected_val = $_POST['food'];  // Valittu ruoka lisätään muuttujaan
 
-              $quantity = $_POST['määrä'];     // Syötetty määrä lisätään muuttujaan
+<?php // Lisätään ruoka ateriataulukkoon "Lisää ruoka"-napista
 
-              // Etsitään tietokannassa oleva alkuperäinen määrä
-              $sql="SELECT app_user.userID, app_food.quantity 
-              FROM app_user, app_food 
-              WHERE app_food.foodName = '$selected_val' AND app_user.userID = '$currentUserID';";
-              $kysely=$DBH->prepare($sql);				
-              $kysely->execute();
-              $row=$kysely->fetch();
-              
-              // Lisätään alkuperäinen määrä muuttujaan
-              $prequantity = $row["quantity"];                
-              
-              //Lasketaan annettu määrä jaettuna tietokannassa olevana määränä ja luodaan niistä muuttujakerroin
-              $total = ($quantity / $prequantity);
+         if(isset($_POST['foodbtn'])){
+                $selected_val = $_POST['food'];  // Valittu ruoka lisätään muuttujaan
+                $quantity = $_POST['määrä'];     // Syötetty määrä lisätään muuttujaan
 
-              // Otetaan valitun ruuan arvot ja userID ja lisätään ne aamiainen-tableen
-              $STH = $DBH->prepare("INSERT INTO app_snacks 
-              (userID, foodID, foodName, quantity, calories, fat, carbohydrates, proteins) 
-              SELECT app_user.userID, app_food.foodID, app_food.foodName, app_food.quantity * $total, app_food.calories * $total, app_food.fat * $total, app_food.carbohydrates * $total, app_food.proteins * $total
-              FROM app_user, app_food
-              WHERE app_food.foodName = '$selected_val' AND app_user.userID = '$currentUserID';");
-              $STH->execute();
-}
+                // Etsitään tietokannassa oleva alkuperäinen määrä
+                $sql="SELECT app_user.userID, app_food.quantity 
+                FROM app_user, app_food 
+                WHERE app_food.foodName = '$selected_val' AND app_user.userID = '$currentUserID';";
+                $kysely=$DBH->prepare($sql);				
+                $kysely->execute();
+                $row=$kysely->fetch();
+                
+                // Lisätään alkuperäinen määrä muuttujaan
+                $prequantity = $row["quantity"];                
+                
+                //Lasketaan annettu määrä jaettuna tietokannassa olevana määränä ja luodaan niistä muuttujakerroin
+                $total = ($quantity / $prequantity);
 
+                // Otetaan valitun ruuan arvot ja userID ja lisätään ne aamiainen-tableen
+                $STH = $DBH->prepare("INSERT INTO app_snacks 
+                (userID, foodID, foodName, quantity, calories, fat, carbohydrates, proteins) 
+                SELECT app_user.userID, app_food.foodID, app_food.foodName, app_food.quantity * $total, app_food.calories * $total, app_food.fat * $total, app_food.carbohydrates * $total, app_food.proteins * $total
+                FROM app_user, app_food
+                WHERE app_food.foodName = '$selected_val' AND app_user.userID = '$currentUserID';");
+                $STH->execute();
+                                    }               
+?>
 
-// Näytetään vain kirjautuneen käyttäjän ja tämän päivän lisätyt ruoka-aineet
-$sql="SELECT * FROM app_snacks WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
-$kysely=$DBH->prepare($sql);				
-$kysely->execute();
+<?php // Syötetään arvot taulukkoon
 
+                // Näytetään vain kirjautuneen käyttäjän ja tämän päivän lisätyt ruoka-aineet
+                $sql="SELECT * FROM app_snacks WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
+                $kysely=$DBH->prepare($sql);				
+                $kysely->execute();
 
- // taulukko, jossa syötetyt arvot 
- include("sravinto/foodTable.php"); 
+                // taulukko, jossa syötetyt arvot 
+                include("sravinto/foodTable.php"); 
 
-// Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
-$sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
-FROM app_snacks
-WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
-$kysely=$DBH->prepare($sql);				
-$kysely->execute();
+                // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
+                $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
+                FROM app_snacks
+                WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+                $kysely=$DBH->prepare($sql);				
+                $kysely->execute();
 
- // taulukko, jossa syötetyt arvot 
- include("sravinto/sumFoodsTable.php"); 
-?>        </div>
+                // taulukko, jossa syötetyt arvot 
+                include("sravinto/sumFoodsTable.php"); 
+?> 
+       </div>
     </div>
 </main>
 
