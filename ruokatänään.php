@@ -58,7 +58,7 @@ $currentUserID = $_SESSION['suserID'];
             if ($bretotal==0){
                 echo("<tr>               
                 <th>Aamiainen</th>
-                <th>Et ole vielä lisännyt aamiaistasi</th>");
+                <th>Et ole vielä lisännyt aamiaista</th>");
             } else {
 
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
@@ -99,7 +99,7 @@ $currentUserID = $_SESSION['suserID'];
                 if ($lunchtotal==0){
                     echo("<tr>               
                     <th>Lounas</th>
-                    <th>Et ole vielä lisännyt lounastasi</th>");
+                    <th>Et ole vielä lisännyt lounasta</th>");
                    
                 } else {
                 //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
@@ -142,7 +142,7 @@ $currentUserID = $_SESSION['suserID'];
             if ($sntotal==0){
                 echo("<tr>               
                 <th>Välipala</th>
-                <th>Et ole vielä lisännyt välipaloja</th>");
+                <th>Et ole vielä lisännyt välipalaa</th>");
             } else {
 
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
@@ -186,7 +186,7 @@ $currentUserID = $_SESSION['suserID'];
              if ($dintotal==0){
                 echo("<tr>               
                 <th>Päivällinen</th>
-                <th>Et ole vielä lisännyt päivällistäsi</th>");
+                <th>Et ole vielä lisännyt päivällistä</th>");
             } else {
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
                 while	($row=$kysely->fetch()){	
@@ -230,7 +230,7 @@ $currentUserID = $_SESSION['suserID'];
                  if ($emtotal==0){
                     echo("<tr>               
                     <th>Iltapala</th>
-                    <th>Et ole vielä lisännyt iltapalaasi</th>");
+                    <th>Et ole vielä lisännyt iltapalaa</th>");
                  } else {
                  //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
                 
