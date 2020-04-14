@@ -14,8 +14,9 @@
                 $tulosOlio=$STH->fetchAll(PDO::FETCH_COLUMN);
                 ?>
                 <form method="post">
-                    <select data-live-search="true" data-live-search-style="startsWith" class="selectpicker" name="food">
-                        <option selected="selected">Lisää ruoka</option>
+                    <select title="Lisää ruoka" data-live-search="true" data-live-search-style="contains" class="selectpicker" name="food">
+
+
                         <?php
                         
                         // käydään array läpi
@@ -25,6 +26,7 @@
                         <?php
                         }
                         ?>
+                          
                     </select>
                     <input type="text" class="quantitybtn" id="määrä" name="määrä" value="Lisää määrä (g)" onclick="this.select()">
                     <input type="submit" class="tallennaruoka" name="foodbtn" value="Tallenna ruoka">
