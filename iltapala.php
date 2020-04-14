@@ -30,17 +30,32 @@
 
         <div class="column">
             <div class="blue-title">
+            <form method="post"><input type="submit"onclick="return confirm('Oletko varma, että haluat poistaa kaikki tämän päivän iltapalat?')" class="deletebtn" name="em_deletebtn" value="Poista kaikki"></form>
                 <h3>Iltapala</h3>
             </div>
-            <?php
 
-// userID lisäys 
-$currentUserID = $_SESSION['suserID'];
+<?php // userID lisäys 
+                $currentUserID = $_SESSION['suserID'];
+?>
 
-if(isset($_POST['foodbtn'])){
-              $selected_val = $_POST['food'];  // Valittu ruoka lisätään muuttujaan
+<?php // Poistaa kaikki tämän päivän iltapalat "Poista kaikki"-napista
 
-              $quantity = $_POST['määrä'];     // Syötetty määrä lisätään muuttujaan
+         if(isset($_POST['em_deletebtn'])){
+
+                // Näytetään vain kirjautuneen käyttäjän ja tämän päivän lisätyt ruoka-aineet
+                $sql="DELETE FROM app_eveningmeal WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
+                $kysely=$DBH->prepare($sql);				
+                $kysely->execute();
+                    
+            
+                                          }		
+?>
+
+<?php // Lisätään valittu ruoka ateriataulukkoon "Lisää ruoka"-napista
+
+         if(isset($_POST['foodbtn'])){
+                $selected_val = $_POST['food'];  // Valittu ruoka lisätään muuttujaan
+                $quantity = $_POST['määrä'];     // Syötetty määrä lisätään muuttujaan
 
                 // Etsitään tietokannassa oleva alkuperäinen määrä
                 $sql="SELECT app_user.userID, app_food.quantity 
@@ -63,68 +78,35 @@ if(isset($_POST['foodbtn'])){
                 FROM app_user, app_food
                 WHERE app_food.foodName = '$selected_val' AND app_user.userID = '$currentUserID';");
                 $STH->execute();
-}
+                                        }
 
 
-// Näytetään vain kirjautuneen käyttäjän ja tämän päivän lisätyt ruoka-aineet
-$sql="SELECT * FROM app_eveningmeal WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
-$kysely=$DBH->prepare($sql);				
-$kysely->execute();
+               
+?>
 
+<?php // Syötetään arvot taulukkoon
 
-// Luodaan taulukko johon syötetään arvot 
-echo("<table>
-	        <tr>
-               <th>Ruoka-aine</th>
-               <th>Määrä</th>
-			   <th>Kalorit</th>
-               <th>Rasva</th>
-               <th>Hiilihydraatit</th>
-               <th>Proteiinit</th>
-               <th>Lisätty</th>
-		    </tr>");
-	while	($row=$kysely->fetch()){	
-     echo("<tr><td>".$row["foodName"]."</td>
-               <td>".$row["quantity"]."g</td>
-			   <td>".$row["calories"]."kcal</td>
-               <td>".$row["fat"]."g</td>
-               <td>".$row["carbohydrates"]."g</td>
-               <td>".$row["proteins"]."g</td>
-               <td>".$row["timeOfEating"]."</td>");
-		}
-    echo("</table>");
+                // Näytetään vain kirjautuneen käyttäjän ja tämän päivän lisätyt ruoka-aineet
+                $sql="SELECT * FROM app_eveningmeal WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
+                $kysely=$DBH->prepare($sql);				
+                $kysely->execute();
+ 
+                // taulukko, jossa syötetyt arvot 
+                include("sravinto/foodTable.php"); 
 
-    // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
-    $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
-    FROM app_eveningmeal
-    WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
-    $kysely=$DBH->prepare($sql);				
-    $kysely->execute();
+                // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
+                $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
+                FROM app_eveningmeal
+                WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+                $kysely=$DBH->prepare($sql);				
+                $kysely->execute();
 
-    // Luodaan taulukko johon syötetään arvot 
-    echo("<table>
-       <tr>
-              <th>Ruoka-aineet yht.</th>
-              <th>Määrä yht.</th>
-              <th>Kalorit yht.</th>
-              <th>Rasvat yht.</th>
-              <th>Hiilihydraatit yht.</th>
-              <th>Proteiinit yht.</th>
-       </tr>");
-    while	($row=$kysely->fetch()){	
-    echo("<tr><td>".$row['COUNT(foodName)']."kpl</td>
-              <td>".$row['SUM(quantity)']."g</td>
-              <td>".$row['SUM(calories)']."kcal</td>
-              <td>".$row['SUM(fat)']."g</td>
-              <td>".$row['SUM(carbohydrates)']."g</td>
-              <td>".$row['SUM(proteins)']."g</td>");
-                                   }
-    echo("</table>");
-
-  
+                // taulukko, jossa syötetyt arvot 
+                include("sravinto/sumFoodsTable.php"); 
 
    
-    ?>        </div>
+?>   
+      </div>
     </div>
 </main>
 
