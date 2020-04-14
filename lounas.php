@@ -1,5 +1,4 @@
 <?php
-    include("includes/iheader.php");
     include("includes/head.php");
     include("includes/naviravinto.php");
 ?>

@@ -1,6 +1,4 @@
 <?php
-    include("includes/iheader.php");
-
     include("includes/head.php");
     include("includes/navitili.php");
 ?>

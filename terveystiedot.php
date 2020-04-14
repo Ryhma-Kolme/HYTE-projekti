@@ -1,7 +1,5 @@
 <?php
     include("includes/head.php");
-    include("includes/iheader.php");
-
     include_once("includes/naviOut.php");
 ?>
 

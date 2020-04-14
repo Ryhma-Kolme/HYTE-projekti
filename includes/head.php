@@ -1,3 +1,9 @@
+<?php
+include_once("config/chttps.php");
+include_once("config/cconfig.php");
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fi-FI">
 
@@ -15,6 +21,7 @@
     <link rel="stylesheet" href="css/navi.css">
     <link rel="stylesheet" href="css/tekstit.css">
     <link rel="stylesheet" href="css/lomakkeet.css">
+    <link rel="stylesheet" href="css/taulukot.css">
 </head>
 
 <body>

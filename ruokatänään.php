@@ -19,14 +19,14 @@
         <?php // Taulukko kaikille aterioille
             echo("  
                 <table>
-                    <tr>
-                        <th>Ruokailu</th>
-                        <th>Määrä yht.</th>
-                        <th>Kalorit yht.</th>
-                        <th>Rasvat yht.</th>
-                        <th>Hiilihydraatit yht.</th>
-                        <th>Proteiinit yht.</th>
-                    </tr>
+                <tr>
+                    <th>Ruokailu</th>
+                    <th>Määrä yht.</th>
+                    <th>Kalorit yht.</th>
+                    <th>Rasvat yht.</th>
+                    <th>Hiilihydraatit yht.</th>
+                    <th>Proteiinit yht.</th>
+                </tr>
             ");
         ?>
                     
