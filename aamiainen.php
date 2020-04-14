@@ -31,7 +31,7 @@
 
         <div class="column">
             <div class="blue-title">
-            <form method="post"><input type="submit" onclick="return confirm('Oletko varma, että haluat poistaa kaikki tämän päivän aamiaiset?')" class="deletebtn" name="bre_deletebtn" value="Poista kaikki"></form>
+                <form method="post"><input type="submit" onclick="return confirm('Oletko varma, että haluat poistaa kaikki tämän päivän aamiaiset?')" class="deletebtn" name="bre_deletebtn" value="Poista kaikki"></form>
                 <h3>Aamiainen</h3>
             </div>
 
@@ -99,9 +99,7 @@
 
                 // taulukko, jossa syötetyt arvot 
                 include("sravinto/sumFoodsTable.php"); 
-
             ?>
-
         </div>
     </div>
 </main>
