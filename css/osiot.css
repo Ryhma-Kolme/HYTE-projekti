@@ -3,7 +3,7 @@
     margin: 5px;
     box-shadow: 5px 10px 10px #88888830;
     padding: 30px 50px;
-    background-color: white;
+    background-color: var(--main-bg-box-color);
 }
 
 .header-trans {
@@ -50,7 +50,7 @@
 .column {
     margin: 5px;
     box-shadow: 5px 10px 10px #88888830;
-    background-color: white;
+    background-color: var(--main-bg-box-color);
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -58,7 +58,7 @@
 
 /* LAATIKON OTSIKKOALUE */
 .blue-title {
-    background-color: #77BFE0;
+    background-color: var(--main-blue-title-color);
     padding: 10px;
 }
 

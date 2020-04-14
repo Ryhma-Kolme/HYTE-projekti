@@ -33,7 +33,7 @@ button, .tallennaruoka {
     border: 0 none;
     letter-spacing: 1px;
     text-transform: uppercase;
-    background: #77bfe0;
+    background-color: var(--main-button-color);
     box-shadow: 0 3px 0 0 #4f8198;
     margin: 0px 5px 10px 5px;
     -webkit-flex: 1;
@@ -42,18 +42,18 @@ button, .tallennaruoka {
 }
 
 button:active, .tallennaruoka:active {
-    background: #779fe0;
+    background-color: var(--main-active-color);
     box-shadow: none;
     margin-bottom: -3px;
     margin-top: 3px;
     }
 
 button:hover, .tallennaruoka:hover {
-    background: #779fe0;
+    background-color: var(--main-active-color);
 }
     
 .current {
-    background: #779fe0;
+    background-color: var(--main-active-color);
     box-shadow: none;
 }
 

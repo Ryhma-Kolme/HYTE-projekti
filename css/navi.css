@@ -4,7 +4,7 @@ nav ul {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    background: white;
+    background-color: var(--main-bg-nav-color);
     box-shadow:  3px 3px 0px #88888830;
     width: 100%;
     list-style-type: none;
@@ -47,6 +47,7 @@ nav ul li a:hover {
 
 nav .active {
     color: #8d77e0;
+    font-weight: bold;
 }
 
 /* RESPONSIIVISUUS */
