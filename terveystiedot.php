@@ -2,7 +2,7 @@
     include("includes/head.php");
     include("includes/iheader.php");
 
-    include_once("includes/navigaatio.php");
+    include_once("includes/naviOut.php");
 ?>
 
 <main>
