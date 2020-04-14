@@ -1,10 +1,9 @@
 <div class="row-buttons">
-<button onclick="document.location = 'aamiainen.php'">Aamiainen</button>
-        <button onclick="document.location = 'lounas.php'">Lounas</button>
-        <button onclick="document.location = 'välipala.php'">Välipala</button>
-        <button onclick="document.location = 'päivällinen.php'">Päivällinen</button>
-        <button onclick="document.location = 'iltapala.php'">Iltapala</button>
-    </div>
+    <button onclick="document.location = 'aamiainen.php'">Aamiainen</button>
+    <button onclick="document.location = 'lounas.php'">Lounas</button>
+    <button onclick="document.location = 'välipala.php'">Välipala</button>
+    <button onclick="document.location = 'päivällinen.php'">Päivällinen</button>
+    <button onclick="document.location = 'iltapala.php'">Iltapala</button>
 </div>
 
 <div class="row">
