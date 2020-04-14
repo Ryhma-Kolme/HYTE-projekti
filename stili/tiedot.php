@@ -1,4 +1,4 @@
-<?php include("includes/iheader.php");?>
+<?php include("includes/head.php");?>
 
 <?php
 //Käyttäjän tila
@@ -46,14 +46,14 @@ if($_SESSION['sloggedIn']=="yes"){
             <h3>Fyysiset tiedot</h3>
         </div>
         <div class="column-content">
-            <?php echo("<p> Sukupuoli " .$_SESSION['ssukupuoli']. "");?>
+            <?php echo("<p> Sukupuoli " .$_SESSION['ssukupuoli']. "</p>");?>
             <hr>
-            <?php echo("<p> Pituus " .$_SESSION['spituus']. " cm");?>
+            <?php echo("<p> Pituus " .$_SESSION['spituus']. " cm</p>");?>
             <hr>
             <form method="post">
-            <p>Paino: 
+            <p>Paino:
             <input type="text" name="editPaino" onclick="this.select()" id="määrä"
-            value="<?php echo(" " .$currentWeight. " ");?>" > kg   
+            value="<?php echo(" " .$currentWeight. " ");?>"> kg   
             <input type="submit" class="savebtn" name="savePaino" value="Tallenna">
             </p>
             </form>
@@ -68,10 +68,13 @@ if($_SESSION['sloggedIn']=="yes"){
        $sql = "UPDATE app_user SET healthWeight='$newWeight' WHERE userID = '$currentUserID'"; // Tietokantaan
        $STH = $DBH->prepare($sql);
        $STH->execute();
+     
+     // Sivun päivitys, jotta uusi paino tulee näkyviin
+       echo "<meta http-equiv='refresh' content='0'>";
 
-       // Sivun päivitys, jotta uusi paino tulee näkyviin
-       header("Location: tilitiedot.php");
-                                   }
+     }
+
+
     ?>
                
         

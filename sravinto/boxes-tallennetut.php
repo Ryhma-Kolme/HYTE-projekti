@@ -1,4 +1,4 @@
-<?php include("includes/iheader.php");?>
+<?php include("includes/head.php");?>
 
 
 <div class="boxes-tallennetut">
