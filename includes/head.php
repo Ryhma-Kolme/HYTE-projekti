@@ -23,6 +23,7 @@ session_start();
     <link rel="stylesheet" href="css/navi.css">
     <link rel="stylesheet" href="css/tekstit.css">
     <link rel="stylesheet" href="css/lomakkeet.css">
+    <link rel="stylesheet" href="css/kalenteri.css">
     <link rel="stylesheet" href="css/taulukot.css">
 </head>
 

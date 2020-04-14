@@ -5,6 +5,7 @@
 ?>
 <main>
     <?php
+        include('skalenteri/toiminnallisuus.php');
         include_once("skalenteri/kalenteri.php");
         include_once("skalenteri/yhteenveto.php");
     ?>

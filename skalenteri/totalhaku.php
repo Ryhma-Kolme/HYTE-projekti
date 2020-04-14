@@ -1,0 +1,73 @@
+<?php
+
+$currentUserID = $_SESSION['suserID'];
+
+$sql="SELECT SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
+FROM app_breakfast, app_lunch, app_snacks, app_dinner, app_eveningmeal
+WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+$kysely=$DBH->prepare($sql);				
+$kysely->execute();
+$row=$kysely->fetch();
+        
+// Lisätään alkuperäinen määrä muuttujaan
+$bretotalC = $row["SUM(calories)"]; 
+$bretotalF = $row["SUM(fat)"]; 
+$bretotalCh = $row["SUM(carbohydrates)"]; 
+$bretotalP = $row["SUM(proteins)"]; 
+
+// Suoritetaan kysely uudelleen
+$kysely=$DBH->prepare($sql);				
+$kysely->execute();
+
+// Lisätään alkuperäinen määrä muuttujaan
+$lunchtotalC = $row["SUM(calories)"]; 
+$lunchtotalF = $row["SUM(fat)"]; 
+$lunchtotalCh = $row["SUM(carbohydrates)"]; 
+$lunchtotalP = $row["SUM(proteins)"];
+
+// Suoritetaan kysely uudelleen
+$kysely=$DBH->prepare($sql);				
+$kysely->execute();
+
+// Lisätään alkuperäinen määrä muuttujaan
+$sntotalC = $row["SUM(calories)"]; 
+$sntotalF = $row["SUM(fat)"]; 
+$sntotalCh = $row["SUM(carbohydrates)"]; 
+$sntotalP = $row["SUM(proteins)"];
+
+// Suoritetaan kysely uudelleen
+$kysely=$DBH->prepare($sql);				
+$kysely->execute();
+
+// Lisätään alkuperäinen määrä muuttujaan
+$dintotalC = $row["SUM(calories)"]; 
+$dintotalF = $row["SUM(fat)"]; 
+$dintotalCh = $row["SUM(carbohydrates)"]; 
+$dintotalP = $row["SUM(proteins)"]; 
+
+// Suoritetaan kysely uudelleen
+$kysely=$DBH->prepare($sql);				
+$kysely->execute();
+
+// Lisätään alkuperäinen määrä muuttujaan
+$emtotalC = $row["SUM(calories)"]; 
+$emtotalF = $row["SUM(fat)"]; 
+$emtotalCh = $row["SUM(carbohydrates)"]; 
+$emtotalP = $row["SUM(proteins)"]; 
+
+//Suoritetaan kysely uudestaan
+$kysely=$DBH->prepare($sql);				
+$kysely->execute();
+
+// Luodaan muuttujat joissa lasketaan yhteen kaikki
+
+// Kaloreita yhteensä
+$caloriestotal = $bretotalC + $lunchtotalC + $dintotalC + $sntotalC + $emtotalC;
+// Rasvaa yhteensä
+$fatstotal = $bretotalF + $lunchtotalF + $dintotalF + $sntotalF + $emtotalF;
+// Hiilihydraatteja yhteensä
+$chtotal = $bretotalCh + $lunchtotalCh + $dintotalCh + $sntotalCh + $emtotalCh;
+// Proteiinia yhteensä
+$proteinstotal = $bretotalP + $lunchtotalP + $dintotalP + $sntotalP + $emtotalP;
+
+?>
