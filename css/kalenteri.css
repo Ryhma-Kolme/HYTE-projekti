@@ -1,0 +1,59 @@
+.calendar {
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+}
+
+.calendar-month {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+}
+
+.calendar-month > li {
+    list-style-type: none;
+}
+
+.calendar-month > li > a {
+    text-decoration: none;
+    color: #5b92ab;
+}
+
+.title {
+    color: var(--main-h2-color);
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+}
+
+.calendar-table, .cal-cell-th, .cal-cell {  
+    text-align: center;
+    border: 0;
+}
+
+.calendar-table {
+    border-collapse: collapse;
+}
+
+.cal-cell-th, .cal-cell {
+    text-transform: uppercase;
+    padding: 15px;
+    margin: 5px;
+}
+
+.cal-cell:hover {
+    background-color: #b5d6e0;
+    cursor: pointer;
+}
+
+.cal-cell:active {
+    background-color: #acccd6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.today {
+    background-color: #8d77e0;
+    text-align: center;
+}
