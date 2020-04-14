@@ -1,5 +1,6 @@
 <?php // Luodaan taulukko johon syötetään arvot 
 
+
 echo("
 <table>
   <tr>
@@ -31,3 +32,4 @@ while	($row=$kysely->fetch()){
   </table>
   ");
   ?>
+

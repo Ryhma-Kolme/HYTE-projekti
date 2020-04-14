@@ -1,3 +1,4 @@
+
 <?php
 // Luodaan taulukko johon syötetään arvot 
 echo("
@@ -28,5 +29,6 @@ while	($row=$kysely->fetch()){
 echo("
 </table>
 ");
+
 
 ?>
