@@ -65,7 +65,7 @@ button:hover, .tallennaruoka:hover {
 }
 
 /* RESPONSIIVISUUS */
-@media (max-width: 600px) {
+@media (max-width: 660px) {
     .row-buttons {
         -webkit-flex-direction: column;
         flex-direction: column;
