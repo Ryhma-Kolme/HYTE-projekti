@@ -63,7 +63,6 @@ if(isset($_POST['addbtn'])){
   //Palataan pääsivulle jos tallennus onnistui
     header("Location: ravinto.php");
 }
- echo("<h1>".$_SESSION['swarningInput']."</hi>");
 
 ?>
 

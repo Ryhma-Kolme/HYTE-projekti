@@ -15,8 +15,8 @@
     ?>
     <form method="post">
 
-    <select selected="selected" name="food" id="select-food" placeholder="Lisää ruoka">
-        <option selected="selected"value="">Lisää ruoka</option>
+    <select name="food" id="select-food">
+        <option selected="selected" value="">Lisää ruoka</option>
             <?php
             
             // käydään array läpi
