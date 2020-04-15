@@ -1,5 +1,4 @@
 <?php
-include("includes/head.php");
 include_once("includes/naviOut.php");
 ?>
 <main>

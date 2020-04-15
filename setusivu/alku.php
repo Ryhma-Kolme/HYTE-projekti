@@ -18,7 +18,6 @@ if($_SESSION['sloggedIn']=="yes"){
 </main>
 <?php
 }else{
-    include("includes/naviOut.php");
     include("logInUser.php");
     ?>
 <?php 
