@@ -1,7 +1,6 @@
-<!-- Sisältää käyttäjän aktiivisuustiedot -->
 <?php
     include("includes/head.php");
-    include("includes/naviaktiivisuus.php");
+    include("navit/uni.php");
 ?>
 
 <main>

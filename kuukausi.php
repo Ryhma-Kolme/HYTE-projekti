@@ -1,7 +1,7 @@
 <!-- Sisältää kalenterin ja kuukauden yhteenvedon -->
 <?php
     include("includes/head.php");
-    include_once("includes/navikuukausi.php");
+    include_once("navit/kuukausi.php");
 ?>
 <main>
     <?php

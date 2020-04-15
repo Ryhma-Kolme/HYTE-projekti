@@ -4,7 +4,7 @@
 //Käyttäjän tila
 
 if($_SESSION['sloggedIn']=="yes"){
-    include("includes/navigaatio.php");
+    include("navit/tili.php");
 ?>
 <main>
     
@@ -83,14 +83,7 @@ if($_SESSION['sloggedIn']=="yes"){
 </main>
 <?php
 }else{
-    include("includes/naviOut.php");
+    include("navit/out.php");
     include("logInUser.php");
     ?>
-    <!-- <main>
-        <div class="header-white">
-            <p class="logo"> foodfx </p>
-            <button><a href="logInUser.php">Kirjaudu</a></button>
-            <button><a href="luoTili2.php">Rekisteröidy</a></button>
-        </div>
-    </main> -->
 <?php } ?>

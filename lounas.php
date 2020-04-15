@@ -1,6 +1,6 @@
 <?php
     include("includes/head.php");
-    include("includes/naviravinto.php");
+    include("navit/ravinto.php");
 ?>
 
 <main>
@@ -14,7 +14,7 @@
 
     <div class="header-white">
         <div class="row-1">
-            <p>Lisää lounaasi valitsemalla tallentamasi ateria tai ruoka-aine tai lisää uusi.</p>
+            <p>Lisää lounaasi valitsemalla tallennettu ruoka-aine tai lisää uusi.</p>
             <button class="uusiruoka" onclick="document.location = 'ruokaaine.php'">Lisää uusi ruoka-aine</button>
         </div>
         <?php include("sravinto/boxes-tallennetut.php"); ?>
