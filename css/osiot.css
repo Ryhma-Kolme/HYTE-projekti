@@ -3,14 +3,14 @@
     margin: 5px;
     box-shadow: 5px 10px 10px #88888830;
     padding: 30px 50px;
-    background-color: var(--main-bg-box-color);
+    background-color: white;
 }
 
 .header-white-ruoka {
     margin: 5px;
     box-shadow: 5px 10px 10px #88888830;
     padding: 30px;
-    background-color: var(--main-bg-box-color);
+    background-color: white;
     display: flex;
 }
 
@@ -23,7 +23,7 @@
 .column {
     margin: 5px;
     box-shadow: 5px 10px 10px #88888830;
-    background-color: var(--main-bg-box-color);
+    background-color: white;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -31,7 +31,7 @@
 
 /* LAATIKON OTSIKKOALUE */
 .blue-title {
-    background-color: var(--main-blue-title-color);
+    background-color: #77bfe0;
     padding: 10px;
 }
 

@@ -42,7 +42,7 @@ tr {
 }
 /* Set a style for the submit button */
 .registerbtn, .loginbtn, .addbtn, .continuebtn, .savebtn {
-  background-color: var(--main-bg-color);
+  background-color: #77bfe0;
   color: white;
   padding: 6px 10px;
   margin: 8px 0;
