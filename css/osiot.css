@@ -6,6 +6,27 @@
     background-color: var(--main-bg-box-color);
 }
 
+/* PIENEMMÄT LAATIKOT: ison laatikon alapuolella */
+.row {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.column {
+    margin: 5px;
+    box-shadow: 5px 10px 10px #88888830;
+    background-color: var(--main-bg-box-color);
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+/* LAATIKON OTSIKKOALUE */
+.blue-title {
+    background-color: var(--main-blue-title-color);
+    padding: 10px;
+}
+
 /* RAVINTO-SIVU: Tallennetut ruoat ison laatikon sisällä */
 .row-1 {
     display: -webkit-flex;
@@ -34,27 +55,7 @@
     margin: 10px;
 }
 
-/* PIENEMMÄT LAATIKOT: ison laatikon alapuolella */
-.row {
-    display: -webkit-flex;
-    display: flex;
-}
-
-.column {
-    margin: 5px;
-    box-shadow: 5px 10px 10px #88888830;
-    background-color: var(--main-bg-box-color);
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-}
-
-/* LAATIKON OTSIKKOALUE */
-.blue-title {
-    background-color: var(--main-blue-title-color);
-    padding: 10px;
-}
-
+/* OMA TILI-SIVULLA */
 .column-content{
     margin: 20px;
 }
@@ -69,6 +70,26 @@
     display: flex;
     flex-flow: column;
     width: 50%;
+}
+
+/* UNISIVULLA */
+
+.flex-row, .uni-column-content {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.uni-column-content {
+    margin: 5px;
+}
+
+.column-1, .column-2 {
+    border: 1px solid #BECCC9;
+    padding: 3px;
+    margin: 3px;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 /* RESPONSIIVISUUS */
