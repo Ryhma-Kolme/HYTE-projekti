@@ -72,6 +72,17 @@
 }
 
 /* RESPONSIIVISUUS */
+@media (max-width: 900px) {
+    .cal-row-1 {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .päivän-tiedot {
+        width: 100%;
+    }
+}
+
 @media (max-width: 600px) {
     .row {
         -webkit-flex-direction: column;
