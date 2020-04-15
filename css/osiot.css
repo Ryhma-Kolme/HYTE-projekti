@@ -6,6 +6,14 @@
     background-color: var(--main-bg-box-color);
 }
 
+.header-white-ruoka {
+    margin: 5px;
+    box-shadow: 5px 10px 10px #88888830;
+    padding: 30px;
+    background-color: var(--main-bg-box-color);
+    display: flex;
+}
+
 /* PIENEMMÄT LAATIKOT: ison laatikon alapuolella */
 .row {
     display: -webkit-flex;
@@ -31,20 +39,26 @@
 .row-1 {
     display: -webkit-flex;
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 10px;
+    /* justify-content: space-between;
+    align-items: baseline; 
+    margin-bottom: 10px;*/
+    flex-flow: column;
+    width: 40%;
+    margin: 5px;
+    justify-content: space-around;
 }
 
 .boxes-tallennetut {
     display: -webkit-flex;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    /* justify-content: space-between; */
+    /* margin-bottom: 20px; */
+    width: 60%;
+    border: 1px solid #BECCC9;
+    margin: 5px;
 }
 
 .box-tallennetut{
-    border: 1px solid #BECCC9;
     margin: 5px;
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -105,16 +119,12 @@
 }
 
 @media (max-width: 600px) {
-    .row {
+    .row, .row-1, .boxes-tallennetut, .header-white-ruoka {
         -webkit-flex-direction: column;
         flex-direction: column;
     }
-    .row-1 {
-        -webkit-flex-direction: column;
-        flex-direction: column;
-    }
-    .boxes-tallennetut {
-        -webkit-flex-direction: column;
-        flex-direction: column;
+
+    .row-1, .boxes-tallennetut {
+        width: 100%;
     }
 }

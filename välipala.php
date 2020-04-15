@@ -12,7 +12,7 @@
         <button onclick="document.location = 'iltapala.php'">Iltapala</button>
     </div>
 
-    <div class="header-white">
+    <div class="header-white-ruoka">
         <div class="row-1">
             <p>Lisää välipalasi valitsemalla tallennettu ruoka-aine tai lisää uusi.</p>
             <button class="uusiruoka" onclick="document.location = 'ruokaaine.php'">Lisää uusi ruoka-aine</button>
