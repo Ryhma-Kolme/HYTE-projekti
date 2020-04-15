@@ -1,4 +1,3 @@
-<?php include("includes/head.php");?>
 
 <?php
 //Käyttäjän tila
@@ -6,7 +5,6 @@
 if($_SESSION['sloggedIn']=="yes"){
     include("navit/tili.php");
 ?>
-<main>
     
 <div class="row">
     <div class="column">
@@ -80,10 +78,8 @@ if($_SESSION['sloggedIn']=="yes"){
         
     </div>
 </div>
-</main>
 <?php
 }else{
-    include("navit/out.php");
     include("logInUser.php");
     ?>
 <?php } ?>

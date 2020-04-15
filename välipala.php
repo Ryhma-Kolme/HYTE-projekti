@@ -30,7 +30,7 @@
 
         <div class="column">
             <div class="blue-title">
-                <form method="post"><input type="submit" onclick="return confirm('Oletko varma, että haluat poistaa kaikki tämän päivän välipalat?')"class="deletebtn" name="sn_deletebtn" value="Poista kaikki"></form>
+                <form method="post"><input type="submit" onclick="return confirm('Oletko varma, että haluat poistaa kaikki tämän päivän välipalat?')" class="deletebtn" name="sn_deletebtn" value="Poista kaikki"></form>
                 <h3>Välipala</h3>
             </div>
 
