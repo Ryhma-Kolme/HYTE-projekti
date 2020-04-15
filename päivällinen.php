@@ -1,6 +1,6 @@
 <?php
     include("includes/head.php");
-    include("includes/naviravinto.php");
+    include("navit/ravinto.php");
 ?>
 
 <main>

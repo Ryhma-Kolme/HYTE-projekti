@@ -2,7 +2,7 @@
 //Käyttäjän tila
 
 if($_SESSION['sloggedIn']=="yes"){
-    include("includes/navietusivu.php");
+    include("navit/in.php");
 ?>
 <main>
     <div class="header-white">
@@ -18,7 +18,7 @@ if($_SESSION['sloggedIn']=="yes"){
 </main>
 <?php
 }else{
-    include("includes/naviOut.php");
+    include("navit/out.php");
     include("logInUser.php");
     ?>
 <?php 
