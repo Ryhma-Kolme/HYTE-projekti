@@ -52,16 +52,9 @@ nav .active {
 
 /* RESPONSIIVISUUS */
 @media (max-width: 600px) {
-    nav ul {
+    nav ul, .left, .right {
         -webkit-flex-direction: column;
         flex-direction: column;
-    }
-    .left {
-        -webkit-flex-direction: column;
-        flex-direction: column;
-    }
-    .right {
-        -webkit-flex-direction: column;
-        flex-direction: column;
+        align-items: flex-start;
     }
 }

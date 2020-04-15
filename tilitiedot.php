@@ -1,6 +1,6 @@
 <?php
     include("includes/head.php");
-    include("includes/navitili.php");
+    include("navit/tili.php");
 ?>
 
 <main>
