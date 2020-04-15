@@ -6,13 +6,6 @@
     background-color: var(--main-bg-box-color);
 }
 
-.header-trans {
-    height: 300px;
-    padding: 30px;
-    text-align: center;
-    font-size: 35px;
-}
-
 /* RAVINTO-SIVU: Tallennetut ruoat ison laatikon sisällä */
 .row-1 {
     display: -webkit-flex;
@@ -67,6 +60,11 @@
 }
 
 /* KALENTERI-SIVULLA */
+.cal-row-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
 .päivän-tiedot {
     display: flex;
     flex-flow: column;

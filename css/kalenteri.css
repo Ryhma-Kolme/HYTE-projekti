@@ -17,11 +17,11 @@
 
 .calendar-month > li > a {
     text-decoration: none;
-    color: #5b92ab;
+    color: white;
 }
 
 .title {
-    color: var(--main-h2-color);
+    color: white;
     font-weight: bold;
     text-align: center;
     font-size: 25px;
