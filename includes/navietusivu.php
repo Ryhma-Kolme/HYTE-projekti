@@ -1,10 +1,6 @@
 <nav>
     <ul> 
-        <div class="left">
-            <li><a class="logo" href="index.php">foodfx</a></li>
-        </div>
-        <div class="right">
-            <li><a href="logOutUser.php"><span class="material-icons">exit_to_app</span></a></li>
-        </div>
+            <li class="left"><a class="logo" href="index.php">foodfx</a></li>
+            <li class="right"><a href="logOutUser.php"><span class="material-icons">exit_to_app</span></a></li>
     </ul>
 </nav>
