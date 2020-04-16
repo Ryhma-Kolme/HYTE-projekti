@@ -46,23 +46,28 @@ if(isset($_POST['addbtn'])){
      $STH = $DBH->prepare("INSERT INTO app_food (foodName, quantity, calories, fat, carbohydrates, proteins)
       VALUES (:dbruoka, :dbruokagrammat, :dbkalorit, :dbrasva, :dbhiilihydraatit, :dbproteiini);");
      $STH->execute($data);
-     header("Location: ravinto.php"); //Palataan pääsivulle kirjautuneena
-     echo("Ruoka-aine lisätty onnistuneesti");
+  //   header("Location: ravinto.php"); //Palataan pääsivulle kirjautuneena
+   
     }else{
         echo("Ruoka-aine on jo lisätty");
       }
   } catch(PDOException $e) {
     file_put_contents('config/DBErrors.txt', 'signInUser.php: '.$e->getMessage()."\n", FILE_APPEND);
     $_SESSION['swarningInput'] = 'Database problem';
-    
   }
 }
 
-  //Testataan pääsivulle paluu
+  // Pääsivulle paluu ja ruoka-aineen lisääminen onnistuneesti-ilmoitus
+  $message = 'Ruoka-aine lisätty onnistuneesti!';
 
-  //Palataan pääsivulle jos tallennus onnistui
-    header("Location: ravinto.php");
+  echo "<SCRIPT>
+      alert('$message')
+      window.location.replace('ravinto.php');
+  </SCRIPT>";
+  
+   
 }
 
 ?>
+
 
