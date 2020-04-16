@@ -1,10 +1,11 @@
 <?php
 include_once("navit/out.php");
 ?>
+<main>
   <?php
   include("lomakkeet/kirjautumisLomake.php"); 
   ?>
-
+</main>
 <?php
 //Lomakkeen submit painettu?
 if(isset($_POST['submitUser'])){
