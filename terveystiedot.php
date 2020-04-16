@@ -73,7 +73,6 @@ if(isset($_POST['registerbtn'])){
   //Palataan pääsivulle jos tallennus onnistui
     header("Location: index.php");
 }
- echo("<h1>".$_SESSION['swarningInput']."</hi>");
 
 ?>
 
