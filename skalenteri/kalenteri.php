@@ -4,9 +4,9 @@
         <div class="column">
             <div class="blue-title">
                 <ul class="calendar-month">
-                    <li><a href="?ym=<?= $prev; ?>">&lt; Edellinen kuukausi</a></li>
+                    <li><a href="?ym=<?= $prev; ?>"><span class="material-icons">arrow_back_ios</span></a></li>
                     <li><span class="title"><?= $title; ?></span></li>
-                    <li><a href="?ym=<?= $next; ?>">Seuraava kuukausi &gt;</a></li>
+                    <li><a href="?ym=<?= $next; ?>"><span class="material-icons">arrow_forward_ios</span></a></li>
                 </ul>
             </div>
             

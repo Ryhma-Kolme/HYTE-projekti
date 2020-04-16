@@ -33,7 +33,7 @@ button, .tallennaruoka {
     border: 0 none;
     letter-spacing: 1px;
     text-transform: uppercase;
-    background-color: var(--main-button-color);
+    background-color: #77bfe0;
     box-shadow: 0 3px 0 0 #4f8198;
     margin: 0px 5px 10px 5px;
     -webkit-flex: 1;
@@ -42,28 +42,30 @@ button, .tallennaruoka {
 }
 
 button:active, .tallennaruoka:active {
-    background-color: var(--main-active-color);
+    background-color: #779fe0;
     box-shadow: none;
     margin-bottom: -3px;
     margin-top: 3px;
     }
 
 button:hover, .tallennaruoka:hover {
-    background-color: var(--main-active-color);
+    background-color: #779fe0;
 }
     
 .current {
-    background-color: var(--main-active-color);
+    background-color: #779fe0;
     box-shadow: none;
 }
 
 .uusiruoka {
-    padding: 12px;
+    padding: 15px;
+    max-height: fit-content;
     max-width: fit-content;
+    margin: 5px;
 }
 
 /* RESPONSIIVISUUS */
-@media (max-width: 600px) {
+@media (max-width: 660px) {
     .row-buttons {
         -webkit-flex-direction: column;
         flex-direction: column;

@@ -1,16 +1,16 @@
 h2{
-    color: var(--main-h2-color);
+    color: #5B92AB;
     font-weight: bold;
     text-align: center;
 }
 
 h3{
-    color: var(--main-h3-color);
+    color: white;
     margin: 0;
 }
 
 h4 {
-    color: var(--main-h4-color);
+    color: black;
     margin: 10px;
     text-align: start;
 }

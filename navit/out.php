@@ -1,5 +1,5 @@
 <nav>
-    <ul> 
-            <li class="left"><a class="logo" href="#">foodfx</a></li>
+    <ul class="left"> 
+        <li><a class="logo" href="#">foodfx</a></li>
     </ul>
 </nav>

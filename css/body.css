@@ -1,18 +1,6 @@
-:root {
-    --main-bg-color: #b5d6e0;
-    --main-bg-nav-color: white;
-    --main-button-color: #77bfe0;
-    --main-active-color: #779fe0;
-    --main-bg-box-color: white;
-    --main-blue-title-color: #77bfe0;
-    --main-h2-color: #5B92AB;
-    --main-h3-color: white;
-    --main-h4-color: black;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--main-bg-color);
+    background-color: #b5d6e0;
     margin: 0px;
 }
 

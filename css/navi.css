@@ -1,16 +1,22 @@
-nav ul {
+nav {
     display: -webkit-flex;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    background-color: var(--main-bg-nav-color);
+    background-color: white;
     box-shadow:  3px 3px 0px #88888830;
     width: 100%;
-    list-style-type: none;
-    padding: 10px;
+    
+    
     margin: 0;
     top: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
 }
 
 .left {
@@ -23,7 +29,6 @@ nav ul {
     display: -webkit-flex;
     display: flex;
     align-items: center;
-    margin-right: 10px;
 }
 
 .logo {
@@ -52,7 +57,7 @@ nav .active {
 
 /* RESPONSIIVISUUS */
 @media (max-width: 600px) {
-    nav ul, .left, .right {
+    nav, .left, .right {
         -webkit-flex-direction: column;
         flex-direction: column;
         align-items: flex-start;
