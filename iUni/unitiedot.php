@@ -25,7 +25,7 @@
         <div class="uni-column-content">
             <div class="column-1">
                 <h4>Unen kesto</h4>
-                <img style="width: 100%" src="images/diagrammi.png" alt="Graafi kuvainnollistamassa">
+                <file style="width: 100%" src="viikouni/unitiedot7.html" alt="Graafi kuvainnollistamassa">
             </div>
             
             <div class="column-2">
