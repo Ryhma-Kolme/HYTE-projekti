@@ -5,7 +5,6 @@
 
 <main>
     <?php
-        include("iUni/unigraafi.php");
         include("iUni/unitiedot.php");
     ?>
 </main>

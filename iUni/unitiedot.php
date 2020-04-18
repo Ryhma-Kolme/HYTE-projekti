@@ -1,4 +1,4 @@
-<div class="flex-row">
+
     <div class="column">
         <div class="blue-title">
             <h3>Viimeisin yö</h3>
@@ -34,4 +34,3 @@
             </div>
         </div>
     </div>
-</div>

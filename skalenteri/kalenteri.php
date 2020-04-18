@@ -32,42 +32,50 @@
                     ?>
                 </tbody>
             </table>
+
         </div>
     </div>
 
+    <script>
+        function PickedDate(a) {
+            console.log(a);
+            return(a);
+        }
+
+        // document.getElementById("morjesta").innerHTML = PickedDate();
+    </script> 
+
+
     <div class="päivän-tiedot">
+
         <div class="column">
             <div class="blue-title">
-                <h3>Päivän ravintotiedot</h3>
+                <h3 style="font-size: 24px;"> Tänään <?= $date_title ?> </h3>
             </div>
 
-            <?php
-            // include("skalenteri/totalhaku.php");
-            echo("
-                <table>
+            <div class="column-content">
+                <h2 style="text-align: start; font-size: 20px;">Ravintotiedot</h2>
+                <table style="margin-bottom: 20px;">
                     <tr>
                         <th>Kalorit</th>
-                        <th>Rasvat</th>
-                        <th>Hiilihydraatit</th>
                         <th>Proteiinit</th>
+                        <th>Hiilihydraatit</th>
+                        <th>Rasvat</th>
                     </tr>
                     <tr>
-                        <td>".$caloriestotal."kcal</td>
-                        <td>".$fatstotal."g</td>
-                        <td>".$chtotal."g</td>
-                        <td>".$proteinstotal."g</td>
+                        <td> <?= $caloriestotal ?> kcal </td>
+                        <td> <?= $proteinstotal ?> g </td>
+                        <td> <?= $chtotal ?> g </td>
+                        <td> <?= $fatstotal ?> g </td>
                     </tr>
                 </table>
-            ");
-            ?>
-        </div>
 
-        <div class="column">
-            <div class="blue-title">
-                <h3>Unitiedot</h3>
+                <hr>
+                
+                <h2 style="text-align: start; font-size: 20px;">Unitiedot</h2>
+                <p>Unen kesto</p>
+                <p>Leposyke</p>
             </div>
-            <p>Unen kesto</p>
-            <p>Leposyke</p>
         </div>
     </div>
 </div>
