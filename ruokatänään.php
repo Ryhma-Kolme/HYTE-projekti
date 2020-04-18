@@ -50,7 +50,6 @@
             //Suoritetaan kysely uudestaan
             $kysely=$DBH->prepare($sql);				
             $kysely->execute();
-         $nappi = 'annu';
 
             // Jos ateriaan ei ole vielä lisätty mitään 
             if ($bretotal==0){
