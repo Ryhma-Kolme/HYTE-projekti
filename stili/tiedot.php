@@ -17,7 +17,10 @@ if($_SESSION['sloggedIn']=="yes"){
             <hr>
             <?php echo("<p> Maa " .$_SESSION['slocation']. "");?>
             <hr>
-            <?php echo("<p> Syntymäpäivä " .$_SESSION['spaiva']. "");?>
+            <?php // Syntymäpäivä muotoon dd-mm-Yy
+            $originalDate = $_SESSION['spaiva'];
+            $newDate = date("d-m-Y", strtotime($originalDate));
+            echo("<p> Syntymäpäivä " .$newDate. "");?>
         </div>
     </div>
    
