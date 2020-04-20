@@ -42,7 +42,7 @@ tr {
 }
 /* Set a style for the submit button */
 .registerbtn, .loginbtn, .addbtn, .continuebtn, .savebtn {
-  background-color: #77bfe0;
+  background-color: #267ea6;
   color: white;
   padding: 6px 10px;
   margin: 8px 0;
@@ -53,7 +53,7 @@ tr {
 }
   .deletebtn {
     float: right;
-     background-color: #77BFE0;;
+     background-color: #267ea6;;
      color: white;
      padding: 6px 10px;
        margin: 0px 0;
