@@ -25,7 +25,7 @@
         <div class="uni-column-content">
             <div class="column-1">
                 <h4>Unen kesto</h4>
-                <?php include("viikkouni/unitiedot7.html");?>
+                
             </div>
             
             <div class="column-2">
