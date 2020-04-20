@@ -10,7 +10,7 @@
                 </ul>
             </div>
             
-            <table class="calendar-table">
+            <table class="calendar-table" style="height:87%">
                 <thead>
                     <tr>
                         <th class="cal-cell-th">ma</th>
@@ -32,42 +32,58 @@
                     ?>
                 </tbody>
             </table>
+
         </div>
     </div>
 
+    <script>
+        function PickedDate(a) {
+            var b = a;
+            document.getElementById("pvm").innerHTML = b;
+        }
+    </script> 
+
+    <?php $_SESSION['valittu'] = '2020-04-17' ?>
+
     <div class="päivän-tiedot">
+
         <div class="column">
             <div class="blue-title">
-                <h3>Päivän ravintotiedot</h3>
+                <h3 id="pvm" style="font-size: 24px;"> <?= $date_title ?> </h3>
             </div>
 
-            <?php
-            // include("skalenteri/totalhaku.php");
-            echo("
-                <table>
+            <div class="column-content">
+                <h2 style="text-align: start; font-size: 20px;">Ravintotiedot</h2>
+                <table style="border:0; margin-bottom: 20px;">
                     <tr>
                         <th>Kalorit</th>
-                        <th>Rasvat</th>
-                        <th>Hiilihydraatit</th>
                         <th>Proteiinit</th>
+                        <th>Hiilihydraatit</th>
+                        <th>Rasvat</th>
                     </tr>
                     <tr>
-                        <td>".$caloriestotal."kcal</td>
-                        <td>".$fatstotal."g</td>
-                        <td>".$chtotal."g</td>
-                        <td>".$proteinstotal."g</td>
+                        <td> <?= $caloriestotal ?> kcal </td>
+                        <td> <?= $proteinstotal ?> g </td>
+                        <td> <?= $chtotal ?> g </td>
+                        <td> <?= $fatstotal ?> g </td>
                     </tr>
                 </table>
-            ");
-            ?>
-        </div>
 
-        <div class="column">
-            <div class="blue-title">
-                <h3>Unitiedot</h3>
+                <hr>
+                
+                <h2 style="text-align: start; font-size: 20px;">Unitiedot</h2>
+                <table style="border:0;">
+                    <tr>
+                        <th>Kesto</th>
+                        <th>Leposyke</th>
+                    </tr>
+                    <tr>
+                        <td>08:20 h</td>
+                        <td>55 bpm</td>
+                    </tr>
+                </table>
+
             </div>
-            <p>Unen kesto</p>
-            <p>Leposyke</p>
         </div>
     </div>
 </div>

@@ -9,6 +9,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 0;
+    margin: 0;
 }
 
 .calendar-month > li {
@@ -25,6 +26,7 @@
     font-weight: bold;
     text-align: center;
     font-size: 25px;
+    text-transform: capitalize;
 }
 
 .calendar-table, .cal-cell-th, .cal-cell {  
@@ -42,14 +44,13 @@
     margin: 5px;
 }
 
-.cal-cell:hover {
+.cal-cell:hover, .today:hover {
     background-color: #b5d6e0;
     cursor: pointer;
 }
 
 .cal-cell:active {
-    background-color: #acccd6;
-    border-radius: 50%;
+    background-color: #77bfe0;
     cursor: pointer;
 }
 
@@ -57,7 +58,6 @@
     background-color: #8d77e0;
     text-align: center;
 }
-
 
 /* RESPONSIIVISUUS */
 @media (max-width: 900px) {

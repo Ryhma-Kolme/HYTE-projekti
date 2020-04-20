@@ -13,11 +13,20 @@ if($_SESSION['sloggedIn']=="yes"){
         </div>
 
         <div class="column-content">
-            <?php echo("<p> Nimi " .$_SESSION['sfirstName']." " .$_SESSION['slastName']."");?>
+            <b>Nimi:</b><p>
+            <?php echo ucwords($_SESSION['sfirstName']." " .$_SESSION['slastName']."");?>
+            </p>
             <hr>
-            <?php echo("<p> Maa " .$_SESSION['slocation']. "");?>
+            <b>Maa:</b><p>
+            <?php echo ucwords($_SESSION['slocation']);?>
+            </p>
             <hr>
-            <?php echo("<p> Syntymäpäivä " .$_SESSION['spaiva']. "");?>
+            <b>Syntymäpäivä:</b><p>
+            <?php // Syntymäpäivä muotoon dd-mm-Yy
+            $originalDate = $_SESSION['spaiva'];
+            $newDate = date("d-m-Y", strtotime($originalDate));
+            echo($newDate);?>
+            </p>
         </div>
     </div>
    
@@ -44,12 +53,16 @@ if($_SESSION['sloggedIn']=="yes"){
             <h3>Fyysiset tiedot</h3>
         </div>
         <div class="column-content">
-            <?php echo("<p> Sukupuoli " .$_SESSION['ssukupuoli']. "</p>");?>
+            <b>Sukupuoli:</b><p>
+            <?php echo ucwords($_SESSION['ssukupuoli']);?>
+            </p>
             <hr>
-            <?php echo("<p> Pituus " .$_SESSION['spituus']. " cm</p>");?>
+            <b>Pituus:</b><p>
+            <?php echo($_SESSION['spituus']);?> cm
+            </p>
             <hr>
             <form method="post">
-            <p>Paino:
+            <b>Paino:</b><p>
             <input type="text" name="editPaino" onclick="this.select()" id="määrä"
             value="<?php echo(" " .$currentWeight. " ");?>"> kg   
             <input type="submit" class="savebtn" name="savePaino" value="Tallenna">
@@ -73,7 +86,7 @@ if($_SESSION['sloggedIn']=="yes"){
      }
 
 
-    ?>
+     ?>
                
         
     </div>
