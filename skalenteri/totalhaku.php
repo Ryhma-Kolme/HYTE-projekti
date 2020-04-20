@@ -1,12 +1,13 @@
-<?php 
-// userID lisäys 
-$currentUserID = $_SESSION['suserID'];
+<?php
+$currentUserID = $_SESSION['suserID']; // userID lisäys 
+$clickedDay = $_SESSION['valittu'];
+// echo ($clickedDay);
 
 // AAMIAINEN TOTAL ARVOJEN LASKU       
     // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
     $sql="SELECT SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
     FROM app_breakfast
-    WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+    WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID';";
     $kysely=$DBH->prepare($sql);				
     $kysely->execute();
     $row=$kysely->fetch();
@@ -25,7 +26,7 @@ $currentUserID = $_SESSION['suserID'];
     // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
     $sql="SELECT SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
     FROM app_lunch
-    WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+    WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID';";
     $kysely=$DBH->prepare($sql);
     $kysely->execute();
     $row=$kysely->fetch();
@@ -43,7 +44,7 @@ $currentUserID = $_SESSION['suserID'];
     // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
     $sql="SELECT SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
     FROM app_snacks
-    WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+    WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID';";
     $kysely=$DBH->prepare($sql);
     $kysely->execute();
     $row=$kysely->fetch();
@@ -62,7 +63,7 @@ $currentUserID = $_SESSION['suserID'];
     // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
     $sql="SELECT SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
     FROM app_dinner
-    WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+    WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID';";
     $kysely=$DBH->prepare($sql);
     $kysely->execute();
     $row=$kysely->fetch();
@@ -73,7 +74,6 @@ $currentUserID = $_SESSION['suserID'];
     $dintotalCh = $row["SUM(carbohydrates)"]; 
     $dintotalP = $row["SUM(proteins)"]; 
 
-
     // Suoritetaan kysely uudelleen
     $kysely=$DBH->prepare($sql);
     $kysely->execute();
@@ -82,7 +82,7 @@ $currentUserID = $_SESSION['suserID'];
     // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
     $sql="SELECT SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
     FROM app_eveningmeal
-    WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+    WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID';";
     $kysely=$DBH->prepare($sql);
     $kysely->execute();
     $row=$kysely->fetch();

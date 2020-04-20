@@ -28,6 +28,7 @@ if ($timestamp === false) {
     $prev = date('Y-m', strtotime('-1 month', $timestamp));
     $next = date('Y-m', strtotime('+1 month', $timestamp));
 
+
 // Tänään (Formaatti:2020-04-17) 
 $today = date('Y-m-j');
 
@@ -49,11 +50,11 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
     
     $date = $ym . '-' . $day; // Muuttuja muuttaa päivämäärän formaattiin: 2020-04-01 tai 2020-04-02
 
-    // Viikkoon lisätään uusi td class="today", jos date-muuttuja matchaa sen kanssa. Jos ei matchaa, viikon td:t pysyy samana.
+    // Viikkoon lisätään uusi td class="today", jos date-muuttuja menee yhteen sen kanssa. Jos ei ole yhteensopiva, viikkoon lisätään perus td.
     if ($today == $date) {
-        $week .= '<td class="today" onclick="PickedDate(\'' . $date . '\')">';
+        $week .= '<td class="today" onclick="PickedDate(\'' . $day . ". " . strftime("%Bta %Y", $timestamp) . '\')">';
     } else {
-        $week .= '<td class="cal-cell" onclick="PickedDate(\'' . $date . '\')">';
+        $week .= '<td class="cal-cell" onclick="PickedDate(\'' . $day . ". " . strftime("%Bta %Y", $timestamp) . '\')">';
     }
 
     // $week -muuttujaan lisätään </td>
@@ -70,6 +71,7 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
         // Jos str on 7, looppi "rakentaa" taulukkoon viikon eli tr
         $weeks[] = '<tr>' . $week . '</tr>';
         $week = '';
+
     }
 }
 ?>

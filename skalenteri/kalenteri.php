@@ -10,7 +10,7 @@
                 </ul>
             </div>
             
-            <table class="calendar-table">
+            <table class="calendar-table" style="height:87%">
                 <thead>
                     <tr>
                         <th class="cal-cell-th">ma</th>
@@ -38,24 +38,23 @@
 
     <script>
         function PickedDate(a) {
-            console.log(a);
-            return(a);
+            var b = a;
+            document.getElementById("pvm").innerHTML = b;
         }
-
-        // document.getElementById("morjesta").innerHTML = PickedDate();
     </script> 
 
+    <?php $_SESSION['valittu'] = '2020-04-17' ?>
 
     <div class="päivän-tiedot">
 
         <div class="column">
             <div class="blue-title">
-                <h3 style="font-size: 24px;"> Tänään <?= $date_title ?> </h3>
+                <h3 id="pvm" style="font-size: 24px;"> <?= $date_title ?> </h3>
             </div>
 
             <div class="column-content">
                 <h2 style="text-align: start; font-size: 20px;">Ravintotiedot</h2>
-                <table style="margin-bottom: 20px;">
+                <table style="border:0; margin-bottom: 20px;">
                     <tr>
                         <th>Kalorit</th>
                         <th>Proteiinit</th>
@@ -73,8 +72,17 @@
                 <hr>
                 
                 <h2 style="text-align: start; font-size: 20px;">Unitiedot</h2>
-                <p>Unen kesto</p>
-                <p>Leposyke</p>
+                <table style="border:0;">
+                    <tr>
+                        <th>Kesto</th>
+                        <th>Leposyke</th>
+                    </tr>
+                    <tr>
+                        <td>08:20 h</td>
+                        <td>55 bpm</td>
+                    </tr>
+                </table>
+
             </div>
         </div>
     </div>

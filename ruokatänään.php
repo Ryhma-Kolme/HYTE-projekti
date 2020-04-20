@@ -18,7 +18,7 @@
 
         <?php // Taulukko kaikille aterioille
             echo("  
-                <table>
+                <table style='border:0; margin:0;'>
                 <tr>
                     <th>Ruokailu</th>
                     <th>Määrä yht.</th>
