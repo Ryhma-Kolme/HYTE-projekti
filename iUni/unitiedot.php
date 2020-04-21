@@ -27,7 +27,7 @@
             <div class="column-1">
             <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
     <body>
-    <canvas id="uni7Chart" width="400" height="400"></canvas>
+    <canvas id="uni7Chart"></canvas>
     
     <script>
         chartIt();
@@ -91,7 +91,7 @@
             <div class="column-2">
                 <h4></h4>
             <body>
-    <canvas id="leposyke7Chart" width="400" height="400"></canvas>
+    <canvas id="leposyke7Chart"></canvas>
     
     <script>
         chartIt();
