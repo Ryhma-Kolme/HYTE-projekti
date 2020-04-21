@@ -1,5 +1,4 @@
-
-    <div class="column">
+    <!-- <div class="column">
         <div class="blue-title">
             <h3>Viimeisin yö</h3>
         </div>
@@ -15,7 +14,7 @@
                 <img style="width: 100%" src="images/graafi.png" alt="Graafi kuvainnollistamassa">
             </div>
         </div>
-    </div>
+    </div> -->
         
     <div class="column">
         <div class="blue-title">
