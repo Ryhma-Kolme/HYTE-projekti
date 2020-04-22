@@ -1,4 +1,4 @@
-nav {
+.nav-web {
     display: -webkit-flex;
     display: flex;
     justify-content: space-between;
@@ -7,13 +7,11 @@ nav {
     background-color: white;
     box-shadow:  3px 3px 0px #88888830;
     width: 100%;
-    
-    
     margin: 0;
     top: 0;
 }
 
-nav ul {
+.nav-web ul {
     list-style-type: none;
     padding: 0;
     margin: 15px;
@@ -32,14 +30,14 @@ nav ul {
 }
 
 .logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: #8d77e0;
-    text-transform: none;
-    letter-spacing: 0;
+    font-size: 30px !important;
+    font-weight: bold !important;
+    color: #8d77e0 !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
 }
 
-nav ul li a {
+.nav-web ul li a {
     font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -51,26 +49,58 @@ nav ul li a {
     flex: 1;
 }
 
-nav ul li a:hover {
+.nav-web ul li a:hover {
     opacity: 0.5;
 }
 
-nav .active {
+.nav-web .active {
     color: #8d77e0;
     font-weight: bold;
 }
 
-/* RESPONSIIVISUUS */
-@media (max-width: 600px) {
-    nav, .left, .right {
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .left, .right {
-        margin: 0;
-    }
-    nav ul li {
-        margin: 5px;
-    }
+.nav-mob {
+    display: none;
 }
+
+/* RESPONSIIVISUUS */
+/* @media (max-width: 600px) {
+    .nav-mob {
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        background-color: white;
+        box-shadow:  3px 3px 0px #88888830;
+        width: 100%;
+        margin: 0;
+        top: 0;
+    }
+
+    .nav-mob ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 15px;
+    }
+
+    .nav-mob ul li a {
+        font-size: 15px;
+        color: black;
+        text-decoration: none;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
+
+    .nav-mob ul li a:hover {
+        opacity: 0.5;
+    }
+    
+    .nav-mob .active {
+        color: #8d77e0;
+        font-weight: bold;
+    }
+    .nav-web {
+        display: none;
+    }
+} */

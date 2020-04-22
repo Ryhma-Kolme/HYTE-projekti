@@ -37,3 +37,7 @@ th, td {
         display: flex;
     }
 }
+
+@media (max-width: 375px) {
+    
+}

@@ -52,9 +52,9 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
 
     // Viikkoon lisätään uusi td class="today", jos date-muuttuja menee yhteen sen kanssa. Jos ei ole yhteensopiva, viikkoon lisätään perus td.
     if ($today == $date) {
-        $week .= '<td class="today" onclick="PickedDate(\'' . $day . ". " . strftime("%Bta %Y", $timestamp) . '\')">';
+        $week .= '<td class="today" onclick="PickedDate(\'' . $date . '\')">';
     } else {
-        $week .= '<td class="cal-cell" onclick="PickedDate(\'' . $day . ". " . strftime("%Bta %Y", $timestamp) . '\')">';
+        $week .= '<td class="cal-cell" onclick="PickedDate(\'' . $date . '\')">';
     }
 
     // $week -muuttujaan lisätään </td>
