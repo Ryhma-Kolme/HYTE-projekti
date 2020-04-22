@@ -13,7 +13,7 @@
     <form method="post">
 
             <select name="food" id="select-food">
-
+                <optgroup label="Ruoat ja juomat">
                 <option selected="selected" value="">Lisää ruoka</option>
                 <?php     
                 // käydään array läpi
@@ -23,7 +23,7 @@
                 <?php
                 }
                 ?>
-
+                </optgroup>
             </select>
             <script>
             $(document).ready(function () {
