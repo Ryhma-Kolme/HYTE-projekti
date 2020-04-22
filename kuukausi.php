@@ -9,6 +9,7 @@
         include("skalenteri/totalhaku.php");
         include_once("skalenteri/kalenteri.php");
         include_once("skalenteri/yhteenveto.php");
+        echo("totalhaku.php rivi 4".$_SESSION['valittu']);
     ?>
 </main>
 <?php

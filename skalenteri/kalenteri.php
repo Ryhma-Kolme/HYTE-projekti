@@ -40,16 +40,24 @@
         function PickedDate(a) {
             var b = a;
             document.getElementById("pvm").innerHTML = b;
+            fetch('skalenteri/pvmValittu.php/?data=' + b)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((vastaus) => { 
+                    
+                    console.log("Vastaus " + vastaus);
+                    
+                });
+            location.reload();
         }
     </script> 
-
-    <?php $_SESSION['valittu'] = '2020-04-17' ?>
 
     <div class="päivän-tiedot">
 
         <div class="column">
             <div class="blue-title">
-                <h3 id="pvm" style="font-size: 24px;"> <?= $date_title ?> </h3>
+                <h3 id="pvm" style="font-size: 24px;"> <?= $_SESSION['valittu'] ?> </h3>
             </div>
 
             <div class="column-content">
