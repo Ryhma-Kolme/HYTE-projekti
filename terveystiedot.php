@@ -50,7 +50,15 @@ if(isset($_POST['registerbtn'])){
   $data['dbpituus'] = $_POST['pituus'];
   $data['dbpaiva'] = $_POST['syntymaaika'];
 
+//kirjautuneen käyttäjän userID?
+$data1['email'] = $_SESSION['semail'];
+$sql1 = "SELECT userID FROM app_user where userEmail =  :email";
+$kysely1=$DBH->prepare($sql1);
+$kysely1->execute($data1);
+$tulos1=$kysely1->fetch();
+$currentUserID=$tulos1[0];
 
+ $_SESSION['suserID'] = $currentUserID;
 
   try {
    

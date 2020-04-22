@@ -11,8 +11,7 @@ if($_SESSION['sloggedIn']=="yes"){
     $tulos1=$kysely1->fetch();
     $currentUserID=$tulos1[0];
 
-      $_SESSION['suserID'] = $currentUserID;
-
+   
     ?>
 
 <main>
