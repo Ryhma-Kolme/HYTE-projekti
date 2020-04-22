@@ -59,6 +59,9 @@
                     <button class="plus" onclick="window.location.href = 'aamiainen.php'">+</button>    
                     <p>Et ole vielä lisännyt aamiaista</p>
                 </td>
+                <td class="respo">
+                    <button class="plus" onclick="window.location.href = 'aamiainen.php'">Lisää</button>
+                </td>
             </tr> <?php
             } else {
 
@@ -106,6 +109,9 @@
                     <button class="plus" onclick="window.location.href = 'lounas.php'">+</button>    
                     <p>Et ole vielä lisännyt lounasta</p>
                 </td>
+                <td class="respo">
+                    <button class="plus" onclick="window.location.href = 'lounas.php'">Lisää</button>
+                </td>
             </tr> <?php
             } else {
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
@@ -152,6 +158,9 @@
                 <td class="lisaa">
                     <button class="plus" onclick="window.location.href = 'välipala.php'">+</button>    
                     <p>Et ole vielä lisännyt välipalaa</p>
+                </td>
+                <td class="respo">
+                    <button class="plus" onclick="window.location.href = 'välipala.php'">Lisää</button>
                 </td>
             </tr> <?php
             } else {
@@ -202,6 +211,9 @@
                     <button class="plus" onclick="window.location.href = 'päivällinen.php'">+</button>    
                     <p>Et ole vielä lisännyt päivällistä</p>
                 </td>
+                <td class="respo">
+                    <button class="plus" onclick="window.location.href = 'päivällinen.php'">Lisää</button>
+                </td>
             </tr> <?php
             } else {
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
@@ -248,6 +260,9 @@
                 <td class="lisaa">
                     <button class="plus" onclick="window.location.href = 'iltapala.php'">+</button>    
                     <p>Et ole vielä lisännyt iltapalaa</p>
+                </td>
+                <td class="respo">
+                    <button class="plus" onclick="window.location.href = 'iltapala.php'">Lisää</button>
                 </td>
             </tr> <?php
             } else {
