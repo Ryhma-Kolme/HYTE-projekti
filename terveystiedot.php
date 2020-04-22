@@ -39,7 +39,6 @@ if(isset($_POST['registerbtn'])){
   unset($_SESSION['swarningInput']);
   //1. Tiedot sessioon
   $_SESSION['ssukupuoli']=$_POST['sukupuoli'];
-
   $_SESSION['spaino']=$_POST['paino'];
   $_SESSION['spituus']=$_POST['pituus'];
   $_SESSION['spaiva']=$_POST['syntymaaika'];
