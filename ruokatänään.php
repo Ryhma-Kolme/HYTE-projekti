@@ -53,12 +53,16 @@
 
             // Jos ateriaan ei ole vielä lisätty mitään 
             if ($bretotal==0){
-                echo("
-                    <tr>               
-                        <th>Aamiainen</th>
-                        <th>Et ole vielä lisännyt aamiaista ");?>
-                        <button onclick="window.location.href = 'aamiainen.php';" class="savebtn">+</button>
-                        <?php echo("</th> </tr>");
+            ?><tr>               
+                <th>Aamiainen</th>
+                <td class="lisaa">
+                    <button class="plus" onclick="window.location.href = 'aamiainen.php'">+</button>    
+                    <p>Et ole vielä lisännyt aamiaista</p>
+                </td>
+                <td class="respo">
+                    <button class="plus" onclick="window.location.href = 'aamiainen.php'">Lisää</button>
+                </td>
+            </tr> <?php
             } else {
 
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
@@ -99,11 +103,16 @@
 
             // Jos ateriaan ei ole vielä lisätty mitään 
             if ($lunchtotal==0){
-                echo("<tr>               
-                <th>Lounas</th>
-                <th>Et ole vielä lisännyt lounasta ");?>
-                <button onclick="window.location.href = 'lounas.php';" class="savebtn">+</button>
-                <?php echo("</th> </tr>");  
+            ?><tr>               
+            <th>Lounas</th>
+                <td class="lisaa">
+                    <button class="plus" onclick="window.location.href = 'lounas.php'">+</button>    
+                    <p>Et ole vielä lisännyt lounasta</p>
+                </td>
+                <td class="respo">
+                    <button class="plus" onclick="window.location.href = 'lounas.php'">Lisää</button>
+                </td>
+            </tr> <?php
             } else {
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
                 while	($row=$kysely->fetch()){	    
@@ -144,12 +153,16 @@
 
             // Jos ateriaan ei ole vielä lisätty mitään 
             if ($sntotal==0){
-                echo("
-                    <tr>               
-                        <th>Välipala</th>
-                        <th>Et ole vielä lisännyt välipalaa ");?>
-                        <button onclick="window.location.href = 'välipala.php';" class="savebtn">+</button>
-                        <?php echo("</th> </tr>");
+            ?><tr>               
+            <th>Välipala</th>
+                <td class="lisaa">
+                    <button class="plus" onclick="window.location.href = 'välipala.php'">+</button>    
+                    <p>Et ole vielä lisännyt välipalaa</p>
+                </td>
+                <td class="respo">
+                    <button class="plus" onclick="window.location.href = 'välipala.php'">Lisää</button>
+                </td>
+            </tr> <?php
             } else {
 
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
@@ -192,12 +205,16 @@
 
             // Jos ateriaan ei ole vielä lisätty mitään 
             if ($dintotal==0){
-                echo("
-                    <tr>               
-                        <th>Päivällinen</th>
-                        <th>Et ole vielä lisännyt päivällistä ");?>
-                        <button onclick="window.location.href = 'päivällinen.php';" class="savebtn">+</button>
-                        <?php echo("</th> </tr>");
+            ?><tr>               
+            <th>Päivällinen</th>
+                <td class="lisaa">
+                    <button class="plus" onclick="window.location.href = 'päivällinen.php'">+</button>    
+                    <p>Et ole vielä lisännyt päivällistä</p>
+                </td>
+                <td class="respo">
+                    <button class="plus" onclick="window.location.href = 'päivällinen.php'">Lisää</button>
+                </td>
+            </tr> <?php
             } else {
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
                 while	($row=$kysely->fetch()){	
@@ -238,12 +255,16 @@
 
             // Jos ateriaan ei ole vielä lisätty mitään 
             if ($emtotal==0){
-                echo("
-                    <tr>               
-                        <th>Iltapala</th>
-                        <th>Et ole vielä lisännyt iltapalaa ");?>
-                        <button onclick="window.location.href = 'iltapala.php';" class="savebtn">+</button>
-                        <?php echo("</th> </tr>");
+            ?><tr>               
+            <th>Iltapala</th>
+                <td class="lisaa">
+                    <button class="plus" onclick="window.location.href = 'iltapala.php'">+</button>    
+                    <p>Et ole vielä lisännyt iltapalaa</p>
+                </td>
+                <td class="respo">
+                    <button class="plus" onclick="window.location.href = 'iltapala.php'">Lisää</button>
+                </td>
+            </tr> <?php
             } else {
                 //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
                 while($row=$kysely->fetch()){	

@@ -15,3 +15,25 @@ table {
 th, td {
     padding: 10px;
 }
+
+.lisaa {
+    display: flex;
+    align-items: center;
+}
+
+.respo{
+    display: none;
+}
+
+/* RESPONSIIVISUUS */
+@media (max-width: 660px) {
+    th, td {
+        padding: 2px;
+    }
+    .lisaa {
+        display: none;
+    }
+    .respo {
+        display: flex;
+    }
+}

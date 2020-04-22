@@ -41,6 +41,14 @@ button, .tallennaruoka {
     flex: 1;
 }
 
+.plus {
+    box-shadow: 0 0 0 0;
+    padding: 6px 10px;
+    flex: 0;
+    margin: 0;
+    text-transform: none;
+}
+
 button:active, .tallennaruoka:active {
     background-color: #779fe0;
     box-shadow: none;

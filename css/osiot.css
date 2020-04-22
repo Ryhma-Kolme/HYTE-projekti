@@ -130,3 +130,9 @@
         width: 100%;
     }
 }
+
+@media (max-width: 660px) {
+    .column-content {
+        margin: 10px;
+    }
+}
