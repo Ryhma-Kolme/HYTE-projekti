@@ -5,7 +5,5 @@
 </nav>
 
 <nav class="nav-mob">
-    <ul>
-        <li><a class="logo" href="#">foodfx</a></li>
-    </ul>
+    <a class="logo" href="#">foodfx</a>
 </nav>

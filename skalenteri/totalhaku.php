@@ -1,7 +1,6 @@
 <?php
 $currentUserID = $_SESSION['suserID']; // userID lisäys 
 $clickedDay = $_SESSION['valittu'];
-echo("totalhaku.php rivi 4".$_SESSION['valittu']);
 // echo ($clickedDay);
 
 // AAMIAINEN TOTAL ARVOJEN LASKU       
