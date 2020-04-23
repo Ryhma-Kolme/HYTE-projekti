@@ -33,7 +33,7 @@
     <hr>
    
     <input type="submit" class="continuebtn" name="continuebtn" value="Jatka"/>
-    <input type="reset"  value="Reset"/>
+    <input type="reset"  value="Tyhjennä lomake"/>
   </div>
   
   <div class="container signin">
