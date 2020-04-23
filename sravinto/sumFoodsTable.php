@@ -16,12 +16,12 @@ echo("
 while	($row=$kysely->fetch()){	
   echo("
     <tr>
-        <td>".$row['COUNT(foodName)']."kpl</td>
-        <td>".$row['SUM(quantity)']."g</td>
-        <td>".$row['SUM(calories)']."kcal</td>
-        <td>".$row['SUM(fat)']."g</td>
-        <td>".$row['SUM(carbohydrates)']."g</td>
-        <td>".$row['SUM(proteins)']."g</td>
+        <td>".$row['COUNT(foodName)']." kpl</td>
+        <td>".$row['SUM(quantity)']." g</td>
+        <td>".$row['SUM(calories)']." kcal</td>
+        <td>".$row['SUM(fat)']." g</td>
+        <td>".$row['SUM(carbohydrates)']." g</td>
+        <td>".$row['SUM(proteins)']." g</td>
     </tr>
   ");
 }
@@ -29,6 +29,4 @@ while	($row=$kysely->fetch()){
 echo("
 </table>
 ");
-
-
 ?>

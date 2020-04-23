@@ -15,7 +15,7 @@
             </div>
         </div>
     </div> -->
-        
+<div class="row">
     <div class="column">
         <div class="blue-title">
             <h3>Viimeiset 7 vuorokautta</h3>
@@ -151,3 +151,4 @@
             </div>
         </div>
     </div>
+</div>
