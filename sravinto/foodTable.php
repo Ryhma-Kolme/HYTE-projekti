@@ -1,6 +1,4 @@
 <?php // Luodaan taulukko johon syötetään arvot 
-
-
 echo("
 <table>
   <tr>
@@ -18,11 +16,11 @@ while	($row=$kysely->fetch()){
     echo("
       <tr>
         <td>".$row["foodName"]."</td>
-        <td>".$row["quantity"]."g</td>
-        <td>".$row["calories"]."kcal</td>
-        <td>".$row["fat"]."g</td>
-        <td>".$row["carbohydrates"]."g</td>
-        <td>".$row["proteins"]."g</td>
+        <td>".$row["quantity"]." g</td>
+        <td>".$row["calories"]." kcal</td>
+        <td>".$row["fat"]." g</td>
+        <td>".$row["carbohydrates"]." g</td>
+        <td>".$row["proteins"]." g</td>
         <td>".$row["timeOfEating"]."</td>
       </tr>
     ");
@@ -31,5 +29,4 @@ while	($row=$kysely->fetch()){
   echo("
   </table>
   ");
-  ?>
-
+?>
