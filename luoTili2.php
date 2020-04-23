@@ -53,9 +53,19 @@ if(isset($_POST['continuebtn'])){
      $STH = $DBH->prepare("INSERT INTO app_user (userName, userEmail, userPwd, firstname, surname, userLocation)
       VALUES (:name, :email, :pwd, :firstName, :lastName, :location);");
      $STH->execute($data);
-     header("Location: index.php"); //Palataan pääsivulle kirjautuneena
+     header("Location: terveystiedot.php"); //Palataan pääsivulle kirjautuneena
     }else{
         $_SESSION['swarningInput']="Email is reserved";
+        
+        $message = 'Sähköposti on jo käytössä';
+
+echo "<SCRIPT>
+    alert('$message')
+    window.location.replace('luoTili2.php');
+</SCRIPT>";
+?>
+        <span class="error">* <?php echo("Sähköposti on jo käytössä");?></span>
+<?php
       }
   } catch(PDOException $e) {
     file_put_contents('config/DBErrors.txt', 'signInUser.php: '.$e->getMessage()."\n", FILE_APPEND);
@@ -63,11 +73,10 @@ if(isset($_POST['continuebtn'])){
     
   }
 }
+}
 
   //Testataan pääsivulle paluu
 
-  //Palataan pääsivulle jos tallennus onnistui
-    header("Location: terveystiedot.php");
-}
+ 
 ?>
 
