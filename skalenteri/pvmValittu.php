@@ -6,6 +6,4 @@
     $_SESSION['valittu'] = $_GET['data'];
     
     echo(json_encode($_SESSION['valittu']));
-   
-    // echo(json_encode($_GET['data']));
 ?>

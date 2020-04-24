@@ -40,6 +40,10 @@ button, .tallennaruoka {
     flex: 1;
 }
 
+.etusivu-button {
+    width: 450px;
+}
+
 .plus {
     box-shadow: 0 0 0 0;
     padding: 6px 10px;
@@ -82,10 +86,14 @@ button:hover, .tallennaruoka:hover {
     }
 }
 
-/* 
-Buttoneita löytyy:
-    Ravintosivu: 
-    - ateriat
-    - lisää uusi ruoka-aine
-    - tallenna ateriaksi
-*/
+@media (max-width: 600px) {
+    .etusivu-button {
+        width: 350px;
+    }
+}
+
+@media (max-width: 450px) {
+    .etusivu-button {
+        width: 220px;
+    }
+}
