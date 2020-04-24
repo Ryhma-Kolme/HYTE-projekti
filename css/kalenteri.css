@@ -29,6 +29,10 @@
     text-transform: capitalize;
 }
 
+#pvm {
+    text-transform: capitalize;
+}
+
 .calendar-table, .cal-cell-th, .cal-cell {  
     text-align: center;
     border: 0;

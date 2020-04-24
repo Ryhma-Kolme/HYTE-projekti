@@ -57,7 +57,7 @@
 
         <div class="column">
             <div class="blue-title">
-                <h3 id="pvm" style="font-size: 24px;"> <?= $_SESSION['valittu'] = date('d.m.Y', strtotime($_SESSION['valittu']));?> </h3>
+                <h3 id="pvm" style="font-size: 24px;"> <?= $_SESSION['valittu'] = strftime('%A %e. %Bta %Y', strtotime($_SESSION['valittu']));?> </h3>
             </div>
 
             <div class="column-content">
