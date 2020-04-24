@@ -22,7 +22,7 @@ if($_SESSION['sloggedIn']=="yes"){
             <button class="etusivu-button" onclick="document.location = 'kuukausi.php'">Tarkastele kalenteria ja yhteenvetoja</button>
             <button class="etusivu-button" onclick="document.location = 'ravinto.php'">Lisää ruokia</button>
             <button class="etusivu-button" onclick="document.location = 'unisivu.php'">Katso viimeisimmät unitietosi</button>
-            <button class="etusivu-button" onclick="document.location = 'tilitiedot.php'">Päivitä tietojasi</button>
+            <button class="etusivu-button" onclick="document.location = 'tilitiedot.php'">Päivitä tilitietojasi</button>
         </div>
     </div>
 </main>
