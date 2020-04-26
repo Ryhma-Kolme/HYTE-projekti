@@ -19,7 +19,8 @@
         var ChTotal = parseInt('<?php echo($chtotal)?>', 10); 
         var ProTotal = parseInt('<?php echo($proteinstotal)?>', 10); 
 
-// Luodaan taulukko
+// Luodaan taulukko 
+    // (Pohjana käytetty CanvasJS Lähde: https://canvasjs.com/javascript-charts/multiple-axis-column-chart)
     window.onload = function () {
 
         var chart = new CanvasJS.Chart("chartContainer", {
