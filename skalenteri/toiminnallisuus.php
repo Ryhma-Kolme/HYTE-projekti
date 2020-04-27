@@ -18,11 +18,8 @@ if ($timestamp === false) {
 }
 
 // Sivulla näkyvillä
-    // Otsikko - kuukausi suomeksi (Formaatti: huhtikuu, 2020)
+    // Otsikko - kuukausi suomeksi (Formaatti: Huhtikuu, 2020)
     $title = strftime("%B, %Y", $timestamp);
-
-    // Otsikko - tänään kuukausi suomeksi (Formaatti: 17. huhtikuuta 2020)
-    $date_title = date('j. ') . strftime("%Bta %Y", $timestamp);
 
     // Linkit edelliselle ja seuraavalle kuukaudelle (Edellinen kk miinustaa kuukaudesta -1 ja seuraava kk lisää +1)
     $prev = date('Y-m', strtotime('-1 month', $timestamp));
@@ -52,7 +49,7 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
 
     // Viikkoon lisätään uusi td class="today", jos date-muuttuja menee yhteen sen kanssa. Jos ei ole yhteensopiva, viikkoon lisätään perus td.
     if ($today == $date) {
-        $week .= '<td class="today" onclick="PickedDate(\'' . $date . '\')">';
+        $week .= '<td class="today active-cell" onclick="PickedDate(\'' . $date . '\')">';
     } else {
         $week .= '<td class="cal-cell" onclick="PickedDate(\'' . $date . '\')">';
     }

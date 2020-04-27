@@ -58,6 +58,10 @@
     cursor: pointer;
 }
 
+.active-cell {
+    background-color: #77bfe0;
+}
+
 .today {
     background-color: #8d77e0;
     text-align: center;
