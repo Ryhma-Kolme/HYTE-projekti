@@ -16,8 +16,9 @@
     <input id="kayttaja" type="text" placeholder="Syötä käyttäjänimesi" name="kayttaja" required>
     <hr>
 
-    <label for="sijainti"><b>Sijainti</b></label>
-    <input id="sijainti" type="text" placeholder="Maa" name="sijainti" required>
+    
+    <?php include("lomakkeet/countryList.php");?>
+
     <hr>
 
     <label for="email"><b>Sähköpostiosoite</b></label>
