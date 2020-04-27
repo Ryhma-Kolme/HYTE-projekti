@@ -36,35 +36,19 @@
         </div>
     </div>
 
-    <script>
-        function PickedDate(a) { // Luodaan funktio klikatulle päivälle
-            var b = a; // Luetaan muuttuja  javascript muuttujaksi
-            document.getElementById("pvm").innerHTML = b; // Muuttaa b -muuttujan html elementiksi
-            fetch('skalenteri/pvmValittu.php/?data=' + b) // Vie data-muuttujaan -muuttujan arvon
-                .then((response) => {
-                    return response.json();
-                })
-                .then((vastaus) => { 
-                    console.log(vastaus);
-                });
-            location.reload();
-        }
-        
-    </script> 
-
-    <!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
-    <script type="text/javascript">
-        $(document).on('click', 'table tbody tr td', function(){
-            $(this).addClass('active-cell').siblings().removeClass('active-cell')
-        })
-    </script> -->
-
     <div class="päivän-tiedot">
 
         <div class="column">
             <div class="blue-title">
-                <h3 id="pvm" style="font-size: 24px;"> <?= strftime('%A %e.%m.%Y', strtotime($_SESSION['valittu']));?> </h3>
+                <h3 id="pvm" style="font-size: 24px;">
+                    <?php 
+                        if($clickedDay == 0){ // Jos päivää ei ole valittu, näytetään tämänhetkinen päivä
+                            echo(strftime('%A %e.%m.%Y', $today));
+                        } else {
+                            echo(strftime('%A %e.%m.%Y', strtotime($_SESSION['valittu'])));
+                        }
+                    ?>
+                </h3>
             </div>
 
             <div class="column-content">
