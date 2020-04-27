@@ -16,16 +16,24 @@ if(isset($_POST['continuebtn'])){
   //Tarkistetaan syötteet myös palvelimella
   if(strlen($_POST['kayttaja'])<4){
     $_SESSION['swarningInput']="Liian lyhyt käyttäjänimi (min 4)";
-
+    ?>
+        <span class="error">* <?php echo("Liian lyhyt käyttäjänimi");?></span>
+    <?php
   }else if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
    $_SESSION['swarningInput']="Illegal email";
-
-  }else if(!strlen($_POST['psw'])>=8){
+   ?>
+   <span class="error">* <?php echo("Sähköposti ei ole oikeassa muodossa");?></span>
+   <?php
+  }else if(strlen($_POST['psw'])<8){
   $_SESSION['swarningInput']="Illegal password (min 8 chars)";
-
+  ?>
+  <span class="error">* <?php echo("Salasanan täytyy olla vähintään 8 merkkiä");?></span>
+  <?php 
   }else if(!$_POST['psw']== $_POST['psw-repeat']){
   $_SESSION['swarningInput']="Given password and verified not same";
-
+  ?>
+  <span class="error">* <?php echo("Salasanat eivät täsmää");?></span>
+  <?php
   }else{
   unset($_SESSION['swarningInput']);
   //1. Tiedot sessioon
@@ -53,22 +61,25 @@ if(isset($_POST['continuebtn'])){
      $STH = $DBH->prepare("INSERT INTO app_user (userName, userEmail, userPwd, firstname, surname, userLocation)
       VALUES (:name, :email, :pwd, :firstName, :lastName, :location);");
      $STH->execute($data);
-     header("Location: terveystiedot.php"); //Palataan pääsivulle kirjautuneena
-    }else{
+
+      echo "<SCRIPT> 
+      window.location.replace('terveystiedot.php');
+      </SCRIPT>";  
+      }else{
         $_SESSION['swarningInput']="Email is reserved";
         
         $message = 'Sähköposti on jo käytössä';
 
-echo "<SCRIPT>
-    alert('$message')
-    window.location.replace('luoTili2.php');
-</SCRIPT>";
+        echo "<SCRIPT>
+            alert('$message')
+            window.location.replace('luoTili2.php');
+        </SCRIPT>";
 ?>
         <span class="error">* <?php echo("Sähköposti on jo käytössä");?></span>
 <?php
       }
   } catch(PDOException $e) {
-    file_put_contents('config/DBErrors.txt', 'signInUser.php: '.$e->getMessage()."\n", FILE_APPEND);
+    file_put_contents('config/DBErrors.txt', 'luoTili2.php: '.$e->getMessage()."\n", FILE_APPEND);
     $_SESSION['swarningInput'] = 'Database problem';
     
   }
