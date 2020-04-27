@@ -22,13 +22,6 @@
    
 
     <div class="row">
-        <!-- <div class="column">
-            <div class="blue-title">
-                <h3>Koko päivän ravintoarvot</h3>
-            </div>
-            <img style="height:200px; padding:10px" src="images/värit.png" alt="Rinkula">
-        </div> -->
-
         <div class="column">
             <div class="blue-title">
                 <form method="post"><input type="submit" onclick="return confirm('Oletko varma, että haluat poistaa kaikki tämän päivän aamiaiset?')" class="deletebtn" name="bre_deletebtn" value="Poista kaikki"></form>
@@ -38,6 +31,7 @@
             <div class="column-content">
                 <?php // userID lisäys 
                     $currentUserID = $_SESSION['suserID'];
+                    $clickedDay = $_SESSION['valittu']; // haetaan valittu päivä
                 ?> 
 
                 <?php // Poistaa kaikki tämän päivän aamiaiset "Poista kaikki"-napista
@@ -45,7 +39,7 @@
                     if(isset($_POST['bre_deletebtn'])){
 
                         // Näytetään vain kirjautuneen käyttäjän ja tämän päivän lisätyt ruoka-aineet
-                        $sql="DELETE FROM app_breakfast WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
+                        $sql="DELETE FROM app_breakfast WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
                         $kysely=$DBH->prepare($sql);				
                         $kysely->execute();
                     }		
@@ -84,7 +78,7 @@
                 <?php // Arvojen syöttö taulukkoon
 
                     // Näytetään vain kirjautuneen käyttäjän ja tämän päivän lisätyt ruoka-aineet
-                    $sql="SELECT * FROM app_breakfast WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
+                    $sql="SELECT * FROM app_breakfast WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID' ORDER BY timeOfEating ASC";
                     $kysely=$DBH->prepare($sql);				
                     $kysely->execute();       
 
@@ -94,7 +88,7 @@
                     // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
                     $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
                     FROM app_breakfast
-                    WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+                    WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID';";
                     $kysely=$DBH->prepare($sql);				
                     $kysely->execute();
 

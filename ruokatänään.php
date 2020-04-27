@@ -14,6 +14,7 @@
 
         <?php // userID lisäys 
             $currentUserID = $_SESSION['suserID'];
+            $clickedDay = $_SESSION['valittu']; // haetaan valittu päivä
         ?>      
 
         <?php // Taulukko kaikille aterioille
@@ -34,7 +35,7 @@
             // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
             $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
             FROM app_breakfast
-            WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+            WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID';";
             $kysely=$DBH->prepare($sql);				
             $kysely->execute();
             $row=$kysely->fetch();
@@ -85,7 +86,7 @@
             // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
             $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
             FROM app_lunch
-            WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+            WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID';";
             $kysely=$DBH->prepare($sql);				
             $kysely->execute();
             $row=$kysely->fetch();
@@ -134,7 +135,7 @@
             // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
             $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
             FROM app_snacks
-            WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+            WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID';";
             $kysely=$DBH->prepare($sql);				
             $kysely->execute();
             $row=$kysely->fetch();
@@ -185,7 +186,7 @@
             // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
             $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
             FROM app_dinner
-            WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+            WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID';";
             $kysely=$DBH->prepare($sql);				
             $kysely->execute();
             $row=$kysely->fetch();
@@ -236,7 +237,7 @@
             // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
             $sql="SELECT COUNT(foodName), SUM(quantity), SUM(calories), SUM(fat), SUM(carbohydrates), SUM(proteins)
             FROM app_eveningmeal
-            WHERE DATE(`timeOfEating`) = CURDATE() AND userID = '$currentUserID';";
+            WHERE DATE(`timeOfEating`) = '$clickedDay' AND userID = '$currentUserID';";
             $kysely=$DBH->prepare($sql);				
             $kysely->execute();
             $row=$kysely->fetch();
