@@ -82,8 +82,7 @@
                                 $total = ($quantity / $prequantity);
 
                                 // Otetaan valitun ruuan arvot ja userID ja lisätään ne aamiainen-tableen
-                                $STH = $DBH->prepare("INSERT INTO app_breakfast 
-                                (userID, foodID, foodName, quantity, calories, fat, carbohydrates, proteins) 
+                                $STH = $DBH->prepare("INSERT INTO app_breakfast (userID, foodID, foodName, quantity, calories, fat, carbohydrates, proteins)
                                 SELECT app_user.userID, app_food.foodID, app_food.foodName, app_food.quantity * $total, app_food.calories * $total, app_food.fat * $total, app_food.carbohydrates * $total, app_food.proteins * $total
                                 FROM app_user, app_food
                                 WHERE app_food.foodName = '$selected_val' AND app_user.userID = '$currentUserID';");
