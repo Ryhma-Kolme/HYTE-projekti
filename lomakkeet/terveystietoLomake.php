@@ -11,8 +11,12 @@
     <label for="nainen">Nainen</label><br>
     <hr> 
 
+    <?php // Tänään (Formaatti:2020-04-17) 
+    $today = date('Y-m-j');
+    ?>
+    
     <label for="syntymaaika">Syntymäaikasi:</label>
-    <input id="syntymaaika" type="date" name="syntymaaika">
+    <input id="syntymaaika" type="date" name="syntymaaika" max="<?php echo($today); ?>">
     <hr>
 
     <label for="paino">Paino (kg):</label>
