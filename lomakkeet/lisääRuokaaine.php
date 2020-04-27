@@ -9,7 +9,7 @@
     <hr>
 
     <label for="ruokagrammat"><b>Ruoan määrä (g):</b></label>
-    <input id="ruokagrammat" type="text" placeholder="Syötä määrä" name="ruokagrammat" required>
+    <input id="ruokagrammat" type="text" placeholder="Syötä määrä" value="100" onclick="this.select()" name="ruokagrammat" required>
     <hr>
 
     <label for="kalorit"><b>Kalorit:</b></label>
