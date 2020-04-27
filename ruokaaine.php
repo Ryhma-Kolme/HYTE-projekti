@@ -37,37 +37,35 @@ if(isset($_POST['addbtn'])){
   $data['dbproteiini'] = $_POST['proteiini'];
   
   try {
-   //***Ruoka ei saa olla lisätty jo aiemmin
-   $sql = "SELECT COUNT(*) FROM app_food where foodName  =  " . "'".$_POST['ruoka']."'"  ;
+    //***Ruoka ei saa olla lisätty jo aiemmin
+    $sql = "SELECT COUNT(*) FROM app_food where foodName  =  " . "'".$_POST['ruoka']."'"  ;
     $kysely=$DBH->prepare($sql);
     $kysely->execute();				
-   $tulos=$kysely->fetch();
-   if($tulos[0] == 0){ //email ei ole käytössä
-     $STH = $DBH->prepare("INSERT INTO app_food (foodName, quantity, calories, fat, carbohydrates, proteins)
+    $tulos=$kysely->fetch();
+
+    if($tulos[0] == 0){ //email ei ole käytössä
+      $STH = $DBH->prepare("INSERT INTO app_food (foodName, quantity, calories, fat, carbohydrates, proteins)
       VALUES (:dbruoka, :dbruokagrammat, :dbkalorit, :dbrasva, :dbhiilihydraatit, :dbproteiini);");
-     $STH->execute($data);
-  //   header("Location: ravinto.php"); //Palataan pääsivulle kirjautuneena
+      $STH->execute($data);
    
-    }else{
+    } else{
         echo("Ruoka-aine on jo lisätty");
       }
+
   } catch(PDOException $e) {
-    file_put_contents('config/DBErrors.txt', 'signInUser.php: '.$e->getMessage()."\n", FILE_APPEND);
-    $_SESSION['swarningInput'] = 'Database problem';
-  }
+      file_put_contents('config/DBErrors.txt', 'signInUser.php: '.$e->getMessage()."\n", FILE_APPEND);
+      $_SESSION['swarningInput'] = 'Database problem';
+    }
 }
 
-  // Pääsivulle paluu ja ruoka-aineen lisääminen onnistuneesti-ilmoitus
-  $message = 'Ruoka-aine lisätty onnistuneesti!';
+    // Pääsivulle paluu ja ruoka-aineen lisääminen onnistuneesti-ilmoitus
+    $message = 'Ruoka-aine lisätty onnistuneesti!';
 
-  echo "<SCRIPT>
-      alert('$message')
-      window.location.replace('ravinto.php');
-  </SCRIPT>";
-  
-   
+    echo "<SCRIPT>
+        alert('$message')
+        window.location.replace('ravinto.php');
+    </SCRIPT>"; 
 }
-
 ?>
 
 

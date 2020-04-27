@@ -63,7 +63,7 @@
                         if ($selected_val==NULL) {
                             echo("<h2>Et ole valinnut ruokaa listasta. Valitse ruoka ennen tallentamista. </h2>");               
                             } 
-                            else if ($quantity==0) {
+                            else if ($quantity<=0) {
                             echo("<h2>Et ole lisännyt ruoan määrää. Lisää määrä ennen tallentamista. </h2>");               
                             } 
                             else {
