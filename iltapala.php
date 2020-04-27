@@ -30,6 +30,8 @@
             <div class="column-content">
                 <?php // userID lisäys 
                     $currentUserID = $_SESSION['suserID'];
+                    // Kellon aika nyt  (esim. 19:41:37) lisätään clickedDay:hin
+                    $clickedTime = date("H:i:s");
 
                     $clickedDay = $_SESSION['valittu']; // haetaan valittu päivä
 
@@ -81,8 +83,8 @@
 
                                 // Otetaan valitun ruuan arvot ja userID ja lisätään ne aamiainen-tableen
                                 $STH = $DBH->prepare("INSERT INTO app_eveningmeal 
-                                (userID, foodID, foodName, quantity, calories, fat, carbohydrates, proteins) 
-                                SELECT app_user.userID, app_food.foodID, app_food.foodName, app_food.quantity * $total, app_food.calories * $total, app_food.fat * $total, app_food.carbohydrates * $total, app_food.proteins * $total
+                                (userID, foodID, foodName, quantity, calories, fat, carbohydrates, proteins, timeOfEating) 
+                                SELECT app_user.userID, app_food.foodID, app_food.foodName, app_food.quantity * $total, app_food.calories * $total, app_food.fat * $total, app_food.carbohydrates * $total, app_food.proteins * $total, CONCAT('$clickedDay', ' ', '$clickedTime')
                                 FROM app_user, app_food
                                 WHERE app_food.foodName = '$selected_val' AND app_user.userID = '$currentUserID';");
                                 $STH->execute();
