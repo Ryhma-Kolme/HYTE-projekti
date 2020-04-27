@@ -1,3 +1,4 @@
+<?php // Lähde: https://gist.github.com/danrovito/977bcb97c9c2dfd3398a#file-countrydropdown-html ?>
 <label for="sijainti"><b>Sijainti</b></label>        
             <select id="sijainti" name="sijainti">
                 <option value="Afghanistan">Afghanistan</option>
