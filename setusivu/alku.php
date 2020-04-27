@@ -18,11 +18,11 @@ if($_SESSION['sloggedIn']=="yes"){
     <div class="header-white">
         <?php echo("<h2> Tervetuloa " .$_SESSION['suserName']. "!</h2>");?>
         <hr>
-        <div class="row-buttons">
-            <button onclick="document.location = 'kuukausi.php'">Tarkastele kalenteria ja yhteenvetoja</button>
-            <button onclick="document.location = 'ravinto.php'">Lisää ruokia</button>
-            <button onclick="document.location = 'unisivu.php'">Miten nukuit viimeyönä?</button>
-            <button onclick="document.location = 'tilitiedot.php'">Päivitä tietojasi</button>
+        <div class="row-buttons" style="flex-flow: column; align-items: center;">
+            <button class="etusivu-button" onclick="document.location = 'kuukausi.php'">Tarkastele kalenteria ja yhteenvetoja</button>
+            <button class="etusivu-button" onclick="document.location = 'ravinto.php'">Lisää ruokia</button>
+            <button class="etusivu-button" onclick="document.location = 'unisivu.php'">Katso viimeisimmät unitietosi</button>
+            <button class="etusivu-button" onclick="document.location = 'tilitiedot.php'">Päivitä tilitietojasi</button>
         </div>
     </div>
 </main>

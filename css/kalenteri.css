@@ -29,6 +29,10 @@
     text-transform: capitalize;
 }
 
+#pvm {
+    text-transform: capitalize;
+}
+
 .calendar-table, .cal-cell-th, .cal-cell {  
     text-align: center;
     border: 0;
@@ -52,6 +56,10 @@
 .cal-cell:active {
     background-color: #77bfe0;
     cursor: pointer;
+}
+
+.active-cell {
+    background-color: #77bfe0;
 }
 
 .today {

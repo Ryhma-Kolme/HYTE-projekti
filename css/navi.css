@@ -32,7 +32,7 @@
 .logo {
     font-size: 30px !important;
     font-weight: bold !important;
-    color: #8d77e0 !important;
+    color: #6249c1 !important;
     text-transform: none !important;
     letter-spacing: 0 !important;
 }
@@ -63,11 +63,10 @@
 }
 
 /* RESPONSIIVISUUS */
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
     .nav-mob {
         display: -webkit-flex;
         display: flex;
-        justify-content: space-between;
         align-items: center;
         position: fixed;
         background-color: white;
@@ -77,22 +76,19 @@
         top: 0;
     }
 
-    .nav-mob ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 15px;
-    }
-
-    .nav-mob ul li a {
+    .nav-mob a {
+        display: flex;
+        place-content: center;
+        margin: 15px 10px;
         font-size: 15px;
-        color: black;
+        color: #255c75;
         text-decoration: none;
         -webkit-flex: 1;
         -ms-flex: 1;
         flex: 1;
     }
 
-    .nav-mob ul li a:hover {
+    .nav-mob a:hover {
         opacity: 0.5;
     }
     
@@ -100,7 +96,12 @@
         color: #8d77e0;
         font-weight: bold;
     }
+
+    .nav-mob .material-icons {
+        font-size: 30px !important;
+    }
+
     .nav-web {
         display: none;
     }
-} */
+}

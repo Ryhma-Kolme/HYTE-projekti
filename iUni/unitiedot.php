@@ -15,12 +15,10 @@
             </div>
         </div>
     </div> -->
-        
+<div class="row">
     <div class="column">
         <div class="blue-title">
             <h3>Viimeiset 7 vuorokautta</h3>
-        
-
         </div>
 
         <div class="uni-column-content">
@@ -69,11 +67,22 @@
                                     return value + 'h';
                                 }
                                     }
-                                }]
-                            }
-                        }               
-                    });
-                    }           
+                                ]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true,
+                                            callback: function(value, index, values){
+                                                return value + 'h';
+                                            }
+                                                }
+                                            }]
+                                        }
+                                    }               
+                                });
+                                }           
 
             async function getData(){       
                 const response = await fetch('graafit/unitiedot7.csv');
@@ -138,12 +147,22 @@
                                 callback: function(value, index, values){
                                     return value + 'l/m';
                                 }
+                            ]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true,
+                                        callback: function(value, index, values){
+                                            return value + 'l/m';
+                                        }
+                                            }
+                                        }]
                                     }
-                                }]
-                            }
-                        }               
-                    });
-                    }           
+                                }               
+                            });
+                            }           
 
                     async function getData(){       
                         const response = await fetch('graafit/leposyke7.csv');
@@ -166,3 +185,4 @@
             </div>
         </div>
     </div>
+</div>

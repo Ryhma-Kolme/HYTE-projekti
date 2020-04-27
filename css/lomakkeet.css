@@ -41,7 +41,7 @@ tr {
   text-align: left;
 }
 /* Set a style for the submit button */
-.registerbtn, .loginbtn, .addbtn, .continuebtn, .savebtn {
+.registerbtn, .loginbtn, .addbtn, .continuebtn, .savebtn,input[type=reset] {
   background-color: #267ea6;
   color: white;
   padding: 6px 10px;

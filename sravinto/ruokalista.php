@@ -25,7 +25,8 @@
                 ?>
                 </optgroup>
             </select>
-            <script>
+            
+            <script> // Hakufunktio listaan
             $(document).ready(function () {
             $('select').selectize({
             sortField: 'text'

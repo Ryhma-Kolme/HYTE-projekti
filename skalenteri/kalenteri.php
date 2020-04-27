@@ -36,28 +36,19 @@
         </div>
     </div>
 
-    <script>
-        function PickedDate(a) {
-            var b = a;
-            document.getElementById("pvm").innerHTML = b;
-            fetch('skalenteri/pvmValittu.php/?data=' + b)
-                .then((response) => {
-                    return response.json();
-                })
-                .then((vastaus) => { 
-                    
-                    console.log("Vastaus " + vastaus);
-                    
-                });
-            location.reload();
-        }
-    </script> 
-
     <div class="päivän-tiedot">
 
         <div class="column">
             <div class="blue-title">
-                <h3 id="pvm" style="font-size: 24px;"> <?= $_SESSION['valittu'] = date('d.m.Y', strtotime($_SESSION['valittu']));?> </h3>
+                <h3 id="pvm" style="font-size: 24px;">
+                    <?php 
+                        if($clickedDay == 0){ // Jos päivää ei ole valittu, näytetään tämänhetkinen päivä
+                            echo(strftime('%A %e.%m.%Y', $today));
+                        } else {
+                            echo(strftime('%A %e.%m.%Y', strtotime($_SESSION['valittu'])));
+                        }
+                    ?>
+                </h3>
             </div>
 
             <div class="column-content">
