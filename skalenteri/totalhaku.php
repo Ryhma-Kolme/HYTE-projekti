@@ -1,7 +1,6 @@
 <?php
 $currentUserID = $_SESSION['suserID']; // userID lisäys 
-$clickedDay = $_SESSION['valittu'];
-// echo ($clickedDay);
+$clickedDay = $_SESSION['valittu']; // haetaan valittu päivä
 
 // AAMIAINEN TOTAL ARVOJEN LASKU       
     // Lasketaan tämän päivän lisättyjen ruoka-aineiden määärä SQL:stä ja kalorien jne summat
