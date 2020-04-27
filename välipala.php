@@ -30,7 +30,15 @@
             <div class="column-content">
                 <?php // userID lisäys 
                     $currentUserID = $_SESSION['suserID'];
+
                     $clickedDay = $_SESSION['valittu']; // haetaan valittu päivä
+
+                      // Tarkistetaan onko käyttäjä kirjautunut sisään
+                      if ($currentUserID==NULL) {
+                        echo("<h2>Et ole kirjautunut sisään. Kirjaudu sisään uudelleen");
+                        ?> <a href="logOutUser.php">tästä</a> <?php echo("tallentaaksi ruokia.</h2>");
+                        } 
+
                 ?>
 
                 <?php // Poistaa kaikki tämän päivän välipalat "Poista kaikki"-napista
@@ -49,28 +57,37 @@
                     if(isset($_POST['foodbtn'])){
                         $selected_val = $_POST['food'];  // Valittu ruoka lisätään muuttujaan
                         $quantity = $_POST['määrä'];     // Syötetty määrä lisätään muuttujaan
-
-                        // Etsitään tietokannassa oleva alkuperäinen määrä
-                        $sql="SELECT app_user.userID, app_food.quantity 
-                        FROM app_user, app_food 
-                        WHERE app_food.foodName = '$selected_val' AND app_user.userID = '$currentUserID';";
-                        $kysely=$DBH->prepare($sql);				
-                        $kysely->execute();
-                        $row=$kysely->fetch();
                         
-                        // Lisätään alkuperäinen määrä muuttujaan
-                        $prequantity = $row["quantity"];                
-                        
-                        //Lasketaan annettu määrä jaettuna tietokannassa olevana määränä ja luodaan niistä muuttujakerroin
-                        $total = ($quantity / $prequantity);
+                          // Tarkistetaan onko käyttäjä valinnut ruoan listasta ja määrän sille
+                          if ($selected_val==NULL) {
+                            echo("<h2>Et ole valinnut ruokaa listasta. Valitse ruoka ennen tallentamista. </h2>");               
+                            } 
+                            else if ($quantity==0) {
+                            echo("<h2>Et ole lisännyt ruoan määrää. Lisää määrä ennen tallentamista. </h2>");               
+                            } 
+                            else {
+                                // Etsitään tietokannassa oleva alkuperäinen määrä
+                                $sql="SELECT app_user.userID, app_food.quantity 
+                                FROM app_user, app_food 
+                                WHERE app_food.foodName = '$selected_val' AND app_user.userID = '$currentUserID';";
+                                $kysely=$DBH->prepare($sql);				
+                                $kysely->execute();
+                                $row=$kysely->fetch();
+                                
+                                // Lisätään alkuperäinen määrä muuttujaan
+                                $prequantity = $row["quantity"];                
+                                
+                                //Lasketaan annettu määrä jaettuna tietokannassa olevana määränä ja luodaan niistä muuttujakerroin
+                                $total = ($quantity / $prequantity);
 
-                        // Otetaan valitun ruuan arvot ja userID ja lisätään ne aamiainen-tableen
-                        $STH = $DBH->prepare("INSERT INTO app_snacks 
-                        (userID, foodID, foodName, quantity, calories, fat, carbohydrates, proteins) 
-                        SELECT app_user.userID, app_food.foodID, app_food.foodName, app_food.quantity * $total, app_food.calories * $total, app_food.fat * $total, app_food.carbohydrates * $total, app_food.proteins * $total
-                        FROM app_user, app_food
-                        WHERE app_food.foodName = '$selected_val' AND app_user.userID = '$currentUserID';");
-                        $STH->execute();
+                                // Otetaan valitun ruuan arvot ja userID ja lisätään ne aamiainen-tableen
+                                $STH = $DBH->prepare("INSERT INTO app_snacks 
+                                (userID, foodID, foodName, quantity, calories, fat, carbohydrates, proteins) 
+                                SELECT app_user.userID, app_food.foodID, app_food.foodName, app_food.quantity * $total, app_food.calories * $total, app_food.fat * $total, app_food.carbohydrates * $total, app_food.proteins * $total
+                                FROM app_user, app_food
+                                WHERE app_food.foodName = '$selected_val' AND app_user.userID = '$currentUserID';");
+                                $STH->execute();
+                            }
                     }               
                 ?>
 
