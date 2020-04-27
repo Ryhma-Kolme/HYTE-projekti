@@ -36,7 +36,7 @@ if(isset($_POST['continuebtn'])){
   $_SESSION['swarningInput']="Given password and verified not same";
   ?>
   <span class="error">* <?php echo("Salasanat eivät täsmää");?></span>
-  
+
   <?php
   }else{
   unset($_SESSION['swarningInput']);
@@ -82,7 +82,7 @@ if(isset($_POST['continuebtn'])){
     <?php
           }
   } catch(PDOException $e) {
-    file_put_contents('config/DBErrors.txt', 'luoTili2.php: '.$e->getMessage()."\n", FILE_APPEND);
+    file_put_contents('log/DBErrors.txt', 'luoTili2.php: '.$e->getMessage()."\n", FILE_APPEND);
     $_SESSION['swarningInput'] = 'Database problem';
         
     }

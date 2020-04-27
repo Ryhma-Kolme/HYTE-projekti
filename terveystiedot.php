@@ -71,7 +71,7 @@ if(isset($_POST['registerbtn'])){
         $STH->execute($data);
         
     } catch(PDOException $e) {
-        file_put_contents('config/DBErrors.txt', 'terveystiedot.php: '.$e->getMessage()."\n", FILE_APPEND);
+        file_put_contents('log/DBErrors.txt', 'terveystiedot.php: '.$e->getMessage()."\n", FILE_APPEND);
         $_SESSION['swarningInput'] = 'Database problem';
         
       }
