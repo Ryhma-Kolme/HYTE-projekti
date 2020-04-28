@@ -42,6 +42,10 @@
             <div class="blue-title">
                 <h3 id="pvm" style="font-size: 24px;">
                     <?php 
+                        if(!isset($_SESSION['valittu']))
+                        {
+                        $_SESSION['valittu'] = $today;
+                        }
                         //  if($clickedDay == 0){ // Jos päivää ei ole valittu, näytetään tämänhetkinen päivä
                         //      echo(strftime('%A %e.%m.%Y', $today));
                         // } else {
