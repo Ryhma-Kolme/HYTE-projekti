@@ -1,6 +1,5 @@
-<?php // Luodaan taulukko johon syötetään arvot 
-echo("
-<table>
+<!-- Luodaan taulukko johon syötetään arvot  -->
+<table lang="fi">
   <tr>
     <th>Ruoka-aine</th>
     <th>Määrä</th>
@@ -8,25 +7,19 @@ echo("
     <th>Rasva</th>
     <th>Hiilihydraatit</th>
     <th>Proteiinit</th>
-    <th>Lisätty</th>
   </tr>
-");
-
+<?php
 while	($row=$kysely->fetch()){	
-    echo("
-      <tr>
-        <td>".$row["foodName"]."</td>
-        <td>".$row["quantity"]." g</td>
-        <td>".$row["calories"]." kcal</td>
-        <td>".$row["fat"]." g</td>
-        <td>".$row["carbohydrates"]." g</td>
-        <td>".$row["proteins"]." g</td>
-        <td>".$row["timeOfEating"]."</td>
-      </tr>
-    ");
-  }
-
   echo("
-  </table>
+    <tr>
+      <td>".$row["foodName"]."</td>
+      <td>".$row["quantity"]." g</td>
+      <td>".$row["calories"]." kcal</td>
+      <td>".$row["fat"]." g</td>
+      <td>".$row["carbohydrates"]." g</td>
+      <td>".$row["proteins"]." g</td>
+    </tr>
   ");
+}
 ?>
+</table>

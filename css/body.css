@@ -9,8 +9,8 @@ main {
 }
 
 /* RESPONSIIVISUUS */
-/* @media (max-width: 600px) {
+@media (max-width: 450px) {
     main {
         margin: 90px 10px 2px 10px;
     }
-} */
+}

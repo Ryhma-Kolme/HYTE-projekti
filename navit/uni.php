@@ -6,6 +6,7 @@
         <li><a class="active" href="unisivu.php">Uni</a></li>
     </ul>
     <ul class="right">
+        <li><a><?= strftime('%a %e.%m.%Y', strtotime($_SESSION['valittu']));?></a></li>
         <li><a href="tilitiedot.php">Oma tili</a></li>
         <li><a href="logOutUser.php"><span class="material-icons">exit_to_app</span></a></li>
     </ul>
@@ -18,4 +19,5 @@
     <a class="active" href="unisivu.php"><span class="material-icons">brightness_3</span></a>
     <a href="tilitiedot.php"><span class="material-icons">face</span></a>
     <a href="logOutUser.php"><span class="material-icons">exit_to_app</span></a>
+    <a class="pvm"><?= strftime('%a %e.%m.%Y', strtotime($_SESSION['valittu']));?></a>
 </nav>
