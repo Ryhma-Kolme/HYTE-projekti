@@ -10,6 +10,13 @@ table {
     width: 100%;
     border: 1px solid #beccc9;
     margin-bottom: 10px;
+    
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
 th, td {
