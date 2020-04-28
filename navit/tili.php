@@ -7,7 +7,7 @@
     </ul>
     <ul class="right">
         <li><a><?= strftime('%a %e.%m.%Y', strtotime($_SESSION['valittu']));?></a></li>
-        <li><a class="active" href="tilitiedot.php">Oma tili</a></li>
+        <li><a class="active" href="tilitiedot.php"><?php echo($_SESSION['suserName']); ?></a></li>
         <li><a href="logOutUser.php"><span class="material-icons">exit_to_app</span></a></li>
     </ul>
 </nav>
