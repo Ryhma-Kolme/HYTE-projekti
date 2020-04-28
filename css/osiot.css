@@ -110,7 +110,7 @@
 
 /* RESPONSIIVISUUS */
 @media (max-width: 900px) {
-    .cal-row-1 {
+    .cal-row-1, .uni-column-content {
         -webkit-flex-direction: column;
         flex-direction: column;
     }
