@@ -2,8 +2,6 @@
 include_once("config/chttps.php");
 include_once("config/cconfig.php");
 session_start();
-// Asettaa Suomen ajan ja päivämäärän
-setlocale(LC_ALL, 'fi_FI');
 ?>
 
 <!DOCTYPE html>
