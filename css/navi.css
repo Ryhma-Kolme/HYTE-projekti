@@ -108,7 +108,7 @@
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 465px) {
     .pvm {
         margin: 0 10px 10px 10px !important;
         place-content: flex-start !important;
