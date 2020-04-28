@@ -9,7 +9,7 @@ main {
 }
 
 /* RESPONSIIVISUUS */
-@media (max-width: 465px) {
+@media (max-width: 450px) {
     main {
         margin: 90px 10px 2px 10px;
     }
