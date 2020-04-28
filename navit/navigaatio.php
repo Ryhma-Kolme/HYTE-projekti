@@ -7,7 +7,7 @@
             <li><a href="unisivu.php">Uni</a></li>
         </div>
         <div class="right">
-            <li><a href="tilitiedot.php">Oma tili</a></li>
+            <li><a href="tilitiedot.php"><?php echo($_SESSION['suserName']); ?></a></li>
             <li><a href="logOutUser.php"><span class="material-icons">exit_to_app</span></a></li>
         </div>
     </ul>
