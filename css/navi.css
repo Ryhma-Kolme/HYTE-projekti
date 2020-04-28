@@ -67,6 +67,7 @@
     .nav-mob {
         display: -webkit-flex;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         position: fixed;
         background-color: white;
@@ -79,10 +80,11 @@
     .nav-mob a {
         display: flex;
         place-content: center;
-        margin: 15px 10px;
+        margin: 10px 10px;
         font-size: 15px;
         color: #255c75;
         text-decoration: none;
+        text-transform: uppercase;
         -webkit-flex: 1;
         -ms-flex: 1;
         flex: 1;
@@ -103,5 +105,12 @@
 
     .nav-web {
         display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .pvm {
+        margin: 0 10px 10px 10px !important;
+        place-content: flex-start !important;
     }
 }

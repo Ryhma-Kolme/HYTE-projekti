@@ -20,4 +20,5 @@
     <a href="unisivu.php"><span class="material-icons">brightness_3</span></a>
     <a href="tilitiedot.php"><span class="material-icons">face</span></a>
     <a href="logOutUser.php"><span class="material-icons">exit_to_app</span></a>
+    <a class="pvm"><?= strftime('%a %e.%m.%Y', strtotime($_SESSION['valittu']));?></a>
 </nav>
