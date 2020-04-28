@@ -8,7 +8,6 @@ echo("
     <th>Rasva</th>
     <th>Hiilihydraatit</th>
     <th>Proteiinit</th>
-    <th>Lisätty</th>
   </tr>
 ");
 
@@ -21,7 +20,6 @@ while	($row=$kysely->fetch()){
         <td>".$row["fat"]." g</td>
         <td>".$row["carbohydrates"]." g</td>
         <td>".$row["proteins"]." g</td>
-        <td>".$row["timeOfEating"]."</td>
       </tr>
     ");
   }
