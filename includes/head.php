@@ -2,6 +2,7 @@
 include_once("config/chttps.php");
 include_once("config/cconfig.php");
 session_start();
+setlocale(LC_TIME, 'fi_FI');
 ?>
 
 <!DOCTYPE html>

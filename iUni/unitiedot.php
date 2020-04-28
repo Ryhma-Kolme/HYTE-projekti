@@ -23,27 +23,49 @@
 
         <div class="uni-column-content">
             <div class="column-1">
-                <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
+    <body>
+    <canvas id="uni7Chart"></canvas>
+    
+    <script>
+        chartIt();
+         
+        async function chartIt() {
+            const ctx = document.getElementById('uni7Chart').getContext('2d');
+            const uniData = await getData();
+            const uni7Chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: uniData.date,
+                    datasets: [
+                    {
+                        label: 'Keskiarvo',
+                        type: 'line',
+                        fill: false,
+                        data: uniData.average,
+                        backgroundColor: 'rgba(146, 209, 226, 1)',
+                        borderColor: 'rgba(0, 0, 0, 1)',
+                        borderWidth: 1
+                        },
+                        {
+                        label: 'Unen kesto',
+                        data: uniData.duration,
+                        backgroundColor: 'rgba(38, 126, 166, 1)',
+                        borderColor: 'rgba(31, 104, 137, 1)',
+                        borderWidth: 1
+                        
 
-                <canvas id="uni7Chart"></canvas>
-                
-                <script>
-                    chartIt();
-                    
-                    async function chartIt() {
-                        const uni7Data = await getData();
-                        const ctx = document.getElementById('uni7Chart').getContext('2d');
-                        const myChart1 = new Chart(ctx, {
-                            type: 'bar',
-                            data: {
-                                labels: uni7Data.xs,
-                                datasets: [
-                                {
-                                    label: 'Unen kesto',
-                                    data: uni7Data.ys,
-                                    backgroundColor: 'rgba(38, 126, 166, 1)',
-                                    borderColor: 'rgba(31, 104, 137, 1)',
-                                    borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                callback: function(value, index, values){
+                                    return value + 'h';
+                                }
                                     }
                                 ]
                             },
@@ -62,53 +84,68 @@
                                 });
                                 }           
 
-                        async function getData(){            
-                            const xs = [];
-                            const ys = [];
-                                    
-                            const response = await fetch('graafit/viikkouni.csv');
-                            const uni7Data = await response.text();
-                        
+            async function getData(){       
+                const response = await fetch('graafit/unitiedot7.csv');
+                const data = await response.text();     
+                const date = [];
+                const duration = [];
+                const average = [];
+                const rows = data.split('\n').slice(1);
+                rows.forEach(row => {
+                const cols = row.split(',');
+                date.push(cols[0]);
+                duration.push(cols[1]);
+                average.push(cols[3]);
+                }); 
+                return {date, duration, average};
+            }
+        
+        </script>
+                
+            </div>
+            
 
-                            const uni7Table = uni7Data.split('\n').slice(1);
-                            uni7Table.forEach(row => {
-                            const uni7Columns = row.split(',')
-                            const uni7Date = uni7Columns[0];
-                            xs.push(uni7Date);
-                            const uni7Duration = uni7Columns[1];
-                            ys.push(uni7Duration);
-                            console.log(uni7Date, uni7Duration);
-                            }); 
-                            return {xs, ys};
+            <div class="column-2">
+            <body>
+    <canvas id="leposyke7Chart"></canvas>
+    
+    <script>
+        chartIt();
+         
+        async function chartIt() {
+            const ctx = document.getElementById('leposyke7Chart').getContext('2d');
+            const leposykeData = await getData();
+            const leposyke7Chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: leposykeData.date,
+                    datasets: [
+                    {
+                        label: 'Leposyke',
+                        data: leposykeData.bpm,
+                        fill: false,
+                        backgroundColor: 'rgba(31, 104, 137, 1)',
+                        borderColor: 'rgba(31, 104, 137, 1)',
+                        borderWidth: 1
+                        },
+                        {
+                        label: 'Keskiarvo',
+                        data: leposykeData.average,
+                        fill: false,
+                        backgroundColor: 'rgba(146, 209, 226, 1)',
+                        borderColor: 'rgba(0, 0, 0, 1)',
+                        borderWidth: 1
                         }
                     
-                    </script>
-                        
-                </div>
-                    
-                    <div class="column-2">
-                        <h4></h4>
-                    <body>
-            <canvas id="leposyke7Chart"></canvas>
-            
-            <script>
-                chartIt();
-                
-                async function chartIt() {
-                    const leposyke7Data = await getData();
-                    const ctx = document.getElementById('leposyke7Chart').getContext('2d');
-                    const myChart2 = new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels: leposyke7Data.xs,
-                            datasets: [
-                            {
-                                label: 'Leposyke',
-                                data: leposyke7Data.ys,
-                                fill: false,
-                                backgroundColor: 'rgba(31, 104, 137, 1)',
-                                borderColor: 'rgba(31, 104, 137, 1)',
-                                borderWidth: 1
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                callback: function(value, index, values){
+                                    return value + 'l/m';
                                 }
                             ]
                         },
@@ -127,27 +164,24 @@
                             });
                             }           
 
-                    async function getData(){            
-                        const xs = [];
-                        const ys = [];
-                                
+                    async function getData(){       
                         const response = await fetch('graafit/leposyke7.csv');
-                        const leposyke7Data = await response.text();
-                    
-
-                        const leposyke7Table = leposyke7Data.split('\n').slice(1);
-                        leposyke7Table.forEach(row => {
-                        const leposyke7Columns = row.split(',')
-                        const leposyke7Date = leposyke7Columns[0];
-                        xs.push(leposyke7Date);
-                        const leposyke7Duration = leposyke7Columns[1];
-                        ys.push(leposyke7Duration);
-                        console.log(leposyke7Date, leposyke7Duration);
+                        const data = await response.text();     
+                        const date = [];
+                        const bpm = [];
+                        const average = [];
+                        const rows = data.split('\n').slice(1);
+                        rows.forEach(row => {
+                        const cols = row.split(',');
+                        date.push(cols[0]);
+                        bpm.push(cols[1]);
+                        average.push(parseFloat(cols[2]));
                         }); 
-                        return {xs, ys};
+                        console.log(date, bpm, average);
+                        return {date, bpm, average};
                     }
-                
-                </script>
+        
+        </script>
             </div>
         </div>
     </div>
