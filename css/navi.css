@@ -63,7 +63,7 @@
 }
 
 /* RESPONSIIVISUUS */
-@media (max-width: 600px) {
+@media (max-width: 765px) {
     .nav-mob {
         display: -webkit-flex;
         display: flex;

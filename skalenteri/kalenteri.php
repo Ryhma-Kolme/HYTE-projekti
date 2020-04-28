@@ -42,11 +42,11 @@
             <div class="blue-title">
                 <h3 id="pvm" style="font-size: 24px;">
                     <?php 
-                        if($clickedDay == 0){ // Jos päivää ei ole valittu, näytetään tämänhetkinen päivä
-                            echo(strftime('%A %e.%m.%Y', $today));
-                        } else {
+                        //  if($clickedDay == 0){ // Jos päivää ei ole valittu, näytetään tämänhetkinen päivä
+                        //      echo(strftime('%A %e.%m.%Y', $today));
+                        // } else {
                             echo(strftime('%A %e.%m.%Y', strtotime($_SESSION['valittu'])));
-                        }
+                        // }
                     ?>
                 </h3>
             </div>
