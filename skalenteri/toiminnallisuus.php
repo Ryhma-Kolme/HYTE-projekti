@@ -1,4 +1,6 @@
 <?php
+// LÄHDE: https://codingwithsara.com/how-to-code-calendar-in-php/
+
 // Asettaa Suomen ajan ja päivämäärän
 setlocale(LC_ALL, 'fi_FI');
 
@@ -51,7 +53,7 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
     if ($today == $date) {
         $week .= '<td class="today active-cell" onclick="PickedDate(\'' . $date . '\')">';
     } else {
-        $week .= '<td class="cal-cell" onclick="PickedDate(\'' . $date . '\')">';
+        $week .= '<td id="test" class="cal-cell" onclick="PickedDate(\'' . $date . '\')">';
     }
 
     // $week -muuttujaan lisätään </td>
@@ -68,7 +70,6 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
         // Jos str on 7, looppi "rakentaa" taulukkoon viikon eli tr
         $weeks[] = '<tr>' . $week . '</tr>';
         $week = '';
-
     }
 }
 ?>

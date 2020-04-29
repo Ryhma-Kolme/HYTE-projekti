@@ -25,7 +25,7 @@
                 <tbody>
                     <?php
                         include("skalenteri/toiminnallisuus.php");
-
+                        // Toiminnallisuus-tiedostossa on luotu lista viikoista ja sen sisältämistä päivistä. Foreachin avulla ne tuodaan näkyville.
                         foreach ($weeks as $week) {
                             echo $week;
                         }
@@ -41,16 +41,12 @@
         <div class="column">
             <div class="blue-title">
                 <h3 id="pvm" style="font-size: 24px;">
-                    <?php 
-                        if(!isset($_SESSION['valittu']))
-                        {
-                        $_SESSION['valittu'] = $today;
+                    <?php
+                        // Jos sessiomuuttujassa ei ole valittua päivää, näytetään tämän hetkinen päivä
+                        if(!isset($_SESSION['valittu'])){
+                            $_SESSION['valittu'] = $today;
                         }
-                        //  if($clickedDay == 0){ // Jos päivää ei ole valittu, näytetään tämänhetkinen päivä
-                        //      echo(strftime('%A %e.%m.%Y', $today));
-                        // } else {
-                            echo(strftime('%A %e.%m.%Y', strtotime($_SESSION['valittu'])));
-                        // }
+                        echo(strftime('%A %e.%m.%Y', strtotime($_SESSION['valittu'])));
                     ?>
                 </h3>
             </div>

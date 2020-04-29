@@ -1,15 +1,20 @@
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
 <script>
-    function PickedDate(a) { // Luodaan funktio klikatulle päivälle
-        var b = a; // Luetaan muuttuja  javascript muuttujaksi
-        //document.getElementById("pvm").innerHTML = b; // Muuttaa b -muuttujan html elementiksi - tämän takia vvvv-mm-dd formaatti vilahtaa (!!)
-        fetch('skalenteri/pvmValittu.php/?data=' + b) // Vie data-muuttujaan b-muuttujan arvon
-            .then((response) => {
-                return response.json();
-            })
-            .then((vastaus) => { 
-                console.log(vastaus);
-            });
-        location.reload();
+    function PickedDate(a) { // Luodaan funktio klikatulle päivälle a=$date > formaatti 2020-04-29
+        var b = a; // Luetaan muuttuja javascript muuttujaksi, jolloin esim. b = 2020-04-29
+        fetch('skalenteri/pvmValittu.php/?data=' + b) // Lisää pvmValittu-tiedoston data-muuttujaan b-muuttujan
+            // .then((response) => {
+            //     return response.json(); // Haun jälkeen funktio palauttaa kutsutun datan
+            // })
+            // .then((vastaus) => { 
+            //     console.log(vastaus); // Tulostaa konsoliin klikatun datan
+            // });
+        location.reload(); // Päivittää sivun heti klikkauksen jälkeen, jolloin otsikkoon tulee näkyville klikattu päivä.
+
+        // return $(document).on('click', 'td', function(){
+        //     $(this).addClass('active-cell').siblings().removeClass('active-cell')
+        // })
     }
 </script> 
 
