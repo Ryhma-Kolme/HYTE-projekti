@@ -53,36 +53,23 @@
                         backgroundColor: 'rgba(38, 126, 166, 1)',
                         borderColor: 'rgba(31, 104, 137, 1)',
                         borderWidth: 1
-                        
-
                         }
                     ]
                 },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true,
-                                callback: function(value, index, values){
-                                    return value + 'h';
-                                }
-                                    }
-                                ]
-                            },
-                            options: {
-                                scales: {
-                                    yAxes: [{
-                                        ticks: {
-                                            beginAtZero: true,
-                                            callback: function(value, index, values){
-                                                return value + 'h';
-                                            }
-                                                }
-                                            }]
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true,
+                                        callback: function(value, index, values){
+                                            return value + 'h';
                                         }
-                                    }               
-                                });
-                                }           
+                                            }
+                                        }]
+                                    }
+                                }               
+                            });
+                            }           
 
             async function getData(){       
                 const response = await fetch('graafit/unitiedot7.csv');
@@ -139,16 +126,6 @@
                     
                     ]
                 },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true,
-                                callback: function(value, index, values){
-                                    return value + 'l/m';
-                                }
-                            ]
-                        },
                         options: {
                             scales: {
                                 yAxes: [{
