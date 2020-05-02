@@ -107,15 +107,25 @@ $startDate = $ym . '-' . 01; // Kuukauden ensimmäinen päivä muuttujaan
     $chMtotal = $bremTotalCh + $lunchMtotalCh + $dinMtotalCh + $snMtotalCh + $emMtotalCh;
     // Proteiinia kk. yhteensä
     $proteinsMtotal = $bremTotalP + $lunchMtotalP + $dinMtotalP + $snMtotalP + $emMtotalP;
+    // Tässä kuussa päiviä
+    $todayDay = date("d");
+    // Tämän hetkisen kuukauden nimi ja vuosi formaatissa toukokuu, 2020
+    $month_name = strftime('%B, %Y', strtotime($today));
 
-    $daysInMonth = ($day - 1); // Päiviä kuukaudessa
-
+    // Jos valittu kuu on tämä kuukausi lasketaan keskiarvo vain jo kuussa kuluneiden päivien kesken
+    if ($title == $month_name) {
+        $monthCalAvg = ($caloriesMtotal / $todayDay);
+    $monthFatAvg = ($fatsMtotal / $todayDay);
+    $monthChAvg = ($chMtotal / $todayDay);
+    $monthProAvg = ($proteinsMtotal / $todayDay);
+    } else {
     // Keskiarvojen lasku (Jaetaan kuukauden kaikki ravinnot yhteen ja jaetaan ne kuukauden päivien määrällä)
-    $monthCalAvg = ($caloriesMtotal / $daysInMonth);
-    $monthFatAvg = ($fatsMtotal / $daysInMonth);
-    $monthChAvg = ($chMtotal / $daysInMonth);
-    $monthProAvg = ($proteinsMtotal / $daysInMonth);
-
+    $monthCalAvg = ($caloriesMtotal / $day_count);
+    $monthFatAvg = ($fatsMtotal / $day_count);
+    $monthChAvg = ($chMtotal / $day_count);
+    $monthProAvg = ($proteinsMtotal / $day_count);
+    }
+    
     $clickedDay = date('d.m.Y', strtotime($_SESSION['valittu']));
 
 ?>
