@@ -64,7 +64,7 @@
             </tr>
 
             <tr class="mobile">
-                <th colspan='3' style='color:#267ea6;'>Aamiainen</th>
+                <th colspan='3' class='ateria-th'>Aamiainen</th>
                 <td class="respo"><button class="plus" onclick="window.location.href = 'aamiainen.php'">Lisää</button></td>
             </tr>
             <?php
@@ -83,7 +83,7 @@
                         </tr>
 
                         <tr class='mobile'>
-                            <th colspan='4' style='color:#267ea6;'>Aamiainen</th>
+                            <th colspan='4' class='ateria-th'>Aamiainen</th>
                         </tr>
                         <tr class='mobile'>
                             <th>Kalorit</th>
@@ -133,7 +133,7 @@
                 </td>
             </tr>
             <tr class='mobile'>
-                <th colspan='3' style='color:#267ea6;'>Lounas</th>
+                <th colspan='3' class='ateria-th'>Lounas</th>
                 <td class="respo">
                     <button class="plus" onclick="window.location.href = 'lounas.php'">Lisää</button>
                 </td>
@@ -153,7 +153,7 @@
                     </tr>
 
                     <tr class='mobile'>
-                        <th colspan='4' style='color:#267ea6;'>Lounas</th>
+                        <th colspan='4' class='ateria-th'>Lounas</th>
                     </tr>
                     <tr class='mobile'>
                         <th>Kalorit</th>
@@ -205,7 +205,7 @@
             </tr>
 
             <tr class="mobile">
-                <th colspan='3' style='color:#267ea6;'>Välipala</th>
+                <th colspan='3' class='ateria-th'>Välipala</th>
                 <td class="respo">
                     <button class="plus" onclick="window.location.href = 'välipala.php'">Lisää</button>
                 </td>
@@ -226,7 +226,7 @@
                         </tr>
                         
                         <tr class='mobile'>
-                        <th colspan='4' style='color:#267ea6;'>Välipala</th>
+                        <th colspan='4' class='ateria-th'>Välipala</th>
                         </tr>
                         <tr class='mobile'>
                             <th>Kalorit</th>
@@ -278,7 +278,7 @@
                 </td>
             </tr>
             <tr class="mobile">
-                <th colspan='3' style='color:#267ea6;'>Päivällinen</th>
+                <th colspan='3' class='ateria-th'>Päivällinen</th>
                 <td class="respo">
                     <button class="plus" onclick="window.location.href = 'päivällinen.php'">Lisää</button>
                 </td>
@@ -298,7 +298,7 @@
                         </tr>
 
                         <tr class='mobile'>
-                        <th colspan='4' style='color:#267ea6;'>Päivällinen</th>
+                        <th colspan='4' class='ateria-th'>Päivällinen</th>
                         </tr>
                         <tr class='mobile'>
                             <th>Kalorit</th>
@@ -349,7 +349,7 @@
                 </td>
             </tr>
             <tr class="mobile">
-                <th colspan='3' style='color:#267ea6;'>Iltapala</th>
+                <th colspan='3' class='ateria-th'>Iltapala</th>
                 <td class="respo">
                     <button class="plus" onclick="window.location.href = 'iltapala.php'">Lisää</button>
                 </td>
@@ -369,7 +369,7 @@
                         </tr>
 
                         <tr class='mobile'>
-                        <th colspan='4' style='color:#267ea6;'>Iltapala</th>
+                        <th colspan='4' class='ateria-th'>Iltapala</th>
                         </tr>
                         <tr class='mobile'>
                             <th>Kalorit</th>
@@ -417,7 +417,7 @@
                 </tr>
 
                 <tr class='mobile'>
-                <th colspan='4' style='color:#267ea6;'>Yhteensä</th>
+                <th colspan='4' class='ateria-th'>Yhteensä</th>
                 </tr>
                 <tr class='mobile'>
                     <th>Kalorit</th>
