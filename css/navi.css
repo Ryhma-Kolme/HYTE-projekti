@@ -53,6 +53,11 @@
     opacity: 0.5;
 }
 
+.logo:hover, .pvm:hover {
+    opacity: 1 !important;
+    cursor: default;
+}
+
 .nav-web .active {
     color: #8d77e0;
     font-weight: bold;
