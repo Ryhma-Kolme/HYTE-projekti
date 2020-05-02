@@ -20,7 +20,7 @@
         <?php // Taulukko kaikille aterioille
             echo("  
                 <table style='border:0; margin:0;'>
-                <tr>
+                <tr class='laptop'>
                     <th>Ruokailu</th>
                     <th>Määrä yht.</th>
                     <th>Kalorit yht.</th>
@@ -54,27 +54,47 @@
 
             // Jos ateriaan ei ole vielä lisätty mitään 
             if ($bretotal==0){
-            ?><tr>               
+            ?>
+            <tr class='laptop'>               
                 <th>Aamiainen</th>
                 <td class="lisaa">
                     <button class="plus" onclick="window.location.href = 'aamiainen.php'">+</button>    
                     <p>Et ole vielä lisännyt aamiaista</p>
                 </td>
-                <td class="respo">
-                    <button class="plus" onclick="window.location.href = 'aamiainen.php'">Lisää</button>
-                </td>
-            </tr> <?php
+            </tr>
+
+            <tr class="mobile">
+                <th colspan='3' class='ateria-th'>Aamiainen</th>
+                <td class="respo"><button class="plus" onclick="window.location.href = 'aamiainen.php'">Lisää</button></td>
+            </tr>
+            <?php
             } else {
 
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
                 while	($row=$kysely->fetch()){	
                     echo("
-                        <tr>               
+                        <tr class='laptop'>               
                             <th>Aamiainen".$row[""]."</th>
                             <td>".$row['SUM(quantity)']." g</td>
                             <td>".$row['SUM(calories)']." kcal</td>
                             <td>".$row['SUM(fat)']." g</td>
                             <td>".$row['SUM(carbohydrates)']." g</td>
+                            <td>".$row['SUM(proteins)']." g</td>
+                        </tr>
+
+                        <tr class='mobile'>
+                            <th colspan='4' class='ateria-th'>Aamiainen</th>
+                        </tr>
+                        <tr class='mobile'>
+                            <th>Kalorit</th>
+                            <th>Hiilihydraatit</th>
+                            <th>Rasvat</th>
+                            <th>Proteiinit</th>
+                        </tr>
+                        <tr class='mobile'>
+                            <td>".$row['SUM(calories)']." kcal</td>
+                            <td>".$row['SUM(carbohydrates)']." g</td>
+                            <td>".$row['SUM(fat)']." g</td>
                             <td>".$row['SUM(proteins)']." g</td>
                         </tr>
                     ");
@@ -104,26 +124,47 @@
 
             // Jos ateriaan ei ole vielä lisätty mitään 
             if ($lunchtotal==0){
-            ?><tr>               
-            <th>Lounas</th>
+            ?>
+            <tr class='laptop'>               
+                <th>Lounas</th>
                 <td class="lisaa">
                     <button class="plus" onclick="window.location.href = 'lounas.php'">+</button>    
                     <p>Et ole vielä lisännyt lounasta</p>
                 </td>
+            </tr>
+            <tr class='mobile'>
+                <th colspan='3' class='ateria-th'>Lounas</th>
                 <td class="respo">
                     <button class="plus" onclick="window.location.href = 'lounas.php'">Lisää</button>
                 </td>
-            </tr> <?php
+            </tr>
+            <?php
             } else {
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
                 while	($row=$kysely->fetch()){	    
                 echo("
-                    <tr>               
+                    <tr class='laptop'>               
                         <th>Lounas</th>
                         <td>".$row['SUM(quantity)']." g</td>
                         <td>".$row['SUM(calories)']." kcal</td>
                         <td>".$row['SUM(fat)']." g</td>
                         <td>".$row['SUM(carbohydrates)']." g</td>
+                        <td>".$row['SUM(proteins)']." g</td>
+                    </tr>
+
+                    <tr class='mobile'>
+                        <th colspan='4' class='ateria-th'>Lounas</th>
+                    </tr>
+                    <tr class='mobile'>
+                        <th>Kalorit</th>
+                        <th>Hiilihydraatit</th>
+                        <th>Rasvat</th>
+                        <th>Proteiinit</th>
+                    </tr>
+                    <tr class='mobile'>
+                        <td>".$row['SUM(calories)']." kcal</td>
+                        <td>".$row['SUM(carbohydrates)']." g</td>
+                        <td>".$row['SUM(fat)']." g</td>
                         <td>".$row['SUM(proteins)']." g</td>
                     </tr>
                     ");
@@ -154,27 +195,49 @@
 
             // Jos ateriaan ei ole vielä lisätty mitään 
             if ($sntotal==0){
-            ?><tr>               
-            <th>Välipala</th>
+            ?>
+            <tr class="laptop">               
+                <th>Välipala</th>
                 <td class="lisaa">
                     <button class="plus" onclick="window.location.href = 'välipala.php'">+</button>    
                     <p>Et ole vielä lisännyt välipalaa</p>
                 </td>
+            </tr>
+
+            <tr class="mobile">
+                <th colspan='3' class='ateria-th'>Välipala</th>
                 <td class="respo">
                     <button class="plus" onclick="window.location.href = 'välipala.php'">Lisää</button>
                 </td>
-            </tr> <?php
+            </tr>
+            <?php
             } else {
 
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
                 while	($row=$kysely->fetch()){	
                     echo("
-                        <tr>               
+                        <tr class='laptop'>               
                             <th>Välipala</th>
                             <td>".$row['SUM(quantity)']." g</td>
                             <td>".$row['SUM(calories)']." kcal</td>
                             <td>".$row['SUM(fat)']." g</td>
                             <td>".$row['SUM(carbohydrates)']." g</td>
+                            <td>".$row['SUM(proteins)']." g</td>
+                        </tr>
+                        
+                        <tr class='mobile'>
+                        <th colspan='4' class='ateria-th'>Välipala</th>
+                        </tr>
+                        <tr class='mobile'>
+                            <th>Kalorit</th>
+                            <th>Hiilihydraatit</th>
+                            <th>Rasvat</th>
+                            <th>Proteiinit</th>
+                        </tr>
+                        <tr class='mobile'>
+                            <td>".$row['SUM(calories)']." kcal</td>
+                            <td>".$row['SUM(carbohydrates)']." g</td>
+                            <td>".$row['SUM(fat)']." g</td>
                             <td>".$row['SUM(proteins)']." g</td>
                         </tr>
                     ");
@@ -206,26 +269,47 @@
 
             // Jos ateriaan ei ole vielä lisätty mitään 
             if ($dintotal==0){
-            ?><tr>               
-            <th>Päivällinen</th>
+            ?>
+            <tr class="laptop">               
+                <th>Päivällinen</th>
                 <td class="lisaa">
                     <button class="plus" onclick="window.location.href = 'päivällinen.php'">+</button>    
                     <p>Et ole vielä lisännyt päivällistä</p>
                 </td>
+            </tr>
+            <tr class="mobile">
+                <th colspan='3' class='ateria-th'>Päivällinen</th>
                 <td class="respo">
                     <button class="plus" onclick="window.location.href = 'päivällinen.php'">Lisää</button>
                 </td>
-            </tr> <?php
+            </tr>
+            <?php
             } else {
             //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
                 while	($row=$kysely->fetch()){	
                     echo("
-                        <tr>               
+                        <tr class='laptop'>               
                             <th>Päivällinen</th>
                             <td>".$row['SUM(quantity)']." g</td>
                             <td>".$row['SUM(calories)']." kcal</td>
                             <td>".$row['SUM(fat)']." g</td>
                             <td>".$row['SUM(carbohydrates)']." g</td>
+                            <td>".$row['SUM(proteins)']." g</td>
+                        </tr>
+
+                        <tr class='mobile'>
+                        <th colspan='4' class='ateria-th'>Päivällinen</th>
+                        </tr>
+                        <tr class='mobile'>
+                            <th>Kalorit</th>
+                            <th>Hiilihydraatit</th>
+                            <th>Rasvat</th>
+                            <th>Proteiinit</th>
+                        </tr>
+                        <tr class='mobile'>
+                            <td>".$row['SUM(calories)']." kcal</td>
+                            <td>".$row['SUM(carbohydrates)']." g</td>
+                            <td>".$row['SUM(fat)']." g</td>
                             <td>".$row['SUM(proteins)']." g</td>
                         </tr>
                     ");
@@ -256,26 +340,47 @@
 
             // Jos ateriaan ei ole vielä lisätty mitään 
             if ($emtotal==0){
-            ?><tr>               
-            <th>Iltapala</th>
+            ?>
+            <tr class="laptop">               
+                <th>Iltapala</th>
                 <td class="lisaa">
                     <button class="plus" onclick="window.location.href = 'iltapala.php'">+</button>    
                     <p>Et ole vielä lisännyt iltapalaa</p>
                 </td>
+            </tr>
+            <tr class="mobile">
+                <th colspan='3' class='ateria-th'>Iltapala</th>
                 <td class="respo">
                     <button class="plus" onclick="window.location.href = 'iltapala.php'">Lisää</button>
                 </td>
-            </tr> <?php
+            </tr>
+            <?php
             } else {
                 //Jos ateriaan on lisätty joku/joitain ruoka-aineita luodaan taulukko
                 while($row=$kysely->fetch()){	
                     echo("
-                        <tr>               
+                        <tr class='laptop'>               
                             <th>Iltapala</th>
                             <td>".$row['SUM(quantity)']." g</td>
                             <td>".$row['SUM(calories)']." kcal</td>
                             <td>".$row['SUM(fat)']." g</td>
                             <td>".$row['SUM(carbohydrates)']." g</td>
+                            <td>".$row['SUM(proteins)']." g</td>
+                        </tr>
+
+                        <tr class='mobile'>
+                        <th colspan='4' class='ateria-th'>Iltapala</th>
+                        </tr>
+                        <tr class='mobile'>
+                            <th>Kalorit</th>
+                            <th>Hiilihydraatit</th>
+                            <th>Rasvat</th>
+                            <th>Proteiinit</th>
+                        </tr>
+                        <tr class='mobile'>
+                            <td>".$row['SUM(calories)']." kcal</td>
+                            <td>".$row['SUM(carbohydrates)']." g</td>
+                            <td>".$row['SUM(fat)']." g</td>
                             <td>".$row['SUM(proteins)']." g</td>
                         </tr>
                     ");
@@ -302,12 +407,28 @@
 
             // Luodaan taulukko jossa on yhteenveto kaikista ravintomääristä 
             echo("
-                <tr>
+                <tr class='laptop'>
                     <th>Yhteenveto</th>
                     <td>".$quanttotal." g</td>
                     <td>".$caloriestotal." kcal</td>
                     <td>".$fatstotal." g</td>
                     <td>".$chtotal." g</td>
+                    <td>".$proteinstotal." g</td>
+                </tr>
+
+                <tr class='mobile'>
+                <th colspan='4' class='ateria-th'>Yhteensä</th>
+                </tr>
+                <tr class='mobile'>
+                    <th>Kalorit</th>
+                    <th>Hiilihydraatit</th>
+                    <th>Rasvat</th>
+                    <th>Proteiinit</th>
+                </tr>
+                <tr class='mobile'>
+                    <td>".$caloriestotal." kcal</td>
+                    <td>".$chtotal." g</td>
+                    <td>".$fatstotal." g</td>
                     <td>".$proteinstotal." g</td>
                 </tr>
                 </table>
