@@ -2,7 +2,7 @@
 // LÄHDE: https://codingwithsara.com/how-to-code-calendar-in-php/
 
 // Asettaa Suomen ajan ja päivämäärän
-setlocale(LC_ALL, 'fi_FI');
+setlocale(LC_TIME, 'fi_FI');
 
 // Hakee seuraavan ja edellisen kuukauden
 if (isset($_GET['ym'])) {
