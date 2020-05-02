@@ -1,7 +1,4 @@
-
-<?php
-// Luodaan taulukko johon syötetään arvot 
-echo("
+<!-- Luodaan taulukko johon syötetään arvot  -->
 <table>
   <tr>
     <th>Ruoka-aineet yht.</th>
@@ -11,8 +8,8 @@ echo("
     <th>Hiilihydraatit yht.</th>
     <th>Proteiinit yht.</th>
   </tr>
-");
 
+<?php
 while	($row=$kysely->fetch()){	
   echo("
     <tr>
@@ -25,8 +22,5 @@ while	($row=$kysely->fetch()){
     </tr>
   ");
 }
-
-echo("
-</table>
-");
 ?>
+</table>

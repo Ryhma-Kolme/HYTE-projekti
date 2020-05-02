@@ -32,10 +32,14 @@ th, td {
     display: none;
 }
 
+.mobile {
+    display: none;
+}
+
 /* RESPONSIIVISUUS */
 @media (max-width: 660px) {
     th, td {
-        padding: 2px;
+        padding: 5px 2px;
     }
     .lisaa {
         display: none;
@@ -45,6 +49,12 @@ th, td {
     }
 }
 
-@media (max-width: 375px) {
-    
+@media (max-width: 450px) {
+    .laptop {
+        display: none;
+    }
+
+    .mobile {
+        display: table-row;
+    }
 }
