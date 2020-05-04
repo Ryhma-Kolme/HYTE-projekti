@@ -63,7 +63,7 @@
                 </td>
             </tr>
 
-            <tr class="mobile">
+            <tr class="mobile" style='border-bottom: 1px solid #beccc9;'>
                 <th colspan='3' class='ateria-th'>Aamiainen</th>
                 <td class="respo"><button class="plus" onclick="window.location.href = 'aamiainen.php'">Lisää</button></td>
             </tr>
@@ -91,7 +91,7 @@
                             <th>Rasvat</th>
                             <th>Proteiinit</th>
                         </tr>
-                        <tr class='mobile'>
+                        <tr class='mobile' style='border-bottom: 1px solid #beccc9;'>
                             <td>".$row['SUM(calories)']." kcal</td>
                             <td>".$row['SUM(carbohydrates)']." g</td>
                             <td>".$row['SUM(fat)']." g</td>
@@ -132,7 +132,7 @@
                     <p>Et ole vielä lisännyt lounasta</p>
                 </td>
             </tr>
-            <tr class='mobile'>
+            <tr class='mobile' style='border-bottom: 1px solid #beccc9;'>
                 <th colspan='3' class='ateria-th'>Lounas</th>
                 <td class="respo">
                     <button class="plus" onclick="window.location.href = 'lounas.php'">Lisää</button>
@@ -161,7 +161,7 @@
                         <th>Rasvat</th>
                         <th>Proteiinit</th>
                     </tr>
-                    <tr class='mobile'>
+                    <tr class='mobile' style='border-bottom: 1px solid #beccc9;'>
                         <td>".$row['SUM(calories)']." kcal</td>
                         <td>".$row['SUM(carbohydrates)']." g</td>
                         <td>".$row['SUM(fat)']." g</td>
@@ -204,7 +204,7 @@
                 </td>
             </tr>
 
-            <tr class="mobile">
+            <tr class="mobile" style='border-bottom: 1px solid #beccc9;'>
                 <th colspan='3' class='ateria-th'>Välipala</th>
                 <td class="respo">
                     <button class="plus" onclick="window.location.href = 'välipala.php'">Lisää</button>
@@ -234,7 +234,7 @@
                             <th>Rasvat</th>
                             <th>Proteiinit</th>
                         </tr>
-                        <tr class='mobile'>
+                        <tr class='mobile' style='border-bottom: 1px solid #beccc9;'>
                             <td>".$row['SUM(calories)']." kcal</td>
                             <td>".$row['SUM(carbohydrates)']." g</td>
                             <td>".$row['SUM(fat)']." g</td>
@@ -277,7 +277,7 @@
                     <p>Et ole vielä lisännyt päivällistä</p>
                 </td>
             </tr>
-            <tr class="mobile">
+            <tr class="mobile" style='border-bottom: 1px solid #beccc9;'>
                 <th colspan='3' class='ateria-th'>Päivällinen</th>
                 <td class="respo">
                     <button class="plus" onclick="window.location.href = 'päivällinen.php'">Lisää</button>
@@ -306,7 +306,7 @@
                             <th>Rasvat</th>
                             <th>Proteiinit</th>
                         </tr>
-                        <tr class='mobile'>
+                        <tr class='mobile' style='border-bottom: 1px solid #beccc9;'>
                             <td>".$row['SUM(calories)']." kcal</td>
                             <td>".$row['SUM(carbohydrates)']." g</td>
                             <td>".$row['SUM(fat)']." g</td>
@@ -348,7 +348,7 @@
                     <p>Et ole vielä lisännyt iltapalaa</p>
                 </td>
             </tr>
-            <tr class="mobile">
+            <tr class="mobile" style="border-bottom: 1px solid #beccc9;">
                 <th colspan='3' class='ateria-th'>Iltapala</th>
                 <td class="respo">
                     <button class="plus" onclick="window.location.href = 'iltapala.php'">Lisää</button>
@@ -377,7 +377,7 @@
                             <th>Rasvat</th>
                             <th>Proteiinit</th>
                         </tr>
-                        <tr class='mobile'>
+                        <tr class='mobile' style='border-bottom: 1px solid #beccc9;'>
                             <td>".$row['SUM(calories)']." kcal</td>
                             <td>".$row['SUM(carbohydrates)']." g</td>
                             <td>".$row['SUM(fat)']." g</td>
