@@ -118,7 +118,7 @@
                         data: leposykeData.average,
                         fill: false,
                         backgroundColor: 'rgba(146, 209, 226, 1)',
-                        borderColor: 'rgba(146, 209, 226, 1)',
+                        borderColor: 'rgba(146, 209, 227, 1)',
                         borderWidth: 1
                         }
                     
