@@ -69,16 +69,54 @@
                 </table>
 
                 <hr>
-                
-                <h2 style="text-align: start; font-size: 20px;">Unitiedot</h2>
+
+<?php // Unien keston tuonti csv tiedostosta
+
+        $sleepTimes = array(); // Luodaan array
+
+        // Tuodaan tiedot
+        if(($handle = fopen("graafit/kkUni.csv", "r")) !== FALSE)
+        {
+            while(($dataTimes = fgetcsv($handle, 1000, ",")) !== FALSE)
+            {
+                $sleepTimes[] = $dataTimes;
+
+            }
+        }
+
+        fclose($handle);
+        $rowsleep = (strftime('%e.%m', strtotime($_SESSION['valittu']))); // Valittu päivä on sama kuin rivi csv tiedostossa
+        $columnsleep = 2; // Miltä sarakkeelta tiedot tuodaan csv:stä
+?>
+
+<?php // Unien leposykkeiden tuonti csv tiedostosta
+
+        $sleepBpm = array(); // Luodaan array
+
+        // Tuodaan tiedot
+        if(($handle = fopen("graafit/kkLeposyke.csv", "r")) !== FALSE)
+        {
+            while(($dataBpm = fgetcsv($handle, 1000, ",")) !== FALSE)
+            {
+                $sleepBpm[] = $dataBpm;
+
+            }
+        }
+
+        fclose($handle);
+        $rowbpm = (strftime('%e', strtotime($_SESSION['valittu']))); // Valittu päivä on sama kuin rivi csv tiedostossa
+        $columnbpm = 1; // Miltä sarakkeelta tiedot tuodaan csv:stä
+?>   
+
+<h2 style="text-align: start; font-size: 20px;">Unitiedot</h2>
                 <table style="border:0;">
                     <tr>
                         <th>Kesto</th>
                         <th>Leposyke</th>
                     </tr>
                     <tr>
-                        <td>08:20 h</td>
-                        <td>55 bpm</td>
+                        <td><?php echo $sleepTimes[intval($rowsleep)][$columnsleep]; ?></td>
+                        <td><?php echo $sleepBpm[intval($rowbpm)][$columnbpm]; ?> bpm</td>
                     </tr>
                 </table>
 
