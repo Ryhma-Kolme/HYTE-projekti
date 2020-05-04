@@ -23,12 +23,14 @@
 
         <div class="uni-column-content">
             <div class="column-1">
+            <!-- Hakee graafin halutusta URL:sta -->
             <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
     <canvas id="uni7Chart"></canvas>
     
     <script>
+        
         chartIt();
-         
+        // Luo muuttujat, sekä graafin ja sen ominaisuudet (otsikot, värit, kuviot)
         async function chartIt() {
             const ctx = document.getElementById('uni7Chart').getContext('2d');
             const uniData = await getData();
@@ -70,6 +72,7 @@
                             });
                             }           
 
+            // Luo muuttujia csv-tiedoston datalle. Hakee luodulle graafille datan csv-tiedostosta ja sijoittaa sen graaffiin
             async function getData(){       
                 const response = await fetch('graafit/unitiedot7.csv');
                 const data = await response.text();     
@@ -83,6 +86,7 @@
                 duration.push(cols[1]);
                 average.push(cols[3]);
                 }); 
+                // Palauttaa valitut muuttujat.
                 return {date, duration, average};
             }
         
@@ -96,7 +100,7 @@
     
     <script>
         chartIt();
-         
+        // Luo muuttujat, sekä graafin ja sen ominaisuudet (otsikot, värit, kuviot)
         async function chartIt() {
             const ctx = document.getElementById('leposyke7Chart').getContext('2d');
             const leposykeData = await getData();
@@ -138,7 +142,7 @@
                                 }               
                             });
                             }           
-
+                    // Luo muuttujia csv-tiedoston datalle. Hakee luodulle graafille datan csv-tiedostosta ja sijoittaa sen graaffiin.
                     async function getData(){       
                         const response = await fetch('graafit/leposyke7.csv');
                         const data = await response.text();     
@@ -152,7 +156,7 @@
                         bpm.push(cols[1]);
                         average.push(parseFloat(cols[2]));
                         }); 
-                        console.log(date, bpm, average);
+                        // Palauttaa valitut muuttujat.
                         return {date, bpm, average};
                     }
         
