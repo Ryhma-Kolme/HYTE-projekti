@@ -53,7 +53,7 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
     if ($today == $date) {
         $week .= '<td class="today active-cell" onclick="PickedDate(\'' . $date . '\')">';
     } else {
-        $week .= '<td id="test" class="cal-cell" onclick="PickedDate(\'' . $date . '\')">';
+        $week .= '<td class="cal-cell" onclick="PickedDate(\'' . $date . '\')">';
     }
 
     // $week -muuttujaan lisätään </td>
