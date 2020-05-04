@@ -26,7 +26,7 @@
 
 
 <nav class="nav-mob">
-    <a class="logo">foodfx</a></li>
+    <a class="logo">foodfx</a>
     <a href="kuukausi.php"><span class="material-icons">event_note</span></a>
     <a href="ravinto.php"><span class="material-icons">fastfood</span></a>
     <a href="unisivu.php"><span class="material-icons">brightness_3</span></a>
