@@ -24,7 +24,6 @@
         <div class="uni-column-content">
             <div class="column-1">
             <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
-    <body>
     <canvas id="uni7Chart"></canvas>
     
     <script>
@@ -93,7 +92,6 @@
             
 
             <div class="column-2">
-            <body>
     <canvas id="leposyke7Chart"></canvas>
     
     <script>

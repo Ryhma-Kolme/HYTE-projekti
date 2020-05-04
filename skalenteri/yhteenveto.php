@@ -17,7 +17,6 @@
         <div class="uni-column-content">
             <div class="column-1">
             <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> </script>
-    <body>
     <canvas id="kkUniChart"></canvas>
     
     <script>
@@ -87,8 +86,6 @@
             </div>
             
             <div class="column-2">
-                <h4></h4>
-            <body>
     <canvas id="kkLeposykeChart"></canvas>
     
     <script>
